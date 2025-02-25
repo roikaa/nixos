@@ -43,7 +43,7 @@ gtk = {
     };
     aliases = {
       pu = "push";
-      cm = "commit";
+      cm = "commit -m";
       co = "checkout";
     };
   };

@@ -20,7 +20,7 @@
   networking.firewall.enable = false;
 
   # Set your time zone.
-  time.timeZone = "Africa/Algeria";
+  time.timeZone = "Etc/GMT-1";
 
   # User account 
   users.users.akio = {
@@ -122,7 +122,6 @@ services.displayManager.sddm.wayland.enable = true;
         ];
 	extraDefCfg = ''
 			process-unmapped-keys yes
-			linux-use-trackpoint-property yes
 		      '';
         config = ''
           (defsrc
