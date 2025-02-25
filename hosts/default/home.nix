@@ -41,6 +41,11 @@ gtk = {
     extraConfig = {
       init.defaultBranch = "main";
     };
+    aliases = {
+      pu = "push";
+      cm = "commit";
+      co = "checkout";
+    };
   };
 
    home.sessionVariables = {
