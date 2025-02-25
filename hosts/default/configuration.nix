@@ -69,6 +69,8 @@ enable = true;
 xwayland.enable = true;
 };
 environment.sessionVariables = {
+LIBVA_DRIVER_NAME = "nvidia";
+XDG_SESSION_TYPE = "wayland";
 WLR_NO_HARDWARE_CURSORS = "1";
 NIXOS_OZONE_WL = "1";
 };
@@ -79,8 +81,8 @@ nvidia.modesetting.enable = true;
 
  
 services.xserver.enable = true;
-services.displayManager.sddm.enable = true;
-  # services.displayManager.sddm.wayland.enable = true;
+#services.xserver.displayManager.sddm.enable = true;
+services.displayManager.sddm.wayland.enable = true;
  
  # Enable the uinput module
   boot.kernelModules = [ "uinput" ];
