@@ -6,18 +6,22 @@
 
       settings = {
           "$mod" = "SUPER";
-          "$termina" = "kitty";
+          "$terminal" = "kitty";
+          "$appluncher" = "rofi";
 
       input = {
         repeat_delay = "300";
         repeat_rate = "50";
-      };    
+      };
+
+
 
     bind =
       [
         "$mod, W, exec, firefox"
-        "$mod, return, exec, $termina"
+        "$mod, return, exec, $terminal"
         "$mod, Q, killactive"
+        "$mod, R, exec, $appluncher -show run"
       ]
       ++ (
         # workspaces

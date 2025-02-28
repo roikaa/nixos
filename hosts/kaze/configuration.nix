@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./../../modules/nvidia.nix
+      ./../../modules/steam.nix
       inputs.home-manager.nixosModules.default
     ];
 
@@ -58,9 +59,17 @@
      swww			# Wallpaper daemon
      yazi			# CLI file manager
      pass			# CLI password manager
+     gnupg  # gpg encrytion for pass
+      pinentry
+     pinentry-curses
 #     dolphin			# GUI file manager
    ];
 
+programs.gnupg.agent = {
+  enable = true;
+  enableSSHSupport = true;
+  pinentryPackage = pkgs.pinentry-curses ;  # or "qt", "mac", etc.
+};
 
 xdg.portal.enable = true;
 xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
@@ -73,13 +82,12 @@ programs.hyprland = {
   enable = true;
   xwayland.enable = true;
 };
-
+environment.variables.EDITOR = "nvim";
 environment.sessionVariables = {
 LIBVA_DRIVER_NAME = "nvidia";
 XDG_SESSION_TYPE = "wayland";
 WLR_NO_HARDWARE_CURSORS = "1";
 NIXOS_OZONE_WL = "1";
-GDK_SCALE = "2";
 };
  
 services.xserver.enable = true;
