@@ -1,16 +1,23 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
-
   home.username = "akio";
   home.homeDirectory = "/home/akio";
-
-  home.packages = with pkgs; [
- bibata-cursors
+  
+  imports = [
+    ./../hyprland.nix
 
   ];
+
+
+  home.packages = with pkgs; [
+# bibata-cursors
+ 
+  ];
+
+
 home.pointerCursor = {
   gtk.enable = true;
-  # x11.enable = true;
+  x11.enable = true;
   package = pkgs.bibata-cursors;
   name = "Bibata-Modern-Classic";
   size = 24;
@@ -34,6 +41,8 @@ gtk = {
   };
 };
 
+
+
   programs.git = {
     enable = true;
     userName = "roikaa";
@@ -48,13 +57,16 @@ gtk = {
     };
   };
 
+
+
+
+
    home.sessionVariables = {
-     EDITOR = "nvim";
+     #EDITOR="nvim";
   };
 
 
   home.file = {
-
 
   };
 

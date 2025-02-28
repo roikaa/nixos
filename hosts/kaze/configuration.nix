@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./../../modules/nvidia.nix
       inputs.home-manager.nixosModules.default
     ];
 
@@ -29,13 +30,16 @@
   extraGroups = [ "wheel" ]; #sudo enable
   packages = with pkgs; [
   ];
-};
+ };
+ 
+ nixpkgs.config.allowUnfree = true;
 
   home-manager = {
    # (ref vimjoyer Ultimate NixOS Guide)
+   backupFileExtension = "backup";
    extraSpecialArgs = { inherit inputs; };
    users = {
-   "akio" = import ./home.nix;
+   "akio" = import ./../../modules/home-manger/home.nix;
    };
   };
 
@@ -53,6 +57,7 @@
      libnotify			# Notification daemon's dependency
      swww			# Wallpaper daemon
      yazi			# CLI file manager
+     pass			# CLI password manager
 #     dolphin			# GUI file manager
    ];
 
@@ -61,24 +66,21 @@ xdg.portal.enable = true;
 xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   
  programs.firefox.enable = true;
-  programs.nix-ld.enable = true;
- programs.hyprland = {
-enable = true;
-#withUWSM = true;
-#nvidiaPatches = true;
-xwayland.enable = true;
+# programs.nix-ld.enable = true;
+
+programs.hyprland = {
+  package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+  enable = true;
+  xwayland.enable = true;
 };
+
 environment.sessionVariables = {
 LIBVA_DRIVER_NAME = "nvidia";
 XDG_SESSION_TYPE = "wayland";
 WLR_NO_HARDWARE_CURSORS = "1";
 NIXOS_OZONE_WL = "1";
+GDK_SCALE = "2";
 };
-hardware = {
-graphics.enable = true;
-nvidia.modesetting.enable = true;
-};
-
  
 services.xserver.enable = true;
 #services.xserver.displayManager.sddm.enable = true;
