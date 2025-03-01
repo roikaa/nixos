@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./../../modules/nvidia.nix
       ./../../modules/steam.nix
+      #./../../modules/zsh.nix
       inputs.home-manager.nixosModules.default
     ];
 
@@ -24,10 +25,15 @@
   # Set your time zone.
   time.timeZone = "Etc/GMT-1";
 
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+
   # User account 
   users.users.akio = {
+  useDefaultShell = true;
   isNormalUser = true;
   description = "akio";
+  #shell = pkgs.zsh;
   extraGroups = [ "wheel" ]; #sudo enable
   packages = with pkgs; [
   ];

@@ -14,7 +14,9 @@
         repeat_rate = "50";
       };
 
-
+      animations = {
+        enabled = false;
+      };
 
     bind =
       [
