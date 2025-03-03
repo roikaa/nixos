@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./../../modules/nvidia.nix
       ./../../modules/steam.nix
+      ./../../modules/ollama.nix
       #./../../modules/zsh.nix
       inputs.home-manager.nixosModules.default
     ];
@@ -39,6 +40,7 @@
   ];
  };
  
+
  nixpkgs.config.allowUnfree = true;
 
   home-manager = {
@@ -51,6 +53,10 @@
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  fonts.packages = with pkgs; [
+    nerdfonts
+];
   environment.systemPackages = with pkgs; [
      wget			
      git			 
@@ -66,11 +72,13 @@
      yazi			# CLI file manager
      pass			# CLI password manager
      gnupg  # gpg encrytion for pass
-      pinentry
-     pinentry-curses
+      pinentry      # for gnupg
+     pinentry-curses    #for gnupg
 #     dolphin			# GUI file manager
    ];
 
+programs.thunar.enable = true;
+ 
 programs.gnupg.agent = {
   enable = true;
   enableSSHSupport = true;

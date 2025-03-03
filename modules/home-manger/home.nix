@@ -14,6 +14,7 @@
  
   ];
 
+  
 
 home.pointerCursor = {
   gtk.enable = true;
@@ -36,7 +37,7 @@ gtk = {
   };
 
   font = {
-    name = "Sans";
+    name = "JetBrainsMono";
     size = 11;
   };
 };
