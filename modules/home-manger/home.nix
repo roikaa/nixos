@@ -6,11 +6,13 @@
   imports = [
     ./../hyprland.nix
     ./../zsh.nix
+    ./../librewolf.nix
   ];
 
 
   home.packages = with pkgs; [
 # bibata-cursors
+  tealdeer
  
   ];
 
@@ -63,7 +65,7 @@ home.sessionVariables.EDITOR = "nvim";
 
 
    home.sessionVariables = {
-     #EDITOR="nvim";
+     MANPAGER="nvim +Man!";
   };
 
 

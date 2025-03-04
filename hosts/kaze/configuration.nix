@@ -74,6 +74,7 @@
      gnupg  # gpg encrytion for pass
       pinentry      # for gnupg
      pinentry-curses    #for gnupg
+     wl-clipboard   # Clipboard
 #     dolphin			# GUI file manager
    ];
 
@@ -88,7 +89,6 @@ programs.gnupg.agent = {
 xdg.portal.enable = true;
 xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   
- programs.firefox.enable = true;
 # programs.nix-ld.enable = true;
 
 programs.hyprland = {

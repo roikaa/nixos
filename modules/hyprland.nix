@@ -4,7 +4,10 @@
     wayland.windowManager.hyprland = {
       enable = true;
 
+
       settings = {
+
+      exec-once = "swww init";
           "$mod" = "SUPER";
           "$terminal" = "kitty";
           "$appluncher" = "rofi";
@@ -14,13 +17,26 @@
         repeat_rate = "50";
       };
 
+      decoration = {
+        rounding = 10 ;
+        active_opacity = 0.9;
+        inactive_opacity = 0.8;
+        
+        blur = {
+        enabled = true;
+          size = 5;
+          passes = 1;
+          vibrancy = 0.1696;
+        };
+      };
+
       animations = {
         enabled = false;
       };
 
     bind =
       [
-        "$mod, W, exec, firefox"
+        "$mod, W, exec, librewolf"
         "$mod, return, exec, $terminal"
         "$mod, Q, killactive"
         "$mod, R, exec, $appluncher -show run"
