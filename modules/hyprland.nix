@@ -6,8 +6,9 @@
 
 
       settings = {
-
-      exec-once = "swww init";
+        
+        exec-once = "swww init";
+          
           "$mod" = "SUPER";
           "$terminal" = "kitty";
           "$appluncher" = "rofi";
@@ -34,12 +35,23 @@
         enabled = false;
       };
 
+    bindm = [
+      # mouse movements
+      "$mod, mouse:272, movewindow"
+      "$mod, mouse:273, resizewindow"
+      "$mod ALT, mouse:272, resizewindow"
+    ];
     bind =
       [
-        "$mod, W, exec, librewolf"
+        "$mod, W, exec, librewolf&,"
         "$mod, return, exec, $terminal"
-        "$mod, Q, killactive"
-        "$mod, R, exec, $appluncher -show run"
+        "$mod, Q, killactive,"
+        "$mod, R, exec, $appluncher -show drun"
+        "$mod, V, togglefloating,"
+
+        # special workspaces (scratchpad) 
+        "$mod, S, togglespecialworkspace, magic"
+        "$mod SHIFT, S, movetoworkspace, special:magic"
       ]
       ++ (
         # workspaces
