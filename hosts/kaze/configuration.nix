@@ -8,9 +8,11 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./../../modules/font.nix
       ./../../modules/nvidia.nix
       ./../../modules/steam.nix
       ./../../modules/ollama.nix
+      ./../../modules/open-webui.nix
       #./../../modules/zsh.nix
       inputs.home-manager.nixosModules.default
     ];
@@ -39,9 +41,25 @@
   packages = with pkgs; [
   ];
  };
- 
+
 
  nixpkgs.config.allowUnfree = true;
+
+# Automatic updating
+system.autoUpgrade = {
+  enable = true;
+  dates = "weekly";
+};
+
+# Automatic cleanup
+nix = {
+  gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 10d";
+  };
+  settings.auto-optimise-store = true;
+};
 
   home-manager = {
    # (ref vimjoyer Ultimate NixOS Guide)
@@ -54,10 +72,27 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  fonts.packages = with pkgs; [
-    nerdfonts
-];
+
+services.mysql = {
+  enable = true;
+  package = pkgs.mariadb;
+};
+
+
   environment.systemPackages = with pkgs; [
+    libreoffice-qt  # Microssoftoffice ulernative
+    signal-desktop  # Chat app
+    discord-ptb     # Discord
+    transmission_4-qt   # Torrent
+    qbittorrent       # Torrent
+    mpv
+    lutris    # gaming lancher
+    heroic    # game lancher
+    wine      # to run .exe windows
+    zed-editor   # IDE
+    vscode # VSCode IDE
+
+     nodejs_23
      wget			
      git			 
      #nix-ld			# ( idk what is this but ig some work around for some apps that dont work in nixos)

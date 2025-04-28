@@ -7,10 +7,12 @@
 
       settings = {
         
+        windowrule = "opacity 0.8, class:footclient";
+
         exec-once = "swww init";
           
           "$mod" = "SUPER";
-          "$terminal" = "kitty";
+          "$terminal" = "foot";
           "$appluncher" = "rofi";
 
       input = {
@@ -20,11 +22,11 @@
 
       decoration = {
         rounding = 10 ;
-        active_opacity = 0.9;
-        inactive_opacity = 0.8;
+        #active_opacity = 0.9;
+        #inactive_opacity = 0.8;
         
         blur = {
-        enabled = true;
+        enabled = false;
           size = 5;
           passes = 1;
           vibrancy = 0.1696;

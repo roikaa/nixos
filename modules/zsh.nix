@@ -4,13 +4,14 @@
   home.packages = with pkgs; [
     zsh
     fzf
+    oh-my-posh
     ];
   
   programs.oh-my-posh = {
   enable = true;
   useTheme = "stelbent.minimal";  # You can choose any theme you prefer
-  enableZshIntegration = true;
-};
+  enableZshIntegration = true; 
+  };
 
   programs.zsh = {
     enable = true;
@@ -23,6 +24,9 @@
       update = "sudo nixos-rebuild switch";
     };
     
+    initExtraBeforeCompInit = "
+                  oh-my-posh disable notice
+                ";
     #defaultKeymap = "";
 
     history = {

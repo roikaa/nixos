@@ -7,12 +7,18 @@
     ./../hyprland.nix
     ./../zsh.nix
     ./../librewolf.nix
+    ./../foot.nix
   ];
 
 
   home.packages = with pkgs; [
 # bibata-cursors
-  tealdeer
+  tealdeer # short manual
+  ani-cli   #anime in terminal
+  btop    # benchmark tool
+  foot    # terminal
+  ffmpeg  #ffmpeg
+  open-webui
  
   ];
 
@@ -38,10 +44,6 @@ gtk = {
     name = "Adwaita";
   };
 
-  font = {
-    name = "JetBrainsMono";
-    size = 11;
-  };
 };
 
 

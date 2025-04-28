@@ -18,6 +18,13 @@
       fsType = "ext4";
     };
 
+#  fileSystems."/nix" = {
+#     device = "/dev/disk/by-label/nix";
+#     fsType = "ext4";
+#     neededForBoot = true;
+#     options = [ "noatime" ];
+#   };
+
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/2827-B85E";
       fsType = "vfat";
