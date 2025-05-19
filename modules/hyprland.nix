@@ -22,8 +22,8 @@
 
       decoration = {
         rounding = 10 ;
-        #active_opacity = 0.9;
-        #inactive_opacity = 0.8;
+        active_opacity = 0.9;
+        inactive_opacity = 0.8;
         
         blur = {
         enabled = false;
@@ -45,6 +45,7 @@
     ];
     bind =
       [
+        "$mod, Y, exec, foot yazi&,"
         "$mod, W, exec, librewolf&,"
         "$mod, return, exec, $terminal"
         "$mod, Q, killactive,"

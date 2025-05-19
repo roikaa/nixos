@@ -8,6 +8,7 @@
     ./../zsh.nix
     ./../librewolf.nix
     ./../foot.nix
+    ./../obs.nix
   ];
 
 

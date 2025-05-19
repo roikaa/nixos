@@ -13,6 +13,7 @@
       ./../../modules/steam.nix
       ./../../modules/ollama.nix
       ./../../modules/open-webui.nix
+      ./../../modules/mysql/mysql.nix
       #./../../modules/zsh.nix
       inputs.home-manager.nixosModules.default
     ];
@@ -73,10 +74,7 @@ nix = {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 
-services.mysql = {
-  enable = true;
-  package = pkgs.mariadb;
-};
+
 
 
   environment.systemPackages = with pkgs; [
@@ -92,7 +90,12 @@ services.mysql = {
     zed-editor   # IDE
     vscode # VSCode IDE
 
-     nodejs_23
+    openssl
+    zig
+    hyprshot
+    libxml2
+
+    nodejs_23
      wget			
      git			 
      #nix-ld			# ( idk what is this but ig some work around for some apps that dont work in nixos)
@@ -133,6 +136,7 @@ programs.hyprland = {
 };
 environment.variables.EDITOR = "nvim";
 environment.sessionVariables = {
+LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
 LIBVA_DRIVER_NAME = "nvidia";
 XDG_SESSION_TYPE = "wayland";
 WLR_NO_HARDWARE_CURSORS = "1";
