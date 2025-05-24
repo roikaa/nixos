@@ -13,7 +13,7 @@
       ./../../modules/steam.nix
       ./../../modules/ollama.nix
       ./../../modules/open-webui.nix
-      ./../../modules/mysql/mysql.nix
+#      ./../../modules/mysql/mysql.nix
       #./../../modules/zsh.nix
       inputs.home-manager.nixosModules.default
     ];
