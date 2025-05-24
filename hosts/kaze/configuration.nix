@@ -81,25 +81,27 @@ nix = {
     libreoffice-qt  # Microssoftoffice ulernative
     signal-desktop  # Chat app
     discord-ptb     # Discord
-    transmission_4-qt   # Torrent
+#    transmission_4-qt   # Torrent
     qbittorrent       # Torrent
     mpv
     lutris    # gaming lancher
     heroic    # game lancher
     wine      # to run .exe windows
-    zed-editor   # IDE
-    vscode # VSCode IDE
+#    zed-editor   # IDE
+#    vscode # VSCode IDE
+    android-studio
 
     openssl
     zig
     hyprshot
-    libxml2
+#    libxml2
 
-    nodejs_23
+    firefox-devedition
+
      wget			
      git			 
-     #nix-ld			# ( idk what is this but ig some work around for some apps that dont work in nixos)
-     kitty                      # Terminal
+     nix-ld			# ( idk what is this but ig some work around for some apps that dont work in nixos)
+#     kitty                      # Terminal
      rofi-wayland	        # Application luncher
      nitch		        # Display system stats
      neovim			# Text editor
@@ -127,7 +129,7 @@ programs.gnupg.agent = {
 xdg.portal.enable = true;
 xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   
-# programs.nix-ld.enable = true;
+programs.nix-ld.enable = true;
 
 programs.hyprland = {
   package = inputs.hyprland.packages."${pkgs.system}".hyprland;
@@ -136,7 +138,6 @@ programs.hyprland = {
 };
 environment.variables.EDITOR = "nvim";
 environment.sessionVariables = {
-LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
 LIBVA_DRIVER_NAME = "nvidia";
 XDG_SESSION_TYPE = "wayland";
 WLR_NO_HARDWARE_CURSORS = "1";

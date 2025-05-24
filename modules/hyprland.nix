@@ -26,7 +26,7 @@
         inactive_opacity = 0.8;
         
         blur = {
-        enabled = false;
+        enabled = true;
           size = 5;
           passes = 1;
           vibrancy = 0.1696;
@@ -51,6 +51,7 @@
         "$mod, Q, killactive,"
         "$mod, R, exec, $appluncher -show drun"
         "$mod, V, togglefloating,"
+        "$mod, P, exec, hyprshot -m output"
 
         # special workspaces (scratchpad) 
         "$mod, S, togglespecialworkspace, magic"

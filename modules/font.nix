@@ -1,8 +1,10 @@
 {config, pkgs, lib, ...}:
 {
   fonts.packages = with pkgs; [
-  nerdfonts
+ # nerdfonts
   noto-fonts
+  nerd-fonts._0xproto
+  nerd-fonts.droid-sans-mono
   noto-fonts-cjk-sans
   noto-fonts-emoji
   liberation_ttf
