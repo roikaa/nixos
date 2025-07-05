@@ -1,6 +1,21 @@
 { config, lib, pkgs, ... }:
 {
 
+    environment.systemPackages = with pkgs; [
+    pciutils
+    file
+    
+    gnumake
+    gcc
+
+    cudatoolkit
+  ];
+
+
+  systemd.services.nvidia-control-devices = {
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig.ExecStart = "${pkgs.linuxPackages.nvidia_x11.bin}/bin/nvidia-smi";
+  };
   # Enable OpenGL
   hardware.graphics = {
     enable = true;

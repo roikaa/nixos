@@ -22,11 +22,13 @@
       ll = "ls -l";
       edit = "sudo -e";
       update = "sudo nixos-rebuild switch";
+      youtube = "yt-dlp -f bestaudio -x --audio-format mp3 --audio-quality 320k --embed-thumbnail --add-metadata ";
+#yt-dlp -f bestaudio -x --audio-format mp3 --audio-quality 320k --embed-thumbnail --add-metadata --postprocessor-args "-id3v2_version 3"
     };
     
-    initExtraBeforeCompInit = "
-                  oh-my-posh disable notice
-                ";
+#    initExtraBeforeCompInit = "
+#                 oh-my-posh disable notice
+#              ";
     #defaultKeymap = "";
 
     history = {

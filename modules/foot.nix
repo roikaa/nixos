@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       main = {
-        font = "JetBrainsMono Nerd Font Mono:size=14";
+        font = "DejaVu Sans Mono :size=14";
       };
     };
   };

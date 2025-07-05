@@ -3,7 +3,7 @@
 {
   services.ollama = {
     enable = true;
-    loadModels = [ "llama3.1:8b" "deepseek-r1:1.5b"];
+    loadModels = [ "gemma3"];
     acceleration = "cuda";  # NVIDIA GPU acceleration
     # acceleration = "rocm";  # AMD GPU acceleration
   };

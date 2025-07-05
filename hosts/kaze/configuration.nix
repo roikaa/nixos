@@ -74,8 +74,8 @@ nix = {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 
-
-
+services.printing.drivers = [ pkgs.cnijfilter2 ];
+services.printing.enable = true;
 
   environment.systemPackages = with pkgs; [
     libreoffice-qt  # Microssoftoffice ulernative
@@ -84,20 +84,28 @@ nix = {
 #    transmission_4-qt   # Torrent
     qbittorrent       # Torrent
     mpv
+    yt-dlp
     lutris    # gaming lancher
     heroic    # game lancher
     wine      # to run .exe windows
 #    zed-editor   # IDE
 #    vscode # VSCode IDE
-    android-studio
+#    android-studio
+    kdePackages.kdenlive
+#    davinci-resolve
 
+telegram-desktop
     openssl
     zig
     hyprshot
+    nodejs
+    glib
 #    libxml2
-
-    firefox-devedition
-
+    gtk3
+    nix-index
+#    firefox-devedition
+    freetube
+komikku
      wget			
      git			 
      nix-ld			# ( idk what is this but ig some work around for some apps that dont work in nixos)
@@ -144,8 +152,8 @@ WLR_NO_HARDWARE_CURSORS = "1";
 NIXOS_OZONE_WL = "1";
 };
  
-services.xserver.enable = true;
-#services.xserver.displayManager.sddm.enable = true;
+#services.xserver.enable = true;
+services.xserver.displayManager.sddm.enable = true;
 services.displayManager.sddm.wayland.enable = true;
  
  # Enable the uinput module
@@ -177,12 +185,13 @@ services.displayManager.sddm.wayland.enable = true;
         devices = [
           # Replace the paths below with the appropriate device paths for your setup.
           # Use `ls /dev/input/by-path/` to find your keyboard devices.
-          "/dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.0-event-kbd"
-          "/dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd"
-          "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:5:1.1-event-kbd"
-          "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:6:1.1-event-kbd"
+          "/dev/input/by-path/pci-0000:00:14.0-usb-0:8:1.0-event-kbd"
+          "/dev/input/by-path/pci-0000:00:14.0-usb-0:8:1.1-event-kbd"
+          "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:8:1.1-event-kbd"
+          "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:8:1.0-event-kbd"
           "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:5:1.0-event-kbd"
           "/dev/input/by-path/pci-0000:00:14.0-usb-0:6:1.1-event-kbd"
+          
         ];
 	extraDefCfg = ''
 			process-unmapped-keys yes
