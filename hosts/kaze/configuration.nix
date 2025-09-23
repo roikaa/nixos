@@ -11,11 +11,8 @@
       ./../../system/hardware/kanataKeyboard.nix
       ./../../system/font.nix
       ./../../system/hardware/nvidia.nix
-      ./../../system/steam.nix
-#      ./../../modules/ollama.nix
-      ./../../system/open-webui.nix
-#      ./../../modules/mysql/mysql.nix
-      #./../../modules/zsh.nix
+      ./../../system/app/steam.nix
+      ./../../system/app/open-webui.nix
       inputs.home-manager.nixosModules.default
     ];
 
