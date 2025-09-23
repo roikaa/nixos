@@ -22,12 +22,12 @@
 
       decoration = {
         rounding = 10 ;
-        active_opacity = 1;
-        inactive_opacity = 1;
+        active_opacity = 0.9;
+        inactive_opacity = 0.8;
         
         blur = {
         enabled = true;
-          size = 5;
+          size = 2;
           passes = 1;
           vibrancy = 0.1696;
         };
