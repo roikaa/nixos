@@ -57,8 +57,8 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 
-services.printing.drivers = [ pkgs.cnijfilter2 ];
-services.printing.enable = true;
+#services.printing.drivers = [ pkgs.cnijfilter2 ];
+#services.printing.enable = true;
 
   environment.systemPackages = with pkgs; [
     libreoffice-qt  # Microssoftoffice ulernative
