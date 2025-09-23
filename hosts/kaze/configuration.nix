@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./../../system/essentials/boot.nix
       ./../../system/essentials/font.nix
       ./../../system/hardware/kanataKeyboard.nix
       ./../../system/hardware/nvidia.nix
@@ -17,10 +18,7 @@
       inputs.home-manager.nixosModules.default
     ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
+  
   networking.hostName = "kaze"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
   networking.firewall.enable = false;
