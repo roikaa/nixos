@@ -81,20 +81,25 @@ services.printing.enable = true;
     libreoffice-qt  # Microssoftoffice ulernative
     signal-desktop  # Chat app
     discord-ptb     # Discord
+    obsidian
 #    transmission_4-qt   # Torrent
     qbittorrent       # Torrent
     mpv
     yt-dlp
     lutris    # gaming lancher
     heroic    # game lancher
-    wine      # to run .exe windows
+#    wine      # to run .exe windows
 #    zed-editor   # IDE
 #    vscode # VSCode IDE
 #    android-studio
-    kdePackages.kdenlive
+#    kdePackages.kdenlive
 #    davinci-resolve
+unrar-wrapper
+#telegram-desktop
+unzip
 
-telegram-desktop
+baobab
+
     openssl
     zig
     hyprshot
@@ -186,6 +191,7 @@ services.displayManager.sddm.wayland.enable = true;
           # Replace the paths below with the appropriate device paths for your setup.
           # Use `ls /dev/input/by-path/` to find your keyboard devices.
           "/dev/input/by-path/pci-0000:00:14.0-usb-0:8:1.0-event-kbd"
+          "/dev/input/by-path/pci-0000:04:00.0-usb-0:1:1.0-event-kbd"
           "/dev/input/by-path/pci-0000:00:14.0-usb-0:8:1.1-event-kbd"
           "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:8:1.1-event-kbd"
           "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:8:1.0-event-kbd"
