@@ -8,9 +8,10 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./../../system/essentials/font.nix
       ./../../system/hardware/kanataKeyboard.nix
-      ./../../system/font.nix
       ./../../system/hardware/nvidia.nix
+      ./../../system/services/maintenance.nix
       ./../../system/app/steam.nix
       ./../../system/app/open-webui.nix
       inputs.home-manager.nixosModules.default
@@ -44,21 +45,7 @@
 
  nixpkgs.config.allowUnfree = true;
 
-# Automatic updating
-system.autoUpgrade = {
-  enable = true;
-  dates = "weekly";
-};
 
-# Automatic cleanup
-nix = {
-  gc = {
-    automatic = true;
-    dates = "daily";
-    options = "--delete-older-than 10d";
-  };
-  settings.auto-optimise-store = true;
-};
 
   home-manager = {
    # (ref vimjoyer Ultimate NixOS Guide)
