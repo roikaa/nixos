@@ -9,11 +9,11 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./../../system/hardware/kanataKeyboard.nix
-      ./../../modules/font.nix
-      ./../../modules/nvidia.nix
-      ./../../modules/steam.nix
+      ./../../system/font.nix
+      ./../../system/hardware/nvidia.nix
+      ./../../system/steam.nix
 #      ./../../modules/ollama.nix
-      ./../../modules/open-webui.nix
+      ./../../system/open-webui.nix
 #      ./../../modules/mysql/mysql.nix
       #./../../modules/zsh.nix
       inputs.home-manager.nixosModules.default
@@ -68,7 +68,7 @@ nix = {
    backupFileExtension = "backup";
    extraSpecialArgs = { inherit inputs; };
    users = {
-   "akio" = import ./../../modules/home-manger/home.nix;
+   "akio" = import ./home.nix;
    };
   };
 
