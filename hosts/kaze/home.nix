@@ -9,6 +9,7 @@
     ./../../user/app/browser/librewolf.nix
     ./../../user/app/terminal/foot.nix
     ./../../user/app/obs/obs.nix
+    ./../../user/app/noevim/nvchad.nix
   ];
 
 
@@ -33,19 +34,19 @@ home.pointerCursor = {
   size = 24;
 };
 
-gtk = {
-  enable = true;
-  theme = {
-    package = pkgs.flat-remix-gtk;
-    name = "Flat-Remix-GTK-Grey-Darkest";
-  };
-
-  iconTheme = {
-    package = pkgs.adwaita-icon-theme;
-    name = "Adwaita";
-  };
-
-};
+#gtk = {
+#  enable = true;
+#  theme = {
+#    package = pkgs.flat-remix-gtk;
+#    name = "Flat-Remix-GTK-Grey-Darkest";
+#  };
+#
+#  iconTheme = {
+#    package = pkgs.adwaita-icon-theme;
+#    name = "Adwaita";
+#  };
+#
+#};
 
 
 home.sessionVariables.EDITOR = "nvim";

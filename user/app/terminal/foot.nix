@@ -2,10 +2,10 @@
 {
   programs.foot = {
     enable = true;
-    settings = {
-      main = {
-        font = "DejaVu Sans Mono :size=14";
-      };
-    };
+#    settings = {
+#      main = {
+#        font = "DejaVu Sans Mono :size=14";
+#      };
+#    };
   };
 }
