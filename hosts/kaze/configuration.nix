@@ -13,8 +13,10 @@
       ./../../system/hardware/kanataKeyboard.nix
       ./../../system/hardware/nvidia.nix
       ./../../system/services/maintenance.nix
+      ./../../system/style/stylix.nix
       ./../../system/app/steam.nix
       ./../../system/app/open-webui.nix
+      
       inputs.home-manager.nixosModules.default
     ];
 
