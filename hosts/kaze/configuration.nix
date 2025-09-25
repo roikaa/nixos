@@ -68,7 +68,7 @@
   environment.systemPackages = with pkgs; [
     libreoffice-qt  # Microssoftoffice ulernative
     signal-desktop  # Chat app
-    discord-ptb     # Discord
+#    discord-ptb     # Discord
     obsidian
 #    transmission_4-qt   # Torrent
     qbittorrent       # Torrent
