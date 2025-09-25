@@ -8,6 +8,7 @@
     ./../../user/shell/zsh.nix
     ./../../user/app/browser/librewolf.nix
     ./../../user/app/terminal/foot.nix
+    ./../../user/app/terminal/kitty.nix
     ./../../user/app/obs/obs.nix
     ./../../user/app/noevim/nixvim.nix
     ./../../user/style/stylix.nix
