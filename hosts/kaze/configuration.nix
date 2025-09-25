@@ -102,7 +102,7 @@ komikku
 #     kitty                      # Terminal
      rofi-wayland	        # Application luncher
      nitch		        # Display system stats
-     neovim			# Text editor
+#     neovim			# Text editor
      waybar			# Status bar
      dunst			# Notification daemon
      libnotify			# Notification daemon's dependency

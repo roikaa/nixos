@@ -10,6 +10,7 @@
     ./../../user/app/terminal/foot.nix
     ./../../user/app/obs/obs.nix
     ./../../user/app/noevim/nvchad.nix
+    ./../../user/style/stylix.nix
   ];
 
 
@@ -21,10 +22,8 @@
   foot    # terminal
   ffmpeg  #ffmpeg
   open-webui
- 
+  neovim
   ];
-
-  
 
 home.pointerCursor = {
   gtk.enable = true;

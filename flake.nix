@@ -19,7 +19,7 @@
     };
 
     nix4nvchad = {
-      url = "github:nix-community/nix4nvchad/release-25.05";
+      url = "github:nix-community/nix4nvchad";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
