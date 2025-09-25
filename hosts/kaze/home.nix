@@ -11,6 +11,7 @@
     ./../../user/app/obs/obs.nix
     ./../../user/app/noevim/nixvim.nix
     ./../../user/style/stylix.nix
+    ./../../user/cli/btop.nix
 #     inputs.nixvim.homeModules.nixvim
   ];
 
@@ -25,7 +26,6 @@
   open-webui
 #  neovim
   ];
-       programs.btop.enable = true;
 
 #home.pointerCursor = {
 #  gtk.enable = true;
