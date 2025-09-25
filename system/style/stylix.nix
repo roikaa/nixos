@@ -6,6 +6,15 @@
    
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
 
+    polarity = "dark";
+    
+    opacity = {
+      #applications = 1.0;
+      #terminal = 0.7;
+      #desktop = 1.0;
+      #popups = 1.0;
+    };
+
 
     fonts = {
       sizes = {
