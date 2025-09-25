@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 {
   home.username = "akio";
   home.homeDirectory = "/home/akio";
@@ -9,7 +9,7 @@
     ./../../user/app/browser/librewolf.nix
     ./../../user/app/terminal/foot.nix
     ./../../user/app/obs/obs.nix
-    ./../../user/app/noevim/nvchad.nix
+    ./../../user/app/noevim/nixvim.nix
     ./../../user/style/stylix.nix
   ];
 

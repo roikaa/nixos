@@ -1,8 +1,9 @@
 { pkgs, ... }:
 {
   stylix = {
+
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
+   base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
 #    targets.neovim.enable = true; # This is crucial for Neovim theming
     fonts = {
       sizes = {
