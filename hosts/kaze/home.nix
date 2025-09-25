@@ -19,20 +19,21 @@
 # bibata-cursors
   tealdeer # short manual
   ani-cli   #anime in terminal
-  btop    # benchmark tool
+#  btop    # benchmark tool
   foot    # terminal
   ffmpeg  #ffmpeg
   open-webui
 #  neovim
   ];
+       programs.btop.enable = true;
 
-home.pointerCursor = {
-  gtk.enable = true;
-  #x11.enable = true;
-  package = pkgs.bibata-cursors;
-  name = "Bibata-Modern-Classic";
-  size = 24;
-};
+#home.pointerCursor = {
+#  gtk.enable = true;
+#  #x11.enable = true;
+#  package = pkgs.bibata-cursors;
+#  name = "Bibata-Modern-Classic";
+#  size = 24;
+#};
 
 #gtk = {
 #  enable = true;

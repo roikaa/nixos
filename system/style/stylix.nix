@@ -3,8 +3,7 @@
   stylix = {
 
     enable = true;
-   base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
-#    targets.neovim.enable = true; # This is crucial for Neovim theming
+   base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
     fonts = {
       sizes = {
         terminal = 15;
