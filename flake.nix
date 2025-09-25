@@ -26,6 +26,9 @@
     #  url = "github:nix-community/nix4nvchad";
     #  inputs.nixpkgs.follows = "nixpkgs";
     #};
+    nixcord = {
+      url = "github:kaylorben/nixcord";
+    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs: 

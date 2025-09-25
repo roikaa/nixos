@@ -5,6 +5,8 @@
     enable = true;
    
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+    targets.gtk.enable = true;
+    targets.qt.enable = true;
 
     polarity = "dark";
     
