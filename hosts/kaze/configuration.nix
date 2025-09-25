@@ -145,7 +145,7 @@ NIXOS_OZONE_WL = "1";
 };
  
 #services.xserver.enable = true;
-services.xserver.displayManager.sddm.enable = true;
+services.displayManager.sddm.enable = true;
 services.displayManager.sddm.wayland.enable = true;
  
 
