@@ -1,114 +1,13 @@
-#{ config, pkgs, inputs, ... }:
-#
-#{
-#  imports = [
-#    inputs.nixvim.homeModules.nixvim
-#  ];
-#
-#  programs.nixvim = {
-#    enable = true;
-#
-#    opts = {
-#     number = true;
-#     relativenumber = true;
-#
-#     shiftwidth = 2;
-#
-#    };
-#    
-#    # Your nixvim configuration here
-#    #colorschemes.gruvbox.enable = true;
-#    plugins = {
-#      lualine.enable = true;
-#      mini.enable = true;
-#    };
-#
-#    plugins.lsp = {
-#      enable = true;
-#
-#      servers = {
-#        ts_ls.enable = true;
-#	
-#	# lua
-#        lua_ls = {
-#          enable = true;
-#          settings.telemetry.enable = false;
-#        };
-#
-#	# rust
-#        rust_analyzer = {
-#          enable = true;
-#          installCargo = true;
-#	  installRustc = true;
-#        };
-#      };
-#    };
-#
-#      plugins.cmp = {
-#      enable = true;
-#      autoEnableSources = true;
-#      settings = {
-#      sources = [
-#        {name = "nvim_lsp";}
-#        {name = "path";}
-#        {name = "buffer";}
-#        {name = "luasnip";}
-#      ];
-#      };
-#
-#      mapping = {
-#        "<CR>" = "cmp.mapping.confirm({ select = true })";
-#        "<Tab>" = {
-#          action = ''
-#            function(fallback)
-#              if cmp.visible() then
-#                cmp.select_next_item()
-#              elseif luasnip.expandable() then
-#                luasnip.expand()
-#              elseif luasnip.expand_or_jumpable() then
-#                luasnip.expand_or_jump()
-#              elseif check_backspace() then
-#                fallback()
-#              else
-#                fallback()
-#              end
-#            end
-#          '';
-#          modes = [ "i" "s" ];
-#        };
-#      };
-#    };
-#  };
-#}
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
 { config, pkgs, inputs, ... }:
 {
   imports = [
     inputs.nixvim.homeModules.nixvim
   ];
+
+  home.packages = with pkgs; [
+    ripgrep # needed to use telescope live_grep
+  ];
+
   programs.nixvim = {
     enable = true;
     opts = {
@@ -116,13 +15,38 @@
       relativenumber = true;
       shiftwidth = 2;
     };
+
+    globals.mapleader = " ";
+
+   keymaps = [
+    {
+      action = "<cmd>Telescope live_grep<CR>";
+      key = "<leader>g";
+    }
+  ];
     
     # Your nixvim configuration here
     #colorschemes.gruvbox.enable = true;
     plugins = {
+
       lualine.enable = true;
+      web-devicons.enable = true;
+
+      # for using stylinx theme, kinda of
       mini.enable = true;
+
+      # All commands available straight way
+      telescope.enable = true;
+
+      # $ nvim . will open oil instad of netrw
+      oil.enable = true;
       
+      # all parsers included, simpl as that
+      treesitter.enable = true;
+
+      # Add luasnip for snippet support
+      luasnip.enable = true;
+
       # LSP configuration
       lsp = {
         enable = true;
@@ -183,9 +107,6 @@
           };
         };
       };
-      
-      # Add luasnip for snippet support
-      luasnip.enable = true;
     };
   };
 }
