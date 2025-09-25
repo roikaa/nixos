@@ -19,9 +19,16 @@
     globals.mapleader = " ";
 
    keymaps = [
+
+    # Telescope
     {
       action = "<cmd>Telescope live_grep<CR>";
       key = "<leader>g";
+    }
+    # nvim-tree
+    {
+      action = "<cmd>NvimTreeToggle<CR>";
+      key = "<leader>e";
     }
   ];
     
@@ -43,6 +50,12 @@
       
       # all parsers included, simpl as that
       treesitter.enable = true;
+
+      # traditional tree pluging
+      nvim-tree = {
+	enable = true;
+	openOnSetup = false;
+      };
 
       # Add luasnip for snippet support
       luasnip.enable = true;
