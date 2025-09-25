@@ -16,6 +16,7 @@
       ./../../system/style/stylix.nix
       ./../../system/app/steam.nix
       ./../../system/app/open-webui.nix
+      ./../../system/hardware/printer.nix
       
       inputs.home-manager.nixosModules.default
     ];
