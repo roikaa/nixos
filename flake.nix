@@ -42,8 +42,6 @@
           ./hosts/kaze/configuration.nix
            inputs.home-manager.nixosModules.default
            inputs.stylix.nixosModules.stylix
-	   inputs.nixvim.nixosModules.nixvim
-           #inputs.nix4nvchad.homeManagerModules.nvchad
         ];
       };
     };

@@ -48,6 +48,8 @@
 
 
   home-manager = {
+  useGlobalPkgs = true;
+  useUserPackages = true;
    # (ref vimjoyer Ultimate NixOS Guide)
    backupFileExtension = "backup";
    extraSpecialArgs = { inherit inputs; };

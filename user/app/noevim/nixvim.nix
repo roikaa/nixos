@@ -1,4 +1,20 @@
-{pkgs, lib, config, ...}:
+{ config, pkgs, inputs, ... }:
+
 {
-programs.nixvim.enable = true;
+  imports = [
+    inputs.nixvim.homeModules.nixvim
+  ];
+
+  programs.nixvim = {
+    enable = true;
+    
+    # Your nixvim configuration here
+    #colorschemes.gruvbox.enable = true;
+    #
+
+        plugins = {
+	 lualine.enable = true;
+	  mini.enable = true;
+   	};
+  };
 }

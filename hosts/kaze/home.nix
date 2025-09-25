@@ -11,6 +11,7 @@
     ./../../user/app/obs/obs.nix
     ./../../user/app/noevim/nixvim.nix
     ./../../user/style/stylix.nix
+#     inputs.nixvim.homeModules.nixvim
   ];
 
 
@@ -22,7 +23,7 @@
   foot    # terminal
   ffmpeg  #ffmpeg
   open-webui
-  neovim
+#  neovim
   ];
 
 home.pointerCursor = {
