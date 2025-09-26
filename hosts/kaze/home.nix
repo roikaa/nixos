@@ -23,11 +23,12 @@
   home.packages = with pkgs; [
   tealdeer # short manual
   ani-cli   #anime in terminal
+  neofetch
 #  foot    # terminal
 
   # core
   brave
-  nitch		        # Display system stats
+  nitch		        # Display system statshome.nix
   unrar-wrapper
   unzip 
   git
