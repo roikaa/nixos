@@ -30,6 +30,50 @@
       action = "<cmd>NvimTreeToggle<CR>";
       key = "<leader>e";
     }
+    # Bufferline navigation
+      {
+        action = "<cmd>BufferLineCyclePrev<CR>";
+        key = "<leader>h";
+        options = { desc = "Go to previous buffer"; };
+      }
+      {
+        action = "<cmd>BufferLineCycleNext<CR>";
+        key = "<leader>l";
+        options = { desc = "Go to next buffer"; };
+      }
+      {
+        action = "<cmd>BufferLinePick<CR>";
+        key = "<leader>b";
+        options = { desc = "Pick buffer"; };
+      }
+
+      # Copy/Paste from system clipboard
+      {
+        action = "+y";
+        key = "<leader>y";
+        mode = "v";
+        options = { desc = "Yank to system clipboard"; };
+      }
+      {
+        action = "+p";
+        key = "<leader>p";
+        mode = "n";
+        options = { desc = "Paste from system clipboard"; };
+      }
+
+      # Save file
+      {
+        action = ":w<CR>";
+        key = "<leader>w";
+        options = { desc = "Save file"; };
+      }
+
+      # Quit
+      {
+        action = ":q<CR>";
+        key = "<leader>q";
+        options = { desc = "Quit"; };
+      }
   ];
     
     # Your nixvim configuration here
