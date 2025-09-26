@@ -12,6 +12,7 @@
     ./../../user/app/obs/obs.nix
     ./../../user/app/noevim/nixvim.nix
     ./../../user/app/discord/nixcord.nix
+    ./../../user/app/appluncher/rofi.nix
     ./../../user/style/stylix.nix
     ./../../user/cli/btop.nix
 #     inputs.nixvim.homeModules.nixvim
@@ -19,14 +20,60 @@
 
 
   home.packages = with pkgs; [
-# bibata-cursors
   tealdeer # short manual
   ani-cli   #anime in terminal
-#  btop    # benchmark tool
-  foot    # terminal
+#  foot    # terminal
+
+  # core
+  brave
+  nitch		        # Display system stats
+  unrar-wrapper
+  unzip 
+  git
+  zsh
+  yazi			# CLI file manager
+  #neovim			# Text editor
+  
+
+  # Style
+  hyprshot
+  waybar			# Status bar
+  swww			# Wallpaper daemon
+  wl-clipboard   # Clipboard
+  dunst			# Notification daemon
+  libnotify			# Notification daemon's dependency
+  #rofi-wayland	        # Application luncher
+  
+  
+  # Dev
+  gtk3
+  
+  
+  # Desktop
+  libreoffice-qt  # Microssoftoffice ulernative
+  obsidian	# not app
+  qbittorrent       # Torrent
+  baobab # GUI app to analyse disk usage
+  #dolphin			# GUI file manager
+  
+
+  # Social
+  signal-desktop  # Chat app
+  #telegram-desktop
+  
+  # Media
   ffmpeg  #ffmpeg
-  open-webui
-#  neovim
+  mpv
+  yt-dlp #youtube smth
+  freetube
+  komikku
+
+  # Gaming
+  lutris 
+  heroic 
+  # wine
+
+#  open-webui
   ];
 
 #home.pointerCursor = {

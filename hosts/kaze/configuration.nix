@@ -66,57 +66,19 @@
 #services.printing.enable = true;
 
   environment.systemPackages = with pkgs; [
-    libreoffice-qt  # Microssoftoffice ulernative
-    signal-desktop  # Chat app
-#    discord-ptb     # Discord
-    obsidian
-#    transmission_4-qt   # Torrent
-    qbittorrent       # Torrent
-    mpv
-    yt-dlp
-    lutris    # gaming lancher
-    heroic    # game lancher
-#    wine      # to run .exe windows
-#    zed-editor   # IDE
-#    vscode # VSCode IDE
-#    android-studio
-#    kdePackages.kdenlive
-#    davinci-resolve
-unrar-wrapper
-#telegram-desktop
-unzip
-
-baobab
-
     openssl
     zig
-    hyprshot
     nodejs
     glib
-#    libxml2
-    gtk3
+    vim
+    wget			
+    git	
     nix-index
-#    firefox-devedition
-    freetube
-komikku
-     wget			
-     git			 
-     nix-ld			# ( idk what is this but ig some work around for some apps that dont work in nixos)
-#     kitty                      # Terminal
-     rofi-wayland	        # Application luncher
-     nitch		        # Display system stats
-#     neovim			# Text editor
-     waybar			# Status bar
-     dunst			# Notification daemon
-     libnotify			# Notification daemon's dependency
-     swww			# Wallpaper daemon
-     yazi			# CLI file manager
+    nix-ld			# ( idk what is this but ig some work around for some apps that dont work in nixos)
      pass			# CLI password manager
      gnupg  # gpg encrytion for pass
       pinentry      # for gnupg
      pinentry-curses    #for gnupg
-     wl-clipboard   # Clipboard
-#     dolphin			# GUI file manager
    ];
 
 programs.thunar.enable = true;
