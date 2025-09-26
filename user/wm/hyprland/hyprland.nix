@@ -7,7 +7,7 @@
 
       settings = {
         
-        windowrule = "opacity 0.8, class:footclient";
+        windowrule = "opacity 0.8, class:foot";
 
         exec-once = "swww init";
           

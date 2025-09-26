@@ -299,23 +299,23 @@
 #        options = { desc = "LSP formatting"; };
 #      }
 #
-#      # Terminal
-#      {
-#        action = "<cmd>split | terminal<CR>";
-#        key = "<leader>h";
-#        options = { desc = "New horizontal terminal"; };
-#      }
-#      {
-#        action = "<cmd>vsplit | terminal<CR>";
-#        key = "<leader>v";
-#        options = { desc = "New vertical terminal"; };
-#      }
-#      {
-#        mode = "t";
-#        action = "<C-\\><C-n>";
-#        key = "<Esc>";
-#        options = { desc = "Terminal normal mode"; };
-#      }
+      # Terminal
+      {
+        action = "<cmd>split | terminal<CR>";
+        key = "<leader>h";
+        options = { desc = "New horizontal terminal"; };
+      }
+      {
+        action = "<cmd>vsplit | terminal<CR>";
+        key = "<leader>v";
+        options = { desc = "New vertical terminal"; };
+      }
+      {
+        mode = "t";
+        action = "<C-\\><C-n>";
+        key = "<Esc>";
+        options = { desc = "Terminal normal mode"; };
+      }
 
       # Miscellaneous
       {
