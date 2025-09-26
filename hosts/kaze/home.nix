@@ -13,6 +13,7 @@
     ./../../user/app/noevim/nixvim.nix
     ./../../user/app/discord/nixcord.nix
     ./../../user/app/appluncher/rofi.nix
+    ./../../user/app/pass/pass.nix
     ./../../user/style/stylix.nix
     ./../../user/cli/btop.nix
 #     inputs.nixvim.homeModules.nixvim
