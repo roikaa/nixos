@@ -333,6 +333,13 @@
         key = "<leader>=";
         options = { desc = "Format entire file"; };
       }
+
+      # Which-key cheatsheet
+      {
+        action = "<cmd>WhichKey<CR>";
+        key = "<leader>?";
+        options = { desc = "Show keybinding cheatsheet"; };
+      }
     ];
     
     # Your nixvim configuration here
@@ -358,6 +365,47 @@
       };
       # Add luasnip for snippet support
       luasnip.enable = true;
+
+      # Which-key for showing keybinding cheatsheet
+      which-key = {
+        enable = true;
+        settings = {
+          delay = 200;
+          expand = 1;
+          notify = false;
+          preset = false;
+          replace = {
+            desc = [
+              [ "<space>" "SPC" ]
+              [ "<leader>" "SPC" ]
+              [ "<[cC][rR]>" "RET" ]
+              [ "<[tT][aA][bB]>" "TAB" ]
+            ];
+          };
+          spec = [
+            {
+              __unkeyed-1 = "<leader>f";
+              group = "Find";
+            }
+            {
+              __unkeyed-1 = "<leader>g";
+              group = "Git";
+            }
+            {
+              __unkeyed-1 = "<leader>l";
+              group = "LSP";
+            }
+            {
+              __unkeyed-1 = "<leader>t";
+              group = "Theme";
+            }
+            {
+              __unkeyed-1 = "<leader>m";
+              group = "Marks";
+            }
+          ];
+        };
+      };
       # LSP configuration
       lsp = {
         enable = true;
