@@ -7,7 +7,7 @@
 
       settings = {
         
-        windowrule = "opacity 0.8, class:foot";
+        windowrule = "opacity 0.7, class:foot";
 
         exec-once = "swww init";
           
@@ -21,9 +21,9 @@
       };
 
       decoration = {
-        rounding = 10 ;
-        active_opacity = 0.8;
-        inactive_opacity = 0.7;
+        rounding = 5 ;
+        active_opacity = 1;
+        inactive_opacity = 0.9;
         
         blur = {
         enabled = true;
