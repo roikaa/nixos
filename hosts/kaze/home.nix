@@ -52,6 +52,7 @@
   
   # Desktop
   libreoffice-qt  # Microssoftoffice ulernative
+  foliate	# eBook reader
   obsidian	# not app
   qbittorrent       # Torrent
   baobab # GUI app to analyse disk usage
