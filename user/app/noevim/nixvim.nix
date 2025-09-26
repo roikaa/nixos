@@ -19,47 +19,47 @@
       {
         action = "<cmd>Telescope live_grep<CR>";
         key = "<leader>fw";
-        desc = "Live grep";
+        options = { desc = "Live grep"; };
       }
       {
         action = "<cmd>Telescope find_files<CR>";
         key = "<leader>ff";
-        desc = "Find files";
+        doptions = { desc = "Find files"; };
       }
       {
         action = "<cmd>Telescope buffers<CR>";
         key = "<leader>fb";
-        desc = "Find buffers";
+        options = { desc = "Find buffers"; };
       }
       {
         action = "<cmd>Telescope help_tags<CR>";
         key = "<leader>fh";
-        desc = "Help page";
+        doptions = { desc = "Help page"; };
       }
       {
         action = "<cmd>Telescope oldfiles<CR>";
         key = "<leader>fo";
-        desc = "Find oldfiles";
+        doptions = { desc = "Find oldfiles"; };
       }
       {
         action = "<cmd>Telescope colorscheme<CR>";
         key = "<leader>th";
-        desc = "Nvchad themes";
+        doptions = { desc = "Nvchad themes"; };
       }
       {
         action = "<cmd>Telescope marks<CR>";
         key = "<leader>ma";
-        desc = "Telescope bookmarks";
+        options = { desc = "Telescope bookmarks"; };
       }
       {
         action = "<cmd>Telescope git_commits<CR>";
         key = "<leader>cm";
-        desc = "Git commits";
+        doptions = { desc  = "Git commits"; };
       }
       {
         action = "<cmd>Telescope git_status<CR>";
         key = "<leader>gt";
-        desc = "Git status";
+        doptions = { desc = "Git status"; };
       }
 
       # nvim-tree
