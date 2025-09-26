@@ -49,7 +49,8 @@
         "$mod, W, exec, librewolf&,"
         "$mod, return, exec, $terminal"
         "$mod, Q, killactive,"
-        "$mod, R, exec, $appluncher -show drun"
+        "$mod, D, exec, $appluncher -show drun"
+        "$mod, C, exec, rofi-pass"
         "$mod, V, togglefloating,"
         "$mod, P, exec, hyprshot -m output"
 

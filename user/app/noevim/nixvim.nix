@@ -39,6 +39,9 @@
       lualine.enable = true;
       web-devicons.enable = true;
 
+      # for opening tabs
+      bufferline.enable = true;
+
       # for using stylinx theme, kinda of
       mini.enable = true;
 
