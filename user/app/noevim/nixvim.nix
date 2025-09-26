@@ -47,34 +47,7 @@
         options = { desc = "Pick buffer"; };
       }
 
-      # Copy/Paste from system clipboard
-      {
-        action = "+y";
-        key = "<leader>y";
-        mode = "v";
-        options = { desc = "Yank to system clipboard"; };
-      }
-      {
-        action = "+p";
-        key = "<leader>p";
-        mode = "n";
-        options = { desc = "Paste from system clipboard"; };
-      }
-
-      # Save file
-      {
-        action = ":w<CR>";
-        key = "<leader>w";
-        options = { desc = "Save file"; };
-      }
-
-      # Quit
-      {
-        action = ":q<CR>";
-        key = "<leader>q";
-        options = { desc = "Quit"; };
-      }
-  ];
+        ];
     
     # Your nixvim configuration here
     #colorschemes.gruvbox.enable = true;
