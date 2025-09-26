@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }: 
+{ cjnfig, pkgs, inputs, ... }: 
 {
 # this is home-manager stylix
   stylix = {
@@ -14,15 +14,16 @@
       size = 24;
     };
 
-   # iconTheme = { 
-   #   package = pkgs.papirus-icon-theme;
-   #   name = "Papirus";
-   # };
-      iconTheme = {
-    enable = true;
-    package = pkgs.gruvbox-plus-icons;
-    light = "Gruvbox-Plus-Light";
-    dark = "Gruvbox-Plus-Dark";
-  };
+    iconTheme = { 
+      enable = true;
+      package = pkgs.papirus-icon-theme;
+      dark = "Papirus";
+    };
+#    iconTheme = {
+#      enable = true;
+#      package = pkgs.gruvbox-plus-icons;
+#      light = "Gruvbox-Plus-Light";
+#      dark = "Gruvbox-Plus-Dark";
+#    };
   };
 }   
