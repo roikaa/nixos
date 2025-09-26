@@ -1,4 +1,5 @@
-{ config, pkgs, inputs, ... }: {
+{ config, pkgs, inputs, ... }: 
+{
 # this is home-manager stylix
   stylix = {
     enable = true;
@@ -13,9 +14,15 @@
       size = 24;
     };
 
-    iconTheme = { 
-      package = pkgs.papirus-icon-theme;
-      name = Papirus;
-    };
+   # iconTheme = { 
+   #   package = pkgs.papirus-icon-theme;
+   #   name = "Papirus";
+   # };
+      iconTheme = {
+    enable = true;
+    package = pkgs.gruvbox-plus-icons;
+    light = "Gruvbox-Plus-Light";
+    dark = "Gruvbox-Plus-Dark";
   };
-			       }   
+  };
+}   
