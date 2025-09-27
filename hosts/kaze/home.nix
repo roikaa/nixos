@@ -19,6 +19,8 @@
 #     inputs.nixvim.homeModules.nixvim
   ];
 
+       programs.foliate.enable = true;
+
 
   home.packages = with pkgs; [
   tealdeer # short manual
@@ -53,7 +55,7 @@
   
   # Desktop
   libreoffice-qt  # Microssoftoffice ulernative
-  foliate	# eBook reader
+  #foliate	# eBook reader
   obsidian	# not app
   qbittorrent       # Torrent
   baobab # GUI app to analyse disk usage
