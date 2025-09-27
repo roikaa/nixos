@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+    ./hardware-configuration.nix
       ./../../system/essentials/boot.nix
       ./../../system/essentials/font.nix
       ./../../system/hardware/kanataKeyboard.nix
@@ -17,46 +17,46 @@
       ./../../system/app/steam.nix
       ./../../system/app/open-webui.nix
 #      ./../../system/hardware/printer.nix
-      
+
       inputs.home-manager.nixosModules.default
     ];
 
-  
-  networking.hostName = "kaze"; # Define your hostname.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-  networking.firewall.enable = false;
 
-  # Set your time zone.
+  networking.hostName = "kaze"; # Define your hostname.
+    networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+    networking.firewall.enable = false;
+
+# Set your time zone.
   time.timeZone = "Etc/GMT-1";
 
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
-  # User account 
+# User account 
   users.users.akio = {
-  useDefaultShell = true;
-  isNormalUser = true;
-  description = "akio";
-  #shell = pkgs.zsh;
-  extraGroups = [ "wheel" ]; #sudo enable
-  packages = with pkgs; [
-  ];
- };
+    useDefaultShell = true;
+    isNormalUser = true;
+    description = "akio";
+#shell = pkgs.zsh;
+    extraGroups = [ "wheel" ]; #sudo enable
+      packages = with pkgs; [
+      ];
+  };
 
 
- nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
 
 
 
   home-manager = {
-  useGlobalPkgs = true;
-  useUserPackages = true;
-   # (ref vimjoyer Ultimate NixOS Guide)
-   backupFileExtension = "backup";
-   extraSpecialArgs = { inherit inputs; };
-   users = {
-   "akio" = import ./home.nix;
-   };
+    useGlobalPkgs = true;
+    useUserPackages = true;
+# (ref vimjoyer Ultimate NixOS Guide)
+    backupFileExtension = "backup";
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "akio" = import ./home.nix;
+    };
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -64,55 +64,56 @@
 
 #services.printing.drivers = [ pkgs.cnijfilter2 ];
 #services.printing.enable = true;
+  services.mautrix-telegram.enable = true;
 
   environment.systemPackages = with pkgs; [
     openssl
-    zig
-    nodejs
-    glib
-    vim
-    wget			
-    git	
-    nix-index
-    nix-ld			# ( idk what is this but ig some work around for some apps that dont work in nixos)
-    pass			# CLI password manager
-     gnupg  # gpg encrytion for pass
+      zig
+      nodejs
+      glib
+      vim
+      wget			
+      git	
+      nix-index
+      nix-ld			# ( idk what is this but ig some work around for some apps that dont work in nixos)
+      pass			# CLI password manager
+      gnupg  # gpg encrytion for pass
       pinentry      # for gnupg
-     pinentry-curses    #for gnupg
-   ];
+      pinentry-curses    #for gnupg
+  ];
 
-programs.thunar.enable = true;
- 
-programs.gnupg.agent = {
-  enable = true;
-  enableSSHSupport = true;
-  pinentryPackage = pkgs.pinentry-curses ;  # or "qt", "mac", etc.
-};
+  programs.thunar.enable = true;
 
-xdg.portal.enable = true;
-xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  
-programs.nix-ld.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+    pinentryPackage = pkgs.pinentry-curses ;  # or "qt", "mac", etc.
+  };
 
-programs.hyprland = {
-  package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-  enable = true;
-  xwayland.enable = true;
-};
-environment.variables.EDITOR = "nvim";
-environment.sessionVariables = {
-LIBVA_DRIVER_NAME = "nvidia";
-XDG_SESSION_TYPE = "wayland";
-WLR_NO_HARDWARE_CURSORS = "1";
-NIXOS_OZONE_WL = "1";
-};
- 
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
+  programs.nix-ld.enable = true;
+
+  programs.hyprland = {
+    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+    enable = true;
+    xwayland.enable = true;
+  };
+  environment.variables.EDITOR = "nvim";
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "nvidia";
+    XDG_SESSION_TYPE = "wayland";
+    WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
+  };
+
 #services.xserver.enable = true;
-services.displayManager.sddm.enable = true;
-services.displayManager.sddm.wayland.enable = true;
- 
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 
- # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
+
+# For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.11"; # Did you read the comment?
 
 }
