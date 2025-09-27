@@ -19,6 +19,8 @@
       package = pkgs.papirus-icon-theme;
       dark = "Papirus";
     };
+
+       #  fonts.sizes.applications = 14;
 #    iconTheme = {
 #      enable = true;
 #      package = pkgs.gruvbox-plus-icons;
