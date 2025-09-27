@@ -64,7 +64,6 @@
 
 #services.printing.drivers = [ pkgs.cnijfilter2 ];
 #services.printing.enable = true;
-  services.mautrix-telegram.enable = true;
 
   environment.systemPackages = with pkgs; [
     openssl
