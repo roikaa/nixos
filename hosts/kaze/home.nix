@@ -60,6 +60,7 @@
   qbittorrent       # Torrent
   baobab # GUI app to analyse disk usage
   #dolphin			# GUI file manager
+  nautilus
   
 
   # Social

@@ -38,11 +38,16 @@
     isNormalUser = true;
     description = "akio";
 #shell = pkgs.zsh;
-    extraGroups = [ "wheel" ]; #sudo enable
+    extraGroups = [ "wheel" "plugdev"]; #sudo enable
       packages = with pkgs; [
       ];
   };
-
+services.udev.extraRules = ''
+  # Samsung Download Mode
+  SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="685d", MODE="0666", GROUP="plugdev"
+  # Samsung devices in download mode
+  SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666", GROUP="plugdev"
+'';
 
   nixpkgs.config.allowUnfree = true;
 
@@ -68,6 +73,7 @@
   environment.systemPackages = with pkgs; [
     openssl
       heimdall-gui
+      android-tools  # for adb/fastboot
       heimdall
       wine
       winetricks
