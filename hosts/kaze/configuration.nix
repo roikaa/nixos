@@ -67,6 +67,7 @@
 
   environment.systemPackages = with pkgs; [
     openssl
+      heimdall-gui
       zig
       nodejs
       glib

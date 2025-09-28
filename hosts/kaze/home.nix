@@ -67,6 +67,7 @@
   #telegram-desktop
   
   # Media
+  feh
   ffmpeg  #ffmpeg
   mpv
   yt-dlp #youtube smth
