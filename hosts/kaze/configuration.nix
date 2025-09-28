@@ -68,6 +68,9 @@
   environment.systemPackages = with pkgs; [
     openssl
       heimdall-gui
+      heimdall
+      wine
+      winetricks
       zig
       nodejs
       glib
