@@ -16,6 +16,7 @@
     ./../../user/app/pass/pass.nix
     ./../../user/style/stylix.nix
     ./../../user/cli/btop.nix
+    ./../../user/app/kde/kdeconnect.nix
 #     inputs.nixvim.homeModules.nixvim
   ];
 
