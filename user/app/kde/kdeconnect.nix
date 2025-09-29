@@ -1,7 +1,7 @@
 {config, pkgs, lib, ...}:
 {
-programs.kdeconnect.enable = true;
-home-manager.users.username.services.kdeconnect.enable = true;
+#programs.kdeconnect.enable = true;
+services.kdeconnect.enable = true;
 
 networking.firewall = rec {
   allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
