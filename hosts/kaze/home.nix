@@ -51,6 +51,7 @@
   
   # Dev
   gtk3
+  mtpfs
   
   
   # Desktop
@@ -60,6 +61,7 @@
   qbittorrent       # Torrent
   baobab # GUI app to analyse disk usage
   #dolphin			# GUI file manager
+  kdePackages.dolphin
   nautilus
   
 

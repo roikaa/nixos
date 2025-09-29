@@ -42,12 +42,12 @@
       packages = with pkgs; [
       ];
   };
-services.udev.extraRules = ''
-  # Samsung Download Mode
-  SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="685d", MODE="0666", GROUP="plugdev"
-  # Samsung devices in download mode
-  SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666", GROUP="plugdev"
-'';
+  services.udev.extraRules = ''
+# Samsung Download Mode
+    SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="685d", MODE="0666", GROUP="plugdev"
+# Samsung devices in download mode
+    SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666", GROUP="plugdev"
+    '';
 
   nixpkgs.config.allowUnfree = true;
 
@@ -71,7 +71,11 @@ services.udev.extraRules = ''
 #services.printing.enable = true;
 
   environment.systemPackages = with pkgs; [
-    openssl
+    dotnetCorePackages.sdk_7_0
+      dotnet-runtime_9
+      tree
+      usbutils
+      openssl
       heimdall-gui
       android-tools  # for adb/fastboot
       heimdall
@@ -89,8 +93,10 @@ services.udev.extraRules = ''
       gnupg  # gpg encrytion for pass
       pinentry      # for gnupg
       pinentry-curses    #for gnupg
+      ];
+  nixpkgs.config.permittedInsecurePackages = [
+    "dotnet-sdk-7.0.410"
   ];
-
   programs.thunar.enable = true;
 
   programs.gnupg.agent = {
