@@ -36,6 +36,7 @@
   git
   zsh
   yazi			# CLI file manager
+  ueberzug
   #neovim			# Text editor
   
 

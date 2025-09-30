@@ -25,7 +25,7 @@
 
   networking.hostName = "kaze"; # Define your hostname.
     networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-    networking.firewall.enable = false;
+    networking.firewall.enable = true;
 
 # Set your time zone.
   time.timeZone = "Etc/GMT-1";
