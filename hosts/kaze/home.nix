@@ -64,6 +64,7 @@
   #dolphin			# GUI file manager
   kdePackages.dolphin
   nautilus
+  joplin-desktop
   
 
   # Social
