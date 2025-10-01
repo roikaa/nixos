@@ -17,6 +17,7 @@
     ./../../user/app/pass/pass.nix
     ./../../user/style/stylix.nix
     ./../../user/cli/btop.nix
+    ./../../user/app/development/android.nix
 #     inputs.nixvim.homeModules.nixvim
   ];
 
