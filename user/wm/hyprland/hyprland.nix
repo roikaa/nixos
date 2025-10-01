@@ -23,7 +23,7 @@
       decoration = {
         rounding = 5 ;
         active_opacity = 1;
-        inactive_opacity = 0.9;
+        inactive_opacity = 1;
         
         blur = {
         enabled = true;

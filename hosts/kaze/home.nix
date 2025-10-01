@@ -81,8 +81,8 @@
   komikku
 
   # Gaming
-  lutris 
-  heroic 
+#  lutris 
+#  heroic 
   # wine
 
 #  open-webui
