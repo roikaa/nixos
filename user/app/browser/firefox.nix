@@ -1,7 +1,7 @@
-{pkgs, config, lib, ...}:
+{pkgs, meta, config, lib, ...}:
 {
   programs.firefox = {
-    enabel = true;
-    package = firefox-esr
+    enable = true;
+    package = pkgs.firefox-esr;
   };
 }
