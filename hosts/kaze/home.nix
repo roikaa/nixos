@@ -7,6 +7,7 @@
     ./../../user/wm/hyprland/hyprland.nix
     ./../../user/shell/zsh.nix
     ./../../user/app/browser/librewolf.nix
+    ./../../user/app/browser/firefox.nix
     ./../../user/app/terminal/foot.nix
     ./../../user/app/terminal/kitty.nix
     ./../../user/app/obs/obs.nix
@@ -29,7 +30,7 @@
 #  foot    # terminal
 
   # core
-  brave
+  #brave
   nitch		        # Display system statshome.nix
   unrar-wrapper
   unzip 
