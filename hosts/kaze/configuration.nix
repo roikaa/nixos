@@ -17,6 +17,7 @@
       ./../../system/app/steam.nix
       ./../../system/app/open-webui.nix
       ./../../system/app/kdeconnect.nix
+      ./../../system/inputs/japanese.nix
 #      ./../../system/hardware/printer.nix
 
       inputs.home-manager.nixosModules.default
