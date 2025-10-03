@@ -73,7 +73,8 @@
 #services.printing.enable = true;
 
   environment.systemPackages = with pkgs; [
-    dotnetCorePackages.sdk_7_0
+    ntfs3g # windows filesystem driver
+      dotnetCorePackages.sdk_7_0
       dotnet-runtime_9
       python312Packages.pip
       python3Full
