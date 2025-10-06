@@ -18,6 +18,7 @@
     ./../../user/style/stylix.nix
     ./../../user/cli/btop.nix
     ./../../user/app/development/android.nix
+    ./../../user/keepass/default.nix
 #     inputs.nixvim.homeModules.nixvim
   ];
 
