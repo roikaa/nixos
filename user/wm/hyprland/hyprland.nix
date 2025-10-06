@@ -54,7 +54,7 @@
 	  "$mod, return, exec, $terminal"
 	  "$mod, Q, killactive,"
 	  "$mod, D, exec, $appluncher -show drun"
-	  "$mod, C, exec, rofi-pass"
+	  "$mod, C, exec, keepmenu"
 	  "$mod, V, togglefloating,"
 	  "$mod, P, exec, hyprshot -m output"
 
