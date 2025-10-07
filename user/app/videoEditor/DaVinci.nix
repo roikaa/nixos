@@ -1,11 +1,6 @@
+{config, lib, pkgs, ...}:
 {
-  config,
-  lib,
-  pkgs,
-  ...
-}:
-{
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     davinci-resolve
   ];
   environment.variables = {
