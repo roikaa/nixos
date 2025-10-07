@@ -26,7 +26,8 @@
   programs.foliate.enable = true; # Ebook reader
     programs.waybar.enable = true;
   xdg.configFile."waybar/config.jsonc".source = ./../../user/wm/waybar/config;
-  xdg.configFile."waybar/style.css".source = ./../../user/wm/waybar/style.css;
+  # conflicting with stylix, use if stylix nolt enabled
+#  xdg.configFile."waybar/style.css".source = ./../../user/wm/waybar/style.css;
 
 
 

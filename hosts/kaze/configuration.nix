@@ -74,8 +74,8 @@
 
   environment.systemPackages = with pkgs; [
     ntfs3g # windows filesystem driver
-      dotnetCorePackages.sdk_7_0
-      dotnet-runtime_9
+#      dotnetCorePackages.sdk_7_0
+#      dotnet-runtime_9
       python312Packages.pip
       python3Full
       tree
@@ -99,9 +99,9 @@
       pinentry      # for gnupg
       pinentry-curses    #for gnupg
       ];
-  nixpkgs.config.permittedInsecurePackages = [
-    "dotnet-sdk-7.0.410"
-  ];
+#  nixpkgs.config.permittedInsecurePackages = [
+#    "dotnet-sdk-7.0.410"
+#  ];
   programs.thunar.enable = true;
 
   programs.gnupg.agent = {
