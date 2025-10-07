@@ -19,6 +19,7 @@
     ./../../user/cli/btop.nix
     ./../../user/app/development/android.nix
     ./../../user/keepass/default.nix
+    ./../../user/app/videoEditor/DaVinci.nix
 #     inputs.nixvim.homeModules.nixvim
   ];
 
