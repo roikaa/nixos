@@ -9,8 +9,11 @@
 
       windowrule = "opacity 0.7, class:foot";
 
-      exec-once = ["swww init"
-      "fcitx5 -d --replace"];
+      exec-once = [
+      "swww init"
+      "fcitx5 -d --replace"
+      "waybar"
+      ];
 
       "$mod" = "SUPER";
       "$terminal" = "foot";
