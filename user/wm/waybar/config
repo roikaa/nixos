@@ -1,0 +1,87 @@
+{
+    //-Bar Array----------------------------------------------------
+    "layer": "top",
+    "position": "top",
+    "height": 35,
+    "spacing": 5,
+
+    //-Modules Left-------------------------------------------------
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+
+    //-Modules Center-----------------------------------------------
+    "modules-center": [],
+
+    //-Modules Right------------------------------------------------
+    "modules-right": [
+        "hyprland/window",
+        "pulseaudio",
+        "network",
+        "battery",
+        "clock",
+        "custom/power"
+    ],
+
+    //-Workspaces---------------------------------------------------
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate"
+    },
+
+    //-Window Title-------------------------------------------------
+    "hyprland/window": {
+        "format": "{} ",
+        "max-length": 35,
+        "separate-outputs": true
+    },
+
+    //-Pulseaudio---------------------------------------------------
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "󰖁 Muted",
+        "on-click": "pavucontrol",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+        "format-icons": {
+            "default": ["", "", ""]
+        }
+    },
+
+    //-Network------------------------------------------------------
+    "network": {
+        "format-wifi": "󰤨  {essid}",
+        "format-ethernet": "󰈀 {ifname}",
+        "format-disconnected": "󰤮 Disconnected",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "on-click": "nm-connection-editor"
+    },
+
+    //-Battery------------------------------------------------------
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂄 {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    //-Clock--------------------------------------------------------
+    "clock": {
+        "format": " {:%I:%M %p}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    //-Custom Power-------------------------------------------------
+    "custom/power": {
+        "format": "󰽥  ",
+        "tooltip": false,
+        "on-click": "systemctl suspend"
+    }
+}

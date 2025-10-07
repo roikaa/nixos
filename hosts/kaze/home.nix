@@ -2,118 +2,99 @@
 {
   home.username = "akio";
   home.homeDirectory = "/home/akio";
-  
+
   imports = [
     ./../../user/wm/hyprland/hyprland.nix
-    ./../../user/shell/zsh.nix
-    ./../../user/app/browser/librewolf.nix
-    ./../../user/app/browser/firefox.nix
-    ./../../user/app/terminal/foot.nix
-    ./../../user/app/terminal/kitty.nix
-    ./../../user/app/obs/obs.nix
-    ./../../user/app/noevim/nixvim.nix
-    ./../../user/app/discord/nixcord.nix
-    ./../../user/app/appluncher/rofi.nix
-    ./../../user/app/pass/pass.nix
-    ./../../user/style/stylix.nix
-    ./../../user/cli/btop.nix
-    ./../../user/app/development/android.nix
-    ./../../user/keepass/default.nix
-    ./../../user/app/videoEditor/DaVinci.nix
+      ./../../user/shell/zsh.nix
+      ./../../user/app/browser/librewolf.nix
+      ./../../user/app/browser/firefox.nix
+      ./../../user/app/terminal/foot.nix
+      ./../../user/app/terminal/kitty.nix
+      ./../../user/app/obs/obs.nix
+      ./../../user/app/noevim/nixvim.nix
+      ./../../user/app/discord/nixcord.nix
+      ./../../user/app/appluncher/rofi.nix
+      ./../../user/app/pass/pass.nix
+      ./../../user/style/stylix.nix
+      ./../../user/cli/btop.nix
+      ./../../user/app/development/android.nix
+      ./../../user/keepass/default.nix
+      ./../../user/app/videoEditor/DaVinci.nix
 #     inputs.nixvim.homeModules.nixvim
   ];
 
-       programs.foliate.enable = true;
+  programs.foliate.enable = true; # Ebook reader
+    programs.waybar.enable = true;
+  xdg.configFile."waybar/config.jsonc".source = ./../../user/wm/waybar/config;
+  xdg.configFile."waybar/style.css".source = ./../../user/wm/waybar/style.css;
+
 
 
   home.packages = with pkgs; [
-  tealdeer # short manual
-  ani-cli   #anime in terminal
-  neofetch
+    tealdeer # short manual
+      ani-cli   #anime in terminal
+      neofetch
 #  foot    # terminal
 
-  # core
-  #brave
-  nitch		        # Display system statshome.nix
-  unrar-wrapper
-  unzip 
-  git
-  zsh
-  yazi			# CLI file manager
-  ueberzug
-  #neovim			# Text editor
-  
+# core
+#brave
+      nitch		        # Display system statshome.nix
+      unrar-wrapper
+      unzip 
+      git
+      zsh
+      yazi			# CLI file manager
+      ueberzug
+#neovim			# Text editor
 
-  # Style
-  hyprshot
-  waybar			# Status bar
-  swww			# Wallpaper daemon
-  wl-clipboard   # Clipboard
-  dunst			# Notification daemon
-  libnotify			# Notification daemon's dependency
-  #rofi-wayland	        # Application luncher
-  
-  
-  # Dev
-  gtk3
-  mtpfs
-  
-  
-  # Desktop
-  libreoffice-qt  # Microssoftoffice ulernative
-  #foliate	# eBook reader
-  obsidian	# not app
-  qbittorrent       # Torrent
-  baobab # GUI app to analyse disk usage
-  #dolphin			# GUI file manager
-  kdePackages.dolphin
-  nautilus
-  
 
-  # Social
-  signal-desktop  # Chat app
-  #telegram-desktop
-  
-  # Media
-  feh
-  ffmpeg  #ffmpeg
-  mpv
-  yt-dlp #youtube smth
-  freetube
-  komikku
+# Style
+      hyprshot
+      swww			# Wallpaper daemon
+      wl-clipboard   # Clipboard
+      dunst			# Notification daemon
+      libnotify			# Notification daemon's dependency
+#rofi-wayland	        # Application luncher
 
-  # Gaming
+
+# Dev
+      gtk3
+      mtpfs
+
+
+# Desktop
+      libreoffice-qt  # Microssoftoffice ulernative
+#foliate	# eBook reader
+      obsidian	# not app
+      qbittorrent       # Torrent
+      baobab # GUI app to analyse disk usage
+#dolphin			# GUI file manager
+      kdePackages.dolphin
+      nautilus
+
+
+# Social
+      signal-desktop  # Chat app
+#telegram-desktop
+
+# Media
+      feh
+      ffmpeg  #ffmpeg
+      mpv
+      yt-dlp #youtube smth
+      freetube
+      komikku
+
+# Gaming
 #  lutris 
 #  heroic 
-  # wine
+# wine
 
 #  open-webui
-  ];
-
-#home.pointerCursor = {
-#  gtk.enable = true;
-#  #x11.enable = true;
-#  package = pkgs.bibata-cursors;
-#  name = "Bibata-Modern-Classic";
-#  size = 24;
-#};
-
-#gtk = {
-#  enable = true;
-#  theme = {
-#    package = pkgs.flat-remix-gtk;
-#    name = "Flat-Remix-GTK-Grey-Darkest";
-#  };
-#
-#  iconTheme = {
-#    package = pkgs.adwaita-icon-theme;
-#    name = "Adwaita";
-#  };
-#
-#};
+      ];
 
 
-home.sessionVariables.EDITOR = "nvim";
+  home.sessionVariables.EDITOR = "nvim";
   programs.git = {
     enable = true;
     userName = "roikaa";
@@ -132,8 +113,8 @@ home.sessionVariables.EDITOR = "nvim";
 
 
 
-   home.sessionVariables = {
-     MANPAGER="nvim +Man!";
+  home.sessionVariables = {
+    MANPAGER="nvim +Man!";
   };
 
 
@@ -143,5 +124,5 @@ home.sessionVariables.EDITOR = "nvim";
 
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
-  programs.home-manager.enable = true;
+    programs.home-manager.enable = true;
 }
