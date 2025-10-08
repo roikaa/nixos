@@ -17,15 +17,11 @@
       url = "github:nix-community/stylix/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim = {
-        #url = "github:nix-community/nixvim";
-        url = "github:nix-community/nixvim/nixos-25.05";
-        inputs.nixpkgs.follows = "nixpkgs";
-    };
-    #nix4nvchad = {
-    #  url = "github:nix-community/nix4nvchad";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
+#    nixvim = {
+#        #url = "github:nix-community/nixvim";
+#        url = "github:nix-community/nixvim/nixos-25.05";
+#        inputs.nixpkgs.follows = "nixpkgs";
+#    };
     nixcord = {
       url = "github:kaylorben/nixcord";
     };

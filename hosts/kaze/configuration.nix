@@ -21,6 +21,7 @@
 
       inputs.home-manager.nixosModules.default
     ];
+ programs.neovim.enable = true;
 
 
   networking.hostName = "kaze"; # Define your hostname.
@@ -68,8 +69,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 
-#services.printing.drivers = [ pkgs.cnijfilter2 ];
-#services.printing.enable = true;
+
 
   environment.systemPackages = with pkgs; [
     ntfs3g # windows filesystem driver
@@ -98,9 +98,7 @@
       pinentry      # for gnupg
       pinentry-curses    #for gnupg
       ];
-#  nixpkgs.config.permittedInsecurePackages = [
-#    "dotnet-sdk-7.0.410"
-#  ];
+
   programs.thunar.enable = true;
 
   programs.gnupg.agent = {

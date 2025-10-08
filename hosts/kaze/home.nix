@@ -11,7 +11,6 @@
       ./../../user/app/terminal/foot.nix
       ./../../user/app/terminal/kitty.nix
       ./../../user/app/obs/obs.nix
-      ./../../user/app/noevim/nixvim.nix
       ./../../user/app/discord/nixcord.nix
       ./../../user/app/appluncher/rofi.nix
       ./../../user/app/pass/pass.nix
@@ -21,7 +20,6 @@
       ./../../user/keepass/default.nix
       ./../../user/app/videoEditor/DaVinci.nix
       ./../../user/app/LaTex/default.nix
-#     inputs.nixvim.homeModules.nixvim
   ];
 
   programs.foliate.enable = true; # Ebook reader
@@ -29,59 +27,7 @@
   xdg.configFile."waybar/config.jsonc".source = ./../../user/wm/waybar/config;
 # conflicting with stylix, use if stylix nolt enabled
 #  xdg.configFile."waybar/style.css".source = ./../../user/wm/waybar/style.css;
-      programs.zathura = {
-  enable = true;
-  extraConfig = ''
-    # Notifications
-    set notification-error-bg       "rgba(40,40,40,1)"
-    set notification-error-fg       "rgba(251,73,52,1)"
-    set notification-warning-bg     "rgba(40,40,40,1)"
-    set notification-warning-fg     "rgba(250,189,47,1)"
-    set notification-bg             "rgba(40,40,40,1)"
-    set notification-fg             "rgba(184,187,38,1)"
-    
-    # Completion menu
-    set completion-bg               "rgba(80,73,69,1)"
-    set completion-fg               "rgba(235,219,178,1)"
-    set completion-group-bg         "rgba(60,56,54,1)"
-    set completion-group-fg         "rgba(146,131,116,1)"
-    set completion-highlight-bg     "rgba(131,165,152,1)"
-    set completion-highlight-fg     "rgba(80,73,69,1)"
-    
-    # Index mode
-    set index-bg                    "rgba(80,73,69,1)"
-    set index-fg                    "rgba(235,219,178,1)"
-    set index-active-bg             "rgba(131,165,152,1)"
-    set index-active-fg             "rgba(80,73,69,1)"
-    
-    # Input bar
-    set inputbar-bg                 "rgba(40,40,40,1)"
-    set inputbar-fg                 "rgba(235,219,178,1)"
-    
-    # Status bar
-    set statusbar-bg                "rgba(80,73,69,1)"
-    set statusbar-fg                "rgba(235,219,178,1)"
-    
-    # Highlighting
-    set highlight-color             "rgba(250,189,47,0.5)"
-    set highlight-active-color      "rgba(254,128,25,0.5)"
-    
-    # Default colors
-    set default-bg                  "rgba(40,40,40,1)"
-    set default-fg                  "rgba(235,219,178,1)"
-    
-    # Rendering
-    set render-loading              true
-    set render-loading-bg           "rgba(40,40,40,1)"
-    set render-loading-fg           "rgba(235,219,178,1)"
-    
-    # Recolor mode
-    set recolor-lightcolor          "rgba(40,40,40,1)"
-    set recolor-darkcolor           "rgba(235,219,178,1)"
-    set recolor                     true
-    set recolor-keephue             true
-  '';
-};
+ 
 
   home.packages = with pkgs; [
     tealdeer # short manual
@@ -173,7 +119,59 @@
   home.file = {
 
   };
-
+     programs.zathura = {
+  enable = true;
+  extraConfig = ''
+    # Notifications
+    set notification-error-bg       "rgba(40,40,40,1)"
+    set notification-error-fg       "rgba(251,73,52,1)"
+    set notification-warning-bg     "rgba(40,40,40,1)"
+    set notification-warning-fg     "rgba(250,189,47,1)"
+    set notification-bg             "rgba(40,40,40,1)"
+    set notification-fg             "rgba(184,187,38,1)"
+    
+    # Completion menu
+    set completion-bg               "rgba(80,73,69,1)"
+    set completion-fg               "rgba(235,219,178,1)"
+    set completion-group-bg         "rgba(60,56,54,1)"
+    set completion-group-fg         "rgba(146,131,116,1)"
+    set completion-highlight-bg     "rgba(131,165,152,1)"
+    set completion-highlight-fg     "rgba(80,73,69,1)"
+    
+    # Index mode
+    set index-bg                    "rgba(80,73,69,1)"
+    set index-fg                    "rgba(235,219,178,1)"
+    set index-active-bg             "rgba(131,165,152,1)"
+    set index-active-fg             "rgba(80,73,69,1)"
+    
+    # Input bar
+    set inputbar-bg                 "rgba(40,40,40,1)"
+    set inputbar-fg                 "rgba(235,219,178,1)"
+    
+    # Status bar
+    set statusbar-bg                "rgba(80,73,69,1)"
+    set statusbar-fg                "rgba(235,219,178,1)"
+    
+    # Highlighting
+    set highlight-color             "rgba(250,189,47,0.5)"
+    set highlight-active-color      "rgba(254,128,25,0.5)"
+    
+    # Default colors
+    set default-bg                  "rgba(40,40,40,1)"
+    set default-fg                  "rgba(235,219,178,1)"
+    
+    # Rendering
+    set render-loading              true
+    set render-loading-bg           "rgba(40,40,40,1)"
+    set render-loading-fg           "rgba(235,219,178,1)"
+    
+    # Recolor mode
+    set recolor-lightcolor          "rgba(40,40,40,1)"
+    set recolor-darkcolor           "rgba(235,219,178,1)"
+    set recolor                     true
+    set recolor-keephue             true
+  '';
+};
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
     programs.home-manager.enable = true;
