@@ -20,6 +20,7 @@
       ./../../user/app/development/android.nix
       ./../../user/keepass/default.nix
       ./../../user/app/videoEditor/DaVinci.nix
+      ./../../user/app/LaTex/default.nix
 #     inputs.nixvim.homeModules.nixvim
   ];
 
