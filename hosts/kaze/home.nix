@@ -28,7 +28,7 @@
   xdg.configFile."waybar/config.jsonc".source = ./../../user/wm/waybar/config;
 # conflicting with stylix, use if stylix nolt enabled
 #  xdg.configFile."waybar/style.css".source = ./../../user/wm/waybar/style.css;
-       programs.zathura.enabled = true;
+       programs.zathura.enable = true;
 
 
   home.packages = with pkgs; [
@@ -63,7 +63,7 @@
 
 
 # Desktop
-      libreoffice-qt  # Microssoftoffice ulernative
+      #libreoffice-qt  # Microssoftoffice ulernative
 #foliate	# eBook reader
       obsidian	# not app
       qbittorrent       # Torrent
