@@ -15,13 +15,12 @@
       ./../../system/services/maintenance.nix
       ./../../system/style/stylix.nix
       ./../../system/app/steam.nix
-      ./../../system/app/open-webui.nix
-      ./../../system/inputs/japanese.nix
+#     ./../../system/app/open-webui.nix
+#      ./../../system/inputs/japanese.nix
 #      ./../../system/hardware/printer.nix
 
       inputs.home-manager.nixosModules.default
     ];
- programs.neovim.enable = true;
 
 
   networking.hostName = "kaze"; # Define your hostname.
