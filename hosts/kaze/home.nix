@@ -26,7 +26,7 @@
   programs.foliate.enable = true; # Ebook reader
     programs.waybar.enable = true;
   xdg.configFile."waybar/config.jsonc".source = ./../../user/wm/waybar/config;
-  # conflicting with stylix, use if stylix nolt enabled
+# conflicting with stylix, use if stylix nolt enabled
 #  xdg.configFile."waybar/style.css".source = ./../../user/wm/waybar/style.css;
 
 
@@ -45,7 +45,6 @@
       git
       zsh
       yazi			# CLI file manager
-      ueberzug
 #neovim			# Text editor
 
 
@@ -70,8 +69,8 @@
       qbittorrent       # Torrent
       baobab # GUI app to analyse disk usage
 #dolphin			# GUI file manager
-      kdePackages.dolphin
-      nautilus
+#     kdePackages.dolphin
+#      nautilus
 
 
 # Social
@@ -80,9 +79,9 @@
 
 # Media
       feh
-      ffmpeg  #ffmpeg
+      ffmpeg  # ffmpeg 
       mpv
-      yt-dlp #youtube smth
+      yt-dlp # best for downloding video/audio
       freetube
       komikku
 
