@@ -5,7 +5,7 @@ programs.neovim = {
 };   
 
 home.file.".config/nvim" = {
-	url = inputs.nvim-config;
+	source = inputs.nvim-config;
   recursive = true;
 
 };
