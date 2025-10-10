@@ -1,5 +1,6 @@
 { cjnfig, pkgs, inputs, ... }: 
 {
+stylix.targets.firefox.profileNames = [ "roika" ];
 # this is home-manager stylix
   stylix = {
     enable = true;
