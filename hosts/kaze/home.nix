@@ -21,7 +21,7 @@
       ./../../user/app/videoEditor/DaVinci.nix
       ./../../user/app/LaTex/default.nix
 
-      ./../../user/neovim/default.nix
+      ./../../neovim/default.nix
   ];
 
   programs.foliate.enable = true; # Ebook reader

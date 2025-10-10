@@ -12,6 +12,12 @@
     # Hyprland Window Managar
     hyprland.url = "github:hyprwm/Hyprland";
 
+    # My Neovim configuration 
+     nvim-config = {
+      url = "github:roikaa/nvim";
+      flake = false;  # It's just files, not a flake
+    };
+
     # Styling tool
     stylix = {
       url = "github:nix-community/stylix/release-25.05";

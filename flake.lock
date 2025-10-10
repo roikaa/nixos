@@ -629,6 +629,22 @@
         "type": "github"
       }
     },
+    "nvim-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1760104210,
+        "narHash": "sha256-SZ2LzxPZ+mz6NsXqSVWEBB5H1KvI3PPv/k/RMh8oYAc=",
+        "owner": "roikaa",
+        "repo": "nvim",
+        "rev": "186b78f680e1c12ae928792979207c1190fab6ff",
+        "type": "github"
+      },
+      "original": {
+        "owner": "roikaa",
+        "repo": "nvim",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -658,6 +674,7 @@
         "hyprland": "hyprland",
         "nixcord": "nixcord",
         "nixpkgs": "nixpkgs_3",
+        "nvim-config": "nvim-config",
         "stylix": "stylix"
       }
     },
