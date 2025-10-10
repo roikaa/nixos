@@ -18,7 +18,7 @@
       ./../../user/cli/btop.nix
       ./../../user/app/development/android.nix
       ./../../user/keepass/default.nix
-      ./../../user/app/videoEditor/DaVinci.nix
+#      ./../../user/app/videoEditor/DaVinci.nix
       ./../../user/app/LaTex/default.nix
 
       ./../../neovim/default.nix

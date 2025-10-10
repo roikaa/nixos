@@ -1,14 +1,11 @@
-{pkgs, lib, config, ...}:
+{pkgs, lib, config, inputs, ...}:
 {
 programs.neovim = {
   enable = true;
 };   
 
 home.file.".config/nvim" = {
-  source = builtins.fetchGit {
-    url = nvim-config;
-    ref = "main";
-  };
+	url = inputs.nvim-config;
   recursive = true;
 
 };
