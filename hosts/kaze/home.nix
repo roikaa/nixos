@@ -84,13 +84,6 @@
       yt-dlp # best for downloding video/audio
       freetube
       komikku
-
-# Gaming
-#  lutris 
-#  heroic 
-# wine
-
-#  open-webui
       ];
 
 

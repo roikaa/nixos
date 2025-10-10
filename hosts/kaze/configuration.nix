@@ -14,9 +14,8 @@
       ./../../system/hardware/nvidia.nix
       ./../../system/services/maintenance.nix
       ./../../system/style/stylix.nix
-      ./../../system/app/steam.nix
 #     ./../../system/app/open-webui.nix
-#      ./../../system/inputs/japanese.nix
+      ./../../system/inputs/japanese.nix
 #      ./../../system/hardware/printer.nix
 
       inputs.home-manager.nixosModules.default
@@ -72,18 +71,12 @@
 
   environment.systemPackages = with pkgs; [
     ntfs3g # windows filesystem driver
-#      dotnetCorePackages.sdk_7_0
-#      dotnet-runtime_9
       python312Packages.pip
       python3Full
       tree
       usbutils
       openssl
-      heimdall-gui
       android-tools  # for adb/fastboot
-      heimdall
-      wine
-      winetricks
       zig
       nodejs
       glib
