@@ -5,23 +5,21 @@
 
   imports = [
     ./../../user/wm/hyprland/hyprland.nix
-      ./../../user/shell/zsh.nix
-      ./../../user/app/browser/librewolf.nix
-      ./../../user/app/browser/firefox.nix
-      ./../../user/app/terminal/foot.nix
-      ./../../user/app/terminal/kitty.nix
-      ./../../user/app/obs/obs.nix
-      ./../../user/app/discord/nixcord.nix
-      ./../../user/app/appluncher/rofi.nix
-      ./../../user/app/pass/pass.nix
-      ./../../user/style/stylix.nix
-      ./../../user/cli/btop.nix
-      ./../../user/app/development/android.nix
-      ./../../user/keepass/default.nix
-#      ./../../user/app/videoEditor/DaVinci.nix
-      ./../../user/app/LaTex/default.nix
-
-      ./../../neovim/default.nix
+    ./../../user/shell/zsh.nix
+    ./../../user/app/browser/librewolf.nix
+    ./../../user/app/browser/firefox.nix
+    ./../../user/app/terminal/foot.nix
+    ./../../user/app/terminal/kitty.nix
+    ./../../user/app/obs/obs.nix
+    ./../../user/app/discord/nixcord.nix
+    ./../../user/app/appluncher/rofi.nix
+    ./../../user/app/pass/pass.nix
+    ./../../user/style/stylix.nix
+    ./../../user/cli/btop.nix
+    ./../../user/app/development/android.nix
+    ./../../user/keepass/default.nix
+    ./../../user/app/LaTex/default.nix
+    ./../../neovim/default.nix
   ];
 
   programs.foliate.enable = true; # Ebook reader
