@@ -9,10 +9,7 @@ home.file.".config/nvim" = {
   recursive = true;
 
 };
-  home.packages = [
-  (pkgs.lua5_1.withPackages (ps: with ps; [
-    lfs
-    penlight
-  ]))
+  home.packages = with pkgs;[
+ lua54Packages.luarocks-nix 
 ];
 }
