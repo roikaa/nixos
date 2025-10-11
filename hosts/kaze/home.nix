@@ -20,6 +20,7 @@
     ./../../user/keepass/default.nix
     ./../../user/app/LaTex/default.nix
     ./../../neovim/default.nix
+    ./../../user/app/Tmux/default.nix
   ];
 
   programs.foliate.enable = true; # Ebook reader
