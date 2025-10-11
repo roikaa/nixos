@@ -11,5 +11,6 @@ home.file.".config/nvim" = {
 };
   home.packages = with pkgs;[
  lua54Packages.luarocks-nix 
+    lua5_1
 ];
 }
