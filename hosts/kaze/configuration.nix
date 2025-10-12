@@ -17,6 +17,7 @@
 #     ./../../system/app/open-webui.nix
       ./../../system/inputs/japanese.nix
 #      ./../../system/hardware/printer.nix
+      ./../../system/app/ollama.nix
 
       inputs.home-manager.nixosModules.default
     ];
@@ -85,6 +86,7 @@
       git	
       nix-index
       nix-ld			# ( idk what is this but ig some work around for some apps that dont work in nixos)
+      sysstat
       pass			# CLI password manager
       gnupg  # gpg encrytion for pass
       pinentry      # for gnupg
