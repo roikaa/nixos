@@ -44,6 +44,7 @@
       git
       zsh
       yazi			# CLI file manager
+    nnn
 #neovim			# Text editor
 
 
