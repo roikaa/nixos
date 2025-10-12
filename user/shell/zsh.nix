@@ -9,7 +9,7 @@
   
   programs.oh-my-posh = {
   enable = true;
-  useTheme = "stelbent.minimal";  # You can choose any theme you prefer
+  useTheme = "gruvbox";  # You can choose any theme you prefer
   enableZshIntegration = true; 
   };
 

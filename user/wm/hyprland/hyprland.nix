@@ -6,13 +6,24 @@
 
 
     settings = {
+workspace = [
+      "w[tv1], gapsout:0, gapsin:0"
+      "f[1], gapsout:0, gapsin:0"
+    ];
 
-       windowrule = "opacity 0.9, class:foot";
+    windowrulev2 = [
+      "bordersize 0, floating:0, onworkspace:w[tv1]"
+      "rounding 0, floating:0, onworkspace:w[tv1]"
+      "bordersize 0, floating:0, onworkspace:f[1]"
+      "rounding 0, floating:0, onworkspace:f[1]"
+    ];
+     # workspace = "name:myworkspace, gapsin:0, gapsout:0";
+       # windowrule = "opacity 0.9, class:foot";
 
       exec-once = [
       "swww init"
       "fcitx5 -d --replace"
-      "waybar"
+      # "waybar"
       ];
 
       "$mod" = "SUPER";
@@ -50,16 +61,16 @@
 	  "$mod, mouse:273, resizewindow"
 	  "$mod ALT, mouse:272, resizewindow"
       ];
-      bind =
-	[
+      bind = [
+	"$mod, F, fullscreen"
 	"$mod, Y, exec, foot yazi&,"
-	  "$mod, W, exec, librewolf&,"
-	  "$mod, return, exec, $terminal"
-	  "$mod, Q, killactive,"
-	  "$mod, D, exec, $appluncher -show drun"
-	  "$mod, C, exec, keepmenu"
-	  "$mod, V, togglefloating,"
-	  "$mod, P, exec, hyprshot -m output"
+	"$mod, W, exec, librewolf&,"
+	"$mod, return, exec, $terminal"
+	"$mod, Q, killactive,"
+	"$mod, D, exec, $appluncher -show drun"
+	"$mod, C, exec, keepmenu"
+	"$mod, V, togglefloating,"
+	"$mod, P, exec, hyprshot -m output"
 
 # special workspaces (scratchpad) 
 	  "$mod, S, togglespecialworkspace, magic"
