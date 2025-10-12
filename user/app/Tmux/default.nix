@@ -7,12 +7,15 @@
     keyMode = "vi";
     prefix = "C-Space";
     extraConfig = ''
-      bind -n M-H previous-window
-      bind -n M-L next-window
+      bind -n M-h previous-window
+      bind -n M-l next-window
       
-      bind "" split-window -v -c "#{pane_current_path}"
-      bind % split-window -h -c "#{pane_current_path}"
-      
+      # bind '"' split-window -v -c "#{pane_current_path}"
+      # bind % split-window -h -c "#{pane_current_path}"
+      bind-key -T prefix v split-window -v -c "#{pane_current_path}"
+      bind-key -T prefix h split-window -h -c "#{pane_current_path}"
+
+
       set -g pane-base-index 1
       set -g base-index 1
       set-window-option -g pane-base-index 1
