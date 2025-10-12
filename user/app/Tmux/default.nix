@@ -9,7 +9,10 @@
     extraConfig = ''
       bind -n M-H previous-window
       bind -n M-L next-window 
-
+      set -g pane-base-index 1
+      set -g base-index 1
+      set-window-option -g pane-base-index 1
+      set-option -g renumber-windows on
          '';
     plugins = with pkgs; [
       tmuxPlugins.better-mouse-mode
