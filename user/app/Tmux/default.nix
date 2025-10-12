@@ -7,7 +7,7 @@
     keyMode = "vi";
     prefix = "C-Space";
     extraConfig = ''
-      # dont need status bar apps , Tmux is overkill
+      # Fuck other WM status bar apps
       set -g status-position top
 
        # Window navigation (alt+0-9)
@@ -46,9 +46,52 @@
       bind -n M-\$ command-prompt -I "#{session_name}" "rename-session '%%'"
 
       # Split-window
-      bind-key -T prefix v split-window -v -c "#{pane_current_path}"
-      bind-key -T prefix h split-window -h -c "#{pane_current_path}"
+      bind -n M-_ split-window -v -c "#{pane_current_path}" # vertical
+      bind -n M-| split-window -h -c "#{pane_current_path}" # vertical
 
+      # Open floating window with nnn file explorer (alt+e)
+      bind -n M-e display-popup -w 120 -h 30 -x 0 -y 0 "nnn"
+
+      # Resize panes (alt+arrow-keys)
+      bind -n M-Up resize-pane -U 5
+      bind -n M-Down resize-pane -D 5
+      bind -n M-Left resize-pane -L 5
+      bind -n M-Right resize-pane -R 5
+
+      # Mark pane (alt+m)
+      bind -n M-m select-pane -m
+
+      # Join pane (alt+b)
+      bind -n M-b command-prompt -p "Join pane from:" "join-pane -s '%%'"
+
+      # Htop in floating window (alt+t)
+      bind -n M-t display-popup -w 120 -h 30 "htop"
+
+      # Zoom/fullscreen pane (alt+z / alt+f)
+      bind -n M-z resize-pane -Z
+      bind -n M-f resize-pane -Z
+
+      # FZF session picker (prefix+c-j)
+      bind -T prefix C-j display-popup -w 120 -h 30 "tmux list-sessions | grep -v attached | fzf | cut -d: -f1 | xargs -r tmux attach-session -t"
+
+      # FZF session-window picker (prefix+c-k)
+      bind -T prefix C-k display-popup -w 120 -h 30 "tmux list-windows -a | fzf | awk '{print $1}' | xargs -r tmux select-window -t"
+
+      # Default tall layout with 1 main pane and others stacked (prefix+alt+4)
+      bind -T prefix M-4 select-layout main-vertical
+
+      # Cycle panes in tall layout (alt+O)
+      bind -n M-O select-pane -t :.+
+
+      # Removing dely
+      set -sg escape-time 10
+
+      # Colors
+      set-option -sa terminal-overrides ",foot:Tc"
+      set -g default-terminal "tmux-256color"
+      set-option -sa terminal-overrides ",tmux-256color:RGB"
+
+      # Set base index to 1
       set -g pane-base-index 1
       set -g base-index 1
       set-window-option -g pane-base-index 1
