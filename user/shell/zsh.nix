@@ -20,6 +20,7 @@
     syntaxHighlighting.enable = true;
     shellAliases = {
       ll = "ls -l";
+      c = "clear"; 
       edit = "sudo -e";
       update = "sudo nixos-rebuild switch";
       youtube = "yt-dlp -f bestaudio -x --audio-format mp3 --audio-quality 320k --embed-thumbnail --add-metadata ";
