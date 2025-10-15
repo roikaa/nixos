@@ -77,10 +77,16 @@ workspace = [
 	"$mod, V, togglefloating,"
 
       	# Move focus
-	"$mod, H, movefocus, left, "
-	"$mod, L, movefocus, right,"
-	"$mod, K, movefocus, up,   "
-	"$mod, J, movefocus, down, "
+	"$mod, H, movefocus, l"
+	"$mod, L, movefocus, r"
+	"$mod, K, movefocus, u"
+	"$mod, J, movefocus, d"
+
+	"$mod, h, alterzorder, top"
+	"$mod, l, alterzorder, top"
+	"$mod, k, alterzorder, top"
+	"$mod, j, alterzorder, top"
+
 
 
 # special workspaces (scratchpad) 
