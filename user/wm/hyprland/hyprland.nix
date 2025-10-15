@@ -39,12 +39,12 @@ workspace = [
       };
 
       decoration = {
-	rounding = 10;
+	rounding = 0;
 	active_opacity = 1;
 	inactive_opacity = 1;
 
 	blur = {
-	  enabled = true;
+	  enabled = false;
 	  size = 5;
 	  passes = 1;
 	  vibrancy = 0.1696;
@@ -62,15 +62,26 @@ workspace = [
 	  "$mod ALT, mouse:272, resizewindow"
       ];
       bind = [
-	"$mod, F, fullscreen"
+	# Lunch Apps
+	# "$mod, C, exec, keepmenu"
 	"$mod, Y, exec, foot yazi&,"
 	"$mod, W, exec, librewolf&,"
 	"$mod, return, exec, $terminal"
-	"$mod, Q, killactive,"
 	"$mod, D, exec, $appluncher -show drun"
-	# "$mod, C, exec, keepmenu"
-	"$mod, V, togglefloating,"
 	"$mod, P, exec, hyprshot -m output"
+
+	# Window minupulation
+	"$mod, Q, killactive,"
+	"$mod, F, fullscreen"
+	"$mod, V, togglefloating,"
+
+	# Move focus
+	"$mod, H, movefocus, left, "
+	"$mod, L, movefocus, right,"
+	"$mod, K, movefocus, up,   "
+	"$mod, J, movefocus, down, "
+
+
 
 # special workspaces (scratchpad) 
 	  "$mod, S, togglespecialworkspace, magic"

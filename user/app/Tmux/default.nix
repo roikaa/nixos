@@ -100,21 +100,23 @@
     plugins = with pkgs; [
       tmuxPlugins.better-mouse-mode
       tmuxPlugins.vim-tmux-navigator
-      # tmuxPlugins.cpu
-      # tmuxPlugins.tmux-prefix-highlight
       {
         plugin = tmuxPlugins.cpu;
-        extraConfig = "set -g status-right ' CPU: #{cpu_icon} #{cpu_percentage} | %a %h-%d %H:%M '";
+        # extraConfig = "set -g status-right ' CPU: #{cpu_icon} #{cpu_percentage} | %a %h-%d %H:%M '";
       }
       {
         plugin = tmuxPlugins.resurrect;
-        extraConfig = "set -g @resurrect-strategy-nvim 'session'";
+        extraConfig = ''
+          set -g @resurrect-strategy-nvim 'session'
+          set -g @resurrect-processes 'ssh yazi nnn btop htop lazygit'
+          set -g @resurrect-capture-pane-contents 'on'
+        '';
       }
       {
         plugin = tmuxPlugins.continuum;
         extraConfig = ''
           set -g @continuum-restore 'on'
-          set -g @continuum-save-interval '60' # minutes
+          set -g @continuum-save-interval '15'
         '';
       }
     ];

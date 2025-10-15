@@ -1,6 +1,6 @@
 {pkgs, config, lib, ...}:
 {
   home.packages = with pkgs; [
-    texliveBasic
+    texliveFull
   ];
 }
