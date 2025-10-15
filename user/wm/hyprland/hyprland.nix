@@ -58,8 +58,9 @@ workspace = [
       bindm = [
 # mouse movements
 	"$mod, mouse:272, movewindow"
-	  "$mod, mouse:273, resizewindow"
-	  "$mod ALT, mouse:272, resizewindow"
+	"$mod, mouse:273, resizewindow"
+	"$mod ALT, mouse:272, resizewindow"
+
       ];
       bind = [
 	# Lunch Apps
@@ -75,12 +76,11 @@ workspace = [
 	"$mod, F, fullscreen"
 	"$mod, V, togglefloating,"
 
-	# Move focus
+      	# Move focus
 	"$mod, H, movefocus, left, "
 	"$mod, L, movefocus, right,"
 	"$mod, K, movefocus, up,   "
 	"$mod, J, movefocus, down, "
-
 
 
 # special workspaces (scratchpad) 
