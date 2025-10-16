@@ -336,11 +336,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1760485027,
-        "narHash": "sha256-1VtVAyvi8wKZSCW+gmzkq6zb3rHlWndHDAPwqolL5+E=",
+        "lastModified": 1760621586,
+        "narHash": "sha256-sIbe3te3RrL9PY4ASKGwv1KuJs0pyn4Zvo3xIF3jFms=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "60529e810d100231d17abab438f94460d4b9fc7e",
+        "rev": "8164b90bc2839d4d2a10c0d2b26c4a413ecf90b2",
         "type": "github"
       },
       "original": {
@@ -528,11 +528,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1760491287,
-        "narHash": "sha256-BOvhD3Q9fZcxQbjz9YPdOTrWjRnyUVqW2YTFJZI8rQE=",
+        "lastModified": 1760577660,
+        "narHash": "sha256-ukYkRvYyzzq2qIDVZHfTizNVmrUsKa+Am7V+4K4w4Fg=",
         "owner": "kaylorben",
         "repo": "nixcord",
-        "rev": "b88450ad729eed534601ff0813b3fed46dd013cb",
+        "rev": "1f1d0421558822f69934be92685f1a6f0f16b98e",
         "type": "github"
       },
       "original": {
@@ -633,11 +633,11 @@
     "nvim-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1760261727,
-        "narHash": "sha256-R6j9Ts6f7muxrRAdR9E1EBiOq8HnRzyP7zFUKu4MfzU=",
+        "lastModified": 1760622227,
+        "narHash": "sha256-eY3ugJACucyuDITFSvyuv4O+5qv/UnW0XfZkA42yNG8=",
         "owner": "roikaa",
         "repo": "nvim",
-        "rev": "fddc45a175c3ddafc342c30dfd9ee337abda9d55",
+        "rev": "9416b267f62a91720caa47754c5a443fc610afd8",
         "type": "github"
       },
       "original": {
