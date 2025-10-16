@@ -19,7 +19,7 @@
     ./../../user/app/development/android.nix
     ./../../user/keepass/default.nix
     ./../../user/app/LaTex/default.nix
-    ./../../neovim/default.nix
+    ./../../user/neovim/default.nix
     ./../../user/app/Tmux/default.nix
     ./../../user/app/zathura/default.nix
   ];
