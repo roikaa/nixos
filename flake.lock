@@ -528,11 +528,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1760577660,
-        "narHash": "sha256-ukYkRvYyzzq2qIDVZHfTizNVmrUsKa+Am7V+4K4w4Fg=",
+        "lastModified": 1760689525,
+        "narHash": "sha256-Dl0jvgL5NjgCGkQ8PCLmGIisWcbFhGWPqKRyIGJ9uus=",
         "owner": "kaylorben",
         "repo": "nixcord",
-        "rev": "1f1d0421558822f69934be92685f1a6f0f16b98e",
+        "rev": "81d2f10a849c4312fefa0cf323dce0a1460dcbbe",
         "type": "github"
       },
       "original": {
@@ -633,11 +633,11 @@
     "nvim-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1760622227,
-        "narHash": "sha256-eY3ugJACucyuDITFSvyuv4O+5qv/UnW0XfZkA42yNG8=",
+        "lastModified": 1760691108,
+        "narHash": "sha256-nTwuCGF/XMQ0UyBWmJSkNHnJCqMKs6gs5he/6rpPFoI=",
         "owner": "roikaa",
         "repo": "nvim",
-        "rev": "9416b267f62a91720caa47754c5a443fc610afd8",
+        "rev": "b1de6e94a29e1584ae3fde459421a317fc639cf1",
         "type": "github"
       },
       "original": {
