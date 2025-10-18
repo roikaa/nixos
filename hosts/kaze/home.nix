@@ -84,6 +84,7 @@
       mpv
       yt-dlp # best for downloding video/audio
       freetube
+      grayjay # multi media platform frontend
       komikku
       ];
 
