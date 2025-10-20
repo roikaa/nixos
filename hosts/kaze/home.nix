@@ -89,16 +89,6 @@
       komikku
     # UNI
     # ciscoPacketTracer8
-  (let
-    deb = /home/akio/uni/Networking/CiscoPacketTracer_900_Ubuntu_64bit.deb;
-  in
-  stdenv.mkDerivation {
-    name = "ciscoPacketTracer";
-    src = deb;
-    buildInputs = [ dpkg ];
-    unpackPhase = "dpkg-deb -xv $src extracted";
-    installPhase = "cp -r extracted/* $out/";
-  })
 
       ];
 

@@ -28,6 +28,10 @@
 #        url = "github:nix-community/nixvim/nixos-25.05";
 #        inputs.nixpkgs.follows = "nixpkgs";
 #    };
+  nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixcord = {
       url = "github:kaylorben/nixcord";
     };

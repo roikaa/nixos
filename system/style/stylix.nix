@@ -10,7 +10,8 @@
     	qt.enable = true;
     };
     polarity = "dark";
-    
+
+
     opacity = {
       #applications = 1.0;
       #terminal = 0.7;
