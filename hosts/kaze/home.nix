@@ -90,7 +90,7 @@
     # UNI
     # ciscoPacketTracer8
   (let
-    deb = ../../CiscoPacketTracer_900_Ubuntu_64bit.deb;
+    deb = /home/akio/uni/Networking/CiscoPacketTracer_900_Ubuntu_64bit.deb;
   in
   stdenv.mkDerivation {
     name = "ciscoPacketTracer";
