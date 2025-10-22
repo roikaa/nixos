@@ -1,0 +1,125 @@
+{ config, pkgs, lib, inputs, ... }:
+{
+  home.username = "ala";
+  home.homeDirectory = "/home/ala";
+
+  imports = [
+    ./../../user/wm/hyprland/hyprland.nix
+    ./../../user/shell/zsh.nix
+    ./../../user/app/browser/librewolf.nix
+    ./../../user/app/browser/firefox.nix
+    ./../../user/app/terminal/foot.nix
+    ./../../user/app/terminal/kitty.nix
+    ./../../user/app/obs/obs.nix
+    ./../../user/app/discord/nixcord.nix
+    ./../../user/app/appluncher/rofi.nix
+    ./../../user/app/pass/pass.nix
+    #./../../user/style/stylix.nix
+    ./../../user/cli/btop.nix
+    ./../../user/app/development/android.nix
+    ./../../user/keepass/default.nix
+    ./../../user/app/LaTex/default.nix
+    ./../../user/neovim/default.nix
+    ./../../user/app/Tmux/default.nix
+    ./../../user/app/zathura/default.nix
+  ];
+
+  programs.foliate.enable = true; # Ebook reader
+    programs.waybar.enable = true;
+  xdg.configFile."waybar/config.jsonc".source = ./../../user/wm/waybar/config;
+# conflicting with stylix, use if stylix nolt enabled
+#  xdg.configFile."waybar/style.css".source = ./../../user/wm/waybar/style.css;
+ 
+
+  home.packages = with pkgs; [
+    tealdeer # short manual
+      ani-cli   #anime in terminal
+      neofetch
+#  foot    # terminal
+
+# core
+#brave
+      nitch		        # Display system statshome.nix
+      unrar-wrapper
+      unzip 
+      git
+      zsh
+      yazi			# CLI file manager
+    nnn
+#neovim			# Text editor
+
+
+# Style
+      hyprshot
+      swww			# Wallpaper daemon
+      wl-clipboard   # Clipboard
+      dunst			# Notification daemon
+      libnotify			# Notification daemon's dependency
+#rofi-wayland	        # Application luncher
+
+
+# Dev
+      gtk3
+      mtpfs
+
+
+# Desktop
+      #libreoffice-qt  # Microssoftoffice ulernative
+#foliate	# eBook reader
+      obsidian	# not app
+      qbittorrent       # Torrent
+      baobab # GUI app to analyse disk usage
+#dolphin			# GUI file manager
+#     kdePackages.dolphin
+#      nautilus
+
+
+# Social
+      signal-desktop  # Chat app
+#telegram-desktop
+
+# Media
+      feh
+      ffmpeg  # ffmpeg 
+      mpv
+      yt-dlp # cli tool downloding video/audio
+      # yewtube # yet another youtube cli
+      # freetube #youtube frontend
+      grayjay # multi media platform frontend
+      komikku
+    # UNI
+    # ciscoPacketTracer8
+
+      ];
+
+  home.sessionVariables.EDITOR = "nvim";
+  programs.git = {
+    enable = true;
+    userName = "roikaa";
+    userEmail = "akio216216@gmail.com";
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
+    aliases = {
+      pu = "push";
+      cm = "commit -m";
+      co = "checkout";
+    };
+  };
+
+
+
+
+
+  home.sessionVariables = {
+    MANPAGER="nvim +Man!";
+  };
+
+
+  home.file = {
+
+  };
+  
+  home.stateVersion = "24.11"; # Please read the comment before changing.
+    programs.home-manager.enable = true;
+}

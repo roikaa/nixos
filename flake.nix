@@ -40,12 +40,12 @@
   outputs = { self, nixpkgs, ... }@inputs: 
     let
       system = "x86_64-linux";
-      host = "kaze";
+#      host = "kaze";
       pkgs = nixpkgs.legacyPackages.${system};
     in
       {
     nixosConfigurations = { 
-      ${host} = nixpkgs.lib.nixosSystem {
+      kaze = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/kaze/configuration.nix
@@ -53,6 +53,15 @@
            inputs.stylix.nixosModules.stylix
         ];
       };
+      nobu = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/nobu/configuration.nix
+           inputs.home-manager.nixosModules.default
+           inputs.stylix.nixosModules.stylix
+        ];
+      };
+
     };
   };
 }
