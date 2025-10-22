@@ -94,9 +94,11 @@ home-manager = {
   programs.nix-ld.enable = true;
 
 environment.sessionVariables = {
+  LIBVA_DRIVER_NAME = "iHD";
   XDG_SESSION_TYPE = "wayland";
   NIXOS_OZONE_WL = "1";
 };
+
   programs.hyprland = {
     package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     enable = true;
@@ -114,7 +116,7 @@ environment.sessionVariables = {
   environment.systemPackages = with pkgs; [
 zig
 gcc
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim 
     wget
     nodejs
 git  

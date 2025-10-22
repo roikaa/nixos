@@ -8,7 +8,7 @@
   programs.nixcord = {
     enable = true;          # Enable Nixcord (It also installs Discord)
     vesktop.enable = true;  # Vesktop
-    dorion.enable = true;   # Dorion
+    # dorion.enable = true;   # Dorion
     quickCss = "some CSS";  # quickCSS file
     config = {
       useQuickCss = true;   # use out quickCSS
