@@ -40,8 +40,8 @@ workspace = [
 
       decoration = {
 	rounding = 10;
-	active_opacity = 0.9;
-	inactive_opacity = 0.8;
+	active_opacity = 0.8;
+	inactive_opacity = 0.7;
 
 	blur = {
 	  enabled = true;
@@ -52,7 +52,7 @@ workspace = [
       };
 
       animations = {
-	enabled = true;
+	enabled = false;
       };
 
       bindm = [
@@ -63,6 +63,7 @@ workspace = [
 
       ];
       bind = [
+	"$mod, O, toggleopaque"
 	# Lunch Apps
 	# "$mod, C, exec, keepmenu"
 	"$mod, Y, exec, foot yazi&,"
