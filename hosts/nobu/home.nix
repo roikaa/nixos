@@ -4,7 +4,7 @@
   home.homeDirectory = "/home/ala";
 
   imports = [
-    ./../../user/wm/hyprland/hyprland.nix
+    ./../../user/wm/hyprland/thinkpad.nix
     ./../../user/shell/zsh.nix
     ./../../user/app/browser/librewolf.nix
     ./../../user/app/browser/firefox.nix
@@ -14,10 +14,10 @@
     ./../../user/app/discord/nixcord.nix
     ./../../user/app/appluncher/rofi.nix
     ./../../user/app/pass/pass.nix
-    #./../../user/style/stylix.nix
+    ./../../user/style/stylix.nix
     ./../../user/cli/btop.nix
-    ./../../user/app/development/android.nix
-    ./../../user/keepass/default.nix
+    # ./../../user/app/development/android.nix
+    # ./../../user/keepass/default.nix
     ./../../user/app/LaTex/default.nix
     ./../../user/neovim/default.nix
     ./../../user/app/Tmux/default.nix
@@ -28,7 +28,7 @@
     programs.waybar.enable = true;
   xdg.configFile."waybar/config.jsonc".source = ./../../user/wm/waybar/config;
 # conflicting with stylix, use if stylix nolt enabled
-#  xdg.configFile."waybar/style.css".source = ./../../user/wm/waybar/style.css;
+ xdg.configFile."waybar/style.css".source = ./../../user/wm/waybar/style.css;
  
 
   home.packages = with pkgs; [
@@ -85,7 +85,7 @@
       yt-dlp # cli tool downloding video/audio
       # yewtube # yet another youtube cli
       # freetube #youtube frontend
-      grayjay # multi media platform frontend
+      # grayjay # multi media platform frontend
       komikku
     # UNI
     # ciscoPacketTracer8

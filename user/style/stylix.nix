@@ -4,7 +4,7 @@ stylix.targets.firefox.profileNames = [ "roika" ];
 # this is home-manager stylix
   stylix = {
     enable = true;
-    #base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
 #base16Scheme = "${pkgs.base16-schemes}/share/themes/sakura.yaml";
 
     targets = {

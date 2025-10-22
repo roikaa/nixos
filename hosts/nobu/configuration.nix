@@ -50,9 +50,11 @@ inputs.home-manager.nixosModules.default
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  #services.xserver.displayManager.gdm.enable = true;
+  #services.xserver.desktopManager.gnome.enable = true;
 
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.displayManager.sddm.wayland.enable = true;
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -103,6 +105,7 @@ home-manager = {
     };
   };
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
@@ -129,16 +132,23 @@ home-manager = {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+zig
+gcc
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+    nodejs
 git  
 nix-ld
 pass
 gnupg
-pinetry
-pinetry-curses
+pinentry
+pinentry-curses
 glib
-
+   ciscoPacketTracer8
+    ntfs3g # windows filesystem driver
+      python312Packages.pip
+      python3Full
+ 
 ];
 
   # Some programs need SUID wrappers, can be configured further or are
