@@ -69,33 +69,12 @@
 
 
 
-# nixpkgs.overlays = [
-#   (final: prev: {
-#     ciscoPacketTracer9 = final.callPackage ({ lib, stdenv, ... }:
-#       stdenv.mkDerivation {
-#         pname = "ciscoPacketTracer";
-#         version = "9.0.0";
-#         
-#         src = builtins.fetchurl {
-#           url = "file:///home/akio/uni/Networking/CiscoPacketTracer_900_Ubuntu_64bit.deb";
-#           sha256 = "086r5qbvvf8qarp554j4q4044vgswv3xfzv2iyvdqdzwqzac16nx";
-#         };
-#         
-#         unpackPhase = "dpkg-deb -x $src $out";
-#         installPhase = "true";
-#       }
-#     ) {};
-#   })
-# ];
-#
 nixpkgs.config.packageOverrides = pkgs: {
     nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/main.tar.gz") {
       inherit pkgs;
     };
   };
   environment.systemPackages = with pkgs; [
-  # ciscoPacketTracer9
-
    ciscoPacketTracer8
     ntfs3g # windows filesystem driver
       python312Packages.pip
