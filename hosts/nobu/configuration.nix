@@ -93,12 +93,25 @@ home-manager = {
 
   programs.nix-ld.enable = true;
 
+# environment.sessionVariables = {
+#   LIBVA_DRIVER_NAME = "iHD";
+#   XDG_SESSION_TYPE = "wayland";
+#   NIXOS_OZONE_WL = "1";
+# };
 environment.sessionVariables = {
   LIBVA_DRIVER_NAME = "iHD";
   XDG_SESSION_TYPE = "wayland";
   NIXOS_OZONE_WL = "1";
+  
+  # Qt/XWayland fixes for Hyprland
+  # QT_QPA_PLATFORM = "wayland;xcb";
+  # QT_QPA_PLATFORMTHEME = "qt5ct";
+  QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+  QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+  QT_SCALE_FACTOR = "1";
+  GDK_SCALE = "1";
+  GDK_DPI_SCALE = "1.0";
 };
-
   programs.hyprland = {
     package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     enable = true;
@@ -130,7 +143,12 @@ glib
     ntfs3g # windows filesystem driver
       python312Packages.pip
       python3Full
- 
+      libsForQt5.qt5ct
+  xorg.xrandr
+    xorg.xrdb
+    qt5.qtwayland
+    qt6.qtwayland
+    xwayland
 ];
 
   # Enable the OpenSSH daemon.
