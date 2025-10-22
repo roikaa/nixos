@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
 ./../../system/style/stylix.nix
 ./../../system/essentials/font.nix
+      ./../../system/hardware/keyboard/thinkpad.nix
 inputs.home-manager.nixosModules.default
     ];
 

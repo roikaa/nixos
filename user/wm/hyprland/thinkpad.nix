@@ -63,7 +63,7 @@ workspace = [
 
       ];
       bind = [
-	"$mod, O, exec, hyprctl dispatch toggleopaque"
+	"$mod, O, exec, hyprctl dispatch setprop active opaque toggle"
 	# Lunch Apps
 	# "$mod, C, exec, keepmenu"
 	"$mod, Y, exec, foot yazi&,"

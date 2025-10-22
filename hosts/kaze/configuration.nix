@@ -10,7 +10,7 @@
     ./hardware-configuration.nix
       ./../../system/essentials/boot.nix
       ./../../system/essentials/font.nix
-      ./../../system/hardware/kanataKeyboard.nix
+      ./../../system/hardware/keyboard/default.nix
       ./../../system/hardware/nvidia.nix
       ./../../system/services/maintenance.nix
       ./../../system/style/stylix.nix
