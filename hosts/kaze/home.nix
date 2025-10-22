@@ -69,6 +69,7 @@
       obsidian	# not app
       qbittorrent       # Torrent
       baobab # GUI app to analyse disk usage
+thunderbird
 #dolphin			# GUI file manager
 #     kdePackages.dolphin
 #      nautilus
