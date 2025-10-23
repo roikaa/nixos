@@ -1,6 +1,16 @@
 { config, pkgs, lib, ... }:  
 
 {
+  # Adding some dependencis
+home.packages = with pkgs; [
+  brightnessctl      # for brightness control
+  playerctl          # for media controls
+  grimblast          # for screenshots (or use grim + slurp)
+  wdisplays          # for display management
+  networkmanager     # usually already installed
+  swaylock           # for screen locking
+  rofi-wayland    # or wofi, fuzzel, tofi
+];
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -62,8 +72,43 @@ workspace = [
 	"$mod ALT, mouse:272, resizewindow"
 
       ];
+ binde = [
+        # Volume controls
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        
+        # Microphone mute
+        ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+        
+        # Brightness controls
+        ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
+        ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+      ];
       bind = [
+	 # ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+        # ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        # ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+	", XF86AudioPlay, exec, playerctl play-pause"
+        ", XF86AudioPause, exec, playerctl play-pause"
+        ", XF86AudioNext, exec, playerctl next"
+        ", XF86AudioPrev, exec, playerctl previous"
+        
+        # ThinkPad specific keys
+        ", XF86Display, exec, wdisplays"  # Display switch key
+        ", XF86WLAN, exec, nmcli radio wifi toggle"  # WiFi toggle (Fn+F8 on some models)
+        
+        # Screenshot
+        ", Print, exec, grimblast copy area"  # Print Screen
+        "SHIFT, Print, exec, grimblast copy screen"
+        
+        # Lock screen
+        "$mod, L, exec, swaylock"
 	"$mod, O, exec, hyprctl dispatch setprop active opaque toggle"
+
+	# refrech waybar
+	"$mod SHIFT, R, exec, pkill -9 waybar; waybar &"
+
 	# Lunch Apps
 	# "$mod, C, exec, keepmenu"
 	"$mod, Y, exec, foot yazi&,"

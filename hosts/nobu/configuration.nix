@@ -111,6 +111,8 @@ environment.sessionVariables = {
   QT_SCALE_FACTOR = "1";
   GDK_SCALE = "1";
   GDK_DPI_SCALE = "1.0";
+  # QTWEBENGINE_LOCALES_PATH = "/nix/store/pdzvvqf9hrn03vfmah44rysjw67q0194-ciscoPacketTracer8-unwrapped/opt/pt/translations/qtwebengine_locales";
+  # QTWEBENGINE_RESOURCES_PATH = "/nix/store/pdzvvqf9hrn03vfmah44rysjw67q0194-ciscoPacketTracer8-unwrapped/opt/pt/resources";
 };
   programs.hyprland = {
     package = inputs.hyprland.packages."${pkgs.system}".hyprland;
@@ -143,14 +145,15 @@ glib
     ntfs3g # windows filesystem driver
       python312Packages.pip
       python3Full
-      libsForQt5.qt5ct
-  xorg.xrandr
-    xorg.xrdb
-    qt5.qtwayland
-    qt6.qtwayland
-    xwayland
+      # libsForQt5.qt5ct
+  # xorg.xrandr
+    # xorg.xrdb
+    # qt5.qtwayland
+    # qt6.qtwayland
+    # xwayland
 ];
 
+  programs.thunar.enable = true;
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
