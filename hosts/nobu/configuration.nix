@@ -157,7 +157,8 @@ glib
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  # networking.firewall.enable = false;
+  networking.firewall.enable = true;
+  networking.firewall.allowedTCPPorts = [22];
 
   system.stateVersion = "25.05"; # Did you read the comment?
 }
