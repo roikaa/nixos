@@ -9,7 +9,7 @@ home.packages = with pkgs; [
   wdisplays          # for display management
   networkmanager     # usually already installed
   swaylock           # for screen locking
-  rofi-wayland    # or wofi, fuzzel, tofi
+  # rofi-wayland    # or wofi, fuzzel, tofi
 ];
   wayland.windowManager.hyprland = {
     enable = true;
@@ -17,7 +17,7 @@ home.packages = with pkgs; [
 
     settings = {
     monitor = [
-	"HDMI-A-1,preferred,auto,1,mirror,,,,,,eDP-1"
+	"HDMI-A-2,preferred,auto,1,mirror,eDP-1"
 	"eDP-1,preferred,auto,1"
       ];
   misc = {

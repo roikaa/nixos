@@ -44,8 +44,8 @@ hardware.graphics = {
     LC_TIME = "en_US.UTF-8";
   };
 
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;

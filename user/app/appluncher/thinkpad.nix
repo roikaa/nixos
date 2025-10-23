@@ -1,7 +1,7 @@
 {pkgs, lib, config, ...}:
 {
 programs.rofi = {
-  # enable = true;
+  enable = true;
   
   extraConfig = {
     modi = "drun,run,filebrowser";
