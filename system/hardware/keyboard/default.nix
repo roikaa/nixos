@@ -44,7 +44,7 @@ services.kanata = {
            hold-time 200
           )
           (defalias
-           caps (tap-hold 200 200 esc lalt)
+           caps (tap-hold 200 200 esc lctrl)
            tab (tap-hold $tap-time $hold-time tab (layer-toggle arrow))
            del del  ;; Alias for the true delete key action
           )

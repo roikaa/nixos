@@ -110,7 +110,9 @@
 
 
 
-
+  home.shellAliases = {
+    rebuild = "sudo nixos-rebuild switch --flake ~/nixos#nobu";
+  };
   home.sessionVariables = {
     MANPAGER="nvim +Man!";
   };

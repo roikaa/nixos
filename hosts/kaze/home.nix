@@ -121,6 +121,11 @@ thunderbird
 
   };
   
-  home.stateVersion = "24.11"; # Please read the comment before changing.
+  home.shellAliases = {
+    rebuild = "sudo nixos-rebuild switch --flake ~/nixos#kaze";
+  };
+  
+
+    home.stateVersion = "24.11"; # Please read the comment before changing.
     programs.home-manager.enable = true;
 }
