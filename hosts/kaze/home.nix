@@ -64,7 +64,7 @@
 
 
 # Desktop
-      #libreoffice-qt  # Microssoftoffice ulernative
+      libreoffice-qt  # Microssoftoffice ulernative
 #foliate	# eBook reader
       obsidian	# not app
       qbittorrent       # Torrent
