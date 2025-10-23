@@ -16,6 +16,10 @@ home.packages = with pkgs; [
 
 
     settings = {
+    monitor = [
+	"HDMI-A-1,preferred,auto,1,mirror,,,,,,eDP-1"
+	"eDP-1,preferred,auto,1"
+      ];
 workspace = [
       "w[tv1], gapsout:0, gapsin:0"
       "f[1], gapsout:0, gapsin:0"
@@ -101,6 +105,7 @@ workspace = [
         # Screenshot
         ", Print, exec, grimblast copy area"  # Print Screen
         "SHIFT, Print, exec, grimblast copy screen"
+	  "$mod SHIFT, Print, exec, grimblast save screen ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"
         
         # Lock screen
         "$mod, L, exec, swaylock"
