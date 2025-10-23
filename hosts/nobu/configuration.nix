@@ -62,7 +62,7 @@ hardware.graphics = {
   # Define a user account. Don't forget to set a password with ‘passwd’.
 programs.zsh.enable = true;
 users.defaultUserShell = pkgs.zsh;
-  users.users.ala = {
+  users.users.akio = {
     isNormalUser = true;
     description = "akio";
     extraGroups = [ "networkmanager" "wheel" ];
