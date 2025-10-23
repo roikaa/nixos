@@ -20,6 +20,11 @@ home.packages = with pkgs; [
 	"HDMI-A-1,preferred,auto,1,mirror,,,,,,eDP-1"
 	"eDP-1,preferred,auto,1"
       ];
+  misc = {
+        force_default_wallpaper = 0;  # Disables the anime mascot wallpapers
+        disable_hyprland_logo = true;  # Disables the Hyprland logo and anime girl background
+        disable_splash_rendering = true;  # Prevents the splash screen from rendering
+      };
 workspace = [
       "w[tv1], gapsout:0, gapsin:0"
       "f[1], gapsout:0, gapsin:0"
