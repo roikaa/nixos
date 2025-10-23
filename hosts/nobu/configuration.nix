@@ -64,7 +64,7 @@ programs.zsh.enable = true;
 users.defaultUserShell = pkgs.zsh;
   users.users.ala = {
     isNormalUser = true;
-    description = "ala";
+    description = "akio";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     #  thunderbird
@@ -77,7 +77,7 @@ home-manager = {
     backupFileExtension = "backup";
     extraSpecialArgs = { inherit inputs; };
     users = {
-      "ala" = import ./home.nix;
+      "akio" = import ./home.nix;
     };
   };
 

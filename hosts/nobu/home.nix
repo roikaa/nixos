@@ -1,7 +1,7 @@
 { config, pkgs, lib, inputs, ... }:
 {
-  home.username = "ala";
-  home.homeDirectory = "/home/ala";
+  home.username = "akio";
+  home.homeDirectory = "/home/akio";
 
   imports = [
     ./../../user/wm/hyprland/thinkpad.nix
