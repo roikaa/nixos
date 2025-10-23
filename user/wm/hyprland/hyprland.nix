@@ -23,7 +23,7 @@ workspace = [
       exec-once = [
       "swww init"
       "fcitx5 -d --replace"
-      # "waybar"
+      "waybar"
       ];
 
       "$mod" = "SUPER";

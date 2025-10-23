@@ -26,7 +26,14 @@
   networking.hostName = "kaze"; # Define your hostname.
     networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
     networking.firewall.enable = true;
-
+  networking.firewall.allowedTCPPorts = [ 22 ];
+ services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false; 
+      PermitRootLogin = "no";         # recommended for security
+    };
+  }; 
 # Set your time zone.
   time.timeZone = "Etc/GMT-1";
 
