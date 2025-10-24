@@ -28,9 +28,11 @@
     programs.waybar.enable = true;
   xdg.configFile."waybar/config.jsonc".source = ./../../user/wm/waybar/config;
 # conflicting with stylix, use if stylix nolt enabled
- xdg.configFile."waybar/style.css".source = ./../../user/wm/waybar/style.css;
+ # xdg.configFile."waybar/style.css".source = ./../../user/wm/waybar/style.css;
  
-
+stylix.targets = {
+    waybar.enable = true;
+  };
   home.packages = with pkgs; [
     tealdeer # short manual
       ani-cli   #anime in terminal

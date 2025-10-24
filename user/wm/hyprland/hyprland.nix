@@ -65,6 +65,9 @@ workspace = [
 
       ];
       bind = [
+
+	"$mod SHIFT, R, exec, pkill -9 waybar; waybar &"
+
 	# Lunch Apps
 	# "$mod, C, exec, keepmenu"
 	"$mod, Y, exec, foot yazi&,"
