@@ -125,7 +125,7 @@ workspace = [
 	"$mod, W, exec, librewolf&,"
 	"$mod, return, exec, $terminal"
 	"$mod, D, exec, $appluncher -show drun"
-	"$mod, P, exec, hyprshot -m output"
+	# "$mod, P, exec, hyprshot -m output"
 
 	# Window minupulation
 	"$mod, Q, killactive,"

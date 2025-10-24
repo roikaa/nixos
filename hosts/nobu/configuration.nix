@@ -58,7 +58,7 @@ hardware.graphics = {
   };
 
   # services.xserver.libinput.enable = true;
-
+  powerManagement.cpuFreqGovernor = "performance";
   # Define a user account. Don't forget to set a password with ‘passwd’.
 programs.zsh.enable = true;
 users.defaultUserShell = pkgs.zsh;
