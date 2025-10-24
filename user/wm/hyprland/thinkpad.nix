@@ -25,19 +25,17 @@ home.packages = with pkgs; [
         disable_hyprland_logo = true;  # Disables the Hyprland logo and anime girl background
         disable_splash_rendering = true;  # Prevents the splash screen from rendering
       };
-workspace = [
-      "w[tv1], gapsout:0, gapsin:0"
-      "f[1], gapsout:0, gapsin:0"
-    ];
-
-    windowrulev2 = [
-      "bordersize 0, floating:0, onworkspace:w[tv1]"
-      "rounding 0, floating:0, onworkspace:w[tv1]"
-      "bordersize 0, floating:0, onworkspace:f[1]"
-      "rounding 0, floating:0, onworkspace:f[1]"
-    ];
-     # workspace = "name:myworkspace, gapsin:0, gapsout:0";
-       # windowrule = "opacity 0.9, class:foot";
+# workspace = [
+#       "w[tv1], gapsout:0, gapsin:0"
+#       "f[1], gapsout:0, gapsin:0"
+#     ];
+#
+#     windowrulev2 = [
+#       "bordersize 0, floating:0, onworkspace:w[tv1]"
+#       "rounding 0, floating:0, onworkspace:w[tv1]"
+#       "bordersize 0, floating:0, onworkspace:f[1]"
+#       "rounding 0, floating:0, onworkspace:f[1]"
+#     ];
 
       exec-once = [
       "swww init"
@@ -58,12 +56,12 @@ workspace = [
       };
 
       decoration = {
-	rounding = 10;
+	rounding = 15;
 	active_opacity = 0.8;
 	inactive_opacity = 0.7;
 
 	blur = {
-	  enabled = true;
+	  enabled = false;
 	  size = 5;
 	  passes = 1;
 	  vibrancy = 0.1696;
