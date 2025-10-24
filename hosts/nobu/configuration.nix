@@ -8,7 +8,7 @@
       ./../../system/essentials/font.nix
       ./../../system/hardware/keyboard/thinkpad.nix
       inputs.home-manager.nixosModules.default
-      ./../../system/hardware/fingerprint/thiknpadt470.nix
+      # ./../../system/hardware/fingerprint/thiknpadt470.nix
     ];
 
   # Bootloader.
@@ -66,11 +66,18 @@ users.defaultUserShell = pkgs.zsh;
   users.users.akio = {
     isNormalUser = true;
     description = "akio";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "plugdev" ];
     packages = with pkgs; [
     #  thunderbird
     ];
   };
+  services.udev.extraRules = ''
+# Samsung Download Mode
+    SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="685d", MODE="0666", GROUP="plugdev"
+# Samsung devices in download mode
+    SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666", GROUP="plugdev"
+    '';
+
 home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
@@ -130,6 +137,7 @@ environment.sessionVariables = {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    usbutils
 zig
 gcc
     vim 
