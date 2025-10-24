@@ -14,6 +14,7 @@ stylix.targets.firefox.profileNames = [ "roika" ];
       tmux.enable = true;
       btop.enable = true;
       kitty.enable = true;
+      hyprland.enable = true;
     };
 autoEnable = false;  
     cursor = {

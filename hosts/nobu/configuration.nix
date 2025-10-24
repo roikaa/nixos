@@ -4,10 +4,11 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-./../../system/style/stylix.nix
-./../../system/essentials/font.nix
+      ./../../system/style/stylix.nix
+      ./../../system/essentials/font.nix
       ./../../system/hardware/keyboard/thinkpad.nix
-inputs.home-manager.nixosModules.default
+      inputs.home-manager.nixosModules.default
+      ./../../system/hardware/fingerprint/thiknpadt470.nix
     ];
 
   # Bootloader.
