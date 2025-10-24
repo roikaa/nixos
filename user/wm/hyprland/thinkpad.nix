@@ -45,6 +45,7 @@ home.packages = with pkgs; [
 
       "$mod" = "SUPER";
       "$terminal" = "foot";
+      "$backupterminal" = "kitty";
       "$appluncher" = "rofi";
 
       input = {
@@ -119,9 +120,11 @@ home.packages = with pkgs; [
 
 	# Lunch Apps
 	# "$mod, C, exec, keepmenu"
-	"$mod, Y, exec, foot yazi&,"
+	"$mod, Y, exec, $terminal yazi&,"
 	"$mod, W, exec, librewolf&,"
 	"$mod, return, exec, $terminal"
+	"$mod SHIFT, return, exec, $backupterminal"
+
 	"$mod, D, exec, $appluncher -show drun"
 	# "$mod, P, exec, hyprshot -m output"
 
