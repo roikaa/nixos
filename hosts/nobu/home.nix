@@ -5,7 +5,7 @@
 
   imports = [
     ./../../user/wm/hyprland/thinkpad.nix
-    ./../../user/shell/zsh.nix
+    ./../../user/shell/default.nix
     ./../../user/app/browser/librewolf.nix
     ./../../user/app/browser/firefox.nix
     ./../../user/app/terminal/foot.nix
