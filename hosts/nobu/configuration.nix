@@ -22,6 +22,8 @@ hardware.graphics = {
     enable32Bit = true;
   };
 
+# hardware.bluetooth.enable = true;
+# services.blueman.enable = true;
   networking.hostName = "nobu"; # Define your hostname.
   
   # Enable networking
@@ -59,7 +61,24 @@ hardware.graphics = {
   };
 
   # services.xserver.libinput.enable = true;
-  powerManagement.cpuFreqGovernor = "performance";
+  # powerManagement.cpuFreqGovernor = "performance";
+powerManagement.cpuFreqGovernor = "schedutil"; # or "ondemand"
+
+services.tlp = {
+  enable = true;
+  settings = {
+    CPU_SCALING_GOVERNOR_ON_AC = "performance";
+    CPU_SCALING_GOVERNOR_ON_BAT = "schedutil";
+    
+    # Allow higher performance on battery
+    CPU_MIN_PERF_ON_BAT = 30;
+    CPU_MAX_PERF_ON_BAT = 80;
+    
+    # Turbo boost
+    CPU_BOOST_ON_AC = 1;
+    CPU_BOOST_ON_BAT = 1;
+  };
+};
   # Define a user account. Don't forget to set a password with ‘passwd’.
 programs.zsh.enable = true;
 users.defaultUserShell = pkgs.zsh;

@@ -36,7 +36,7 @@
       ani-cli   #anime in terminal
       neofetch
 #  foot    # terminal
-
+ascii-image-converter
 # core
 #brave
       nitch		        # Display system statshome.nix
