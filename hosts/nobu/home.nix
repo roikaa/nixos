@@ -32,6 +32,7 @@
  
 
   home.packages = with pkgs; [
+
     tealdeer # short manual
       ani-cli   #anime in terminal
       neofetch
