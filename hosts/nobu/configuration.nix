@@ -1,6 +1,7 @@
 { config, pkgs, lib, inputs, ... }:
-
-{
+let 
+     tokyo-night-sddm = pkgs.libsForQt5.callPackage ./../../system/sddm/tokyo-night.nix { };
+in {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -47,8 +48,25 @@ hardware.graphics = {
     LC_TIME = "en_US.UTF-8";
   };
 
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+# services.xserver.enable = true;
+# services.displayManager.sddm = {  
+#   enable = true;
+#   wayland.enable = true;
+#   theme = "sddm-astronaut-japanese_aesthetic";
+#   package = pkgs.kdePackages.sddm; 
+#   extraPackages = with pkgs; [  
+#     sddm-astronaut  
+#     qt6.qtsvg
+#     qt6.qtvirtualkeyboard
+#     qt6.qtmultimedia
+#   ];
+# };
+
+services.displayManager.sddm = {  
+  enable = true;
+  wayland.enable = true;
+  theme = "tokyo-night-sddm";
+  };
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -60,7 +78,6 @@ hardware.graphics = {
     pulse.enable = true;
   };
 
-  # services.xserver.libinput.enable = true;
   # powerManagement.cpuFreqGovernor = "performance";
 powerManagement.cpuFreqGovernor = "schedutil"; # or "ondemand"
 
@@ -120,26 +137,15 @@ home-manager = {
 
   programs.nix-ld.enable = true;
 
-# environment.sessionVariables = {
-#   LIBVA_DRIVER_NAME = "iHD";
-#   XDG_SESSION_TYPE = "wayland";
-#   NIXOS_OZONE_WL = "1";
-# };
 environment.sessionVariables = {
   LIBVA_DRIVER_NAME = "iHD";
   XDG_SESSION_TYPE = "wayland";
   NIXOS_OZONE_WL = "1";
-  
-  # Qt/XWayland fixes for Hyprland
-  # QT_QPA_PLATFORM = "wayland;xcb";
-  # QT_QPA_PLATFORMTHEME = "qt5ct";
   QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
   QT_AUTO_SCREEN_SCALE_FACTOR = "1";
   QT_SCALE_FACTOR = "1";
   GDK_SCALE = "1";
   GDK_DPI_SCALE = "1.0";
-  # QTWEBENGINE_LOCALES_PATH = "/nix/store/pdzvvqf9hrn03vfmah44rysjw67q0194-ciscoPacketTracer8-unwrapped/opt/pt/translations/qtwebengine_locales";
-  # QTWEBENGINE_RESOURCES_PATH = "/nix/store/pdzvvqf9hrn03vfmah44rysjw67q0194-ciscoPacketTracer8-unwrapped/opt/pt/resources";
 };
   programs.hyprland = {
     package = inputs.hyprland.packages."${pkgs.system}".hyprland;
@@ -147,8 +153,6 @@ environment.sessionVariables = {
     xwayland.enable = true;
   };
   # environment.variables.EDITOR = "vim";
-  # Install firefox.
-  # programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -156,6 +160,8 @@ environment.sessionVariables = {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+ # sddm-chili-theme
+tokyo-night-sddm
     usbutils
 zig
 gcc

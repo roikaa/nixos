@@ -112,7 +112,7 @@ home.packages = with pkgs; [
 	  "$mod SHIFT, Print, exec, grimblast save screen ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"
         
         # Lock screen
-        "$mod, L, exec, swaylock"
+        "$mod SHIFT, L, exec, swaylock"
 	"$mod, O, exec, hyprctl dispatch setprop active opaque toggle"
 
 	# refrech waybar
