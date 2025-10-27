@@ -22,6 +22,7 @@
     ./../../user/neovim/default.nix
     ./../../user/app/Tmux/default.nix
     ./../../user/app/zathura/default.nix
+    ./../../user/wm/sketchybar/default.nix
   ];
 
   programs.foliate.enable = true; # Ebook reader

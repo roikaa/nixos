@@ -1,7 +1,7 @@
 { config, pkgs, lib, inputs, ... }:
 let 
-     # tokyo-night-sddm = pkgs.libsForQt5.callPackage ./../../system/sddm/tokyo-night.nix { };
-    sddm-astronaut = pkgs.qt6Packages.callPackage ./../../system/sddm/sddm-astronaut.nix { };
+     tokyo-night-sddm = pkgs.libsForQt5.callPackage ./../../system/sddm/tokyo-night.nix { };
+    # sddm-astronaut = pkgs.qt6Packages.callPackage ./../../system/sddm/sddm-astronaut-theme.nix { };
 in {
   imports =
     [ # Include the results of the hardware scan.
@@ -66,8 +66,8 @@ hardware.graphics = {
 services.displayManager.sddm = {  
   enable = true;
   wayland.enable = true;
-  # theme = "tokyo-night-sddm";
-  theme = "sddm-astronaut";
+  theme = "tokyo-night-sddm";
+  # theme = "sddm-astronaut";
   };
 
   # Enable sound with pipewire.
@@ -163,8 +163,8 @@ environment.sessionVariables = {
   # $ nix search wget
   environment.systemPackages = with pkgs; [
  # sddm-chili-theme
-# tokyo-night-sddm
-sddm-astronaut
+tokyo-night-sddm
+# sddm-astronaut
     usbutils
 zig
 gcc
