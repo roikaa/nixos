@@ -12,7 +12,7 @@
             reload_style_on_change = true;
 
             modules-left = [
-              # "custom/actions"
+              "custom/actions"
               "systemd-failed-units"
               "hyprland/workspaces"
               "hyprland/window"
@@ -31,14 +31,15 @@
               "group/power"
               "group/hardware"
               "tray"
+              # "custom/swaync"
               # "custom/fnott"
             ];
 
-            # "custom/actions" = {
-            #   format = "";
-            #   tooltip-format = "System Actions";
+            "custom/actions" = {
+              format = " ";
+              tooltip-format = "System Actions";
             #   on-click = lib.getExe' self.packages.${pkgs.system}.fuzzel-goodies "fuzzel-actions";
-            # };
+            };
 
             "hyprland/workspaces" = {
               show-special = true;
@@ -62,6 +63,7 @@
                 "7" = "7";
                 "8" = "8";
                 "9" = "9";
+                "10" = "10";
               };
 
               persistent-workspaces = {
@@ -152,7 +154,7 @@
               # };
 
             backlight = {
-              format = "{icon}";
+              format = "{icon} {percent}%";
               format-icons = [
                 "󱩎"
                 "󱩏"
@@ -169,7 +171,7 @@
             };
 
             wireplumber = {
-              format = "{icon}";
+              format = "{icon} {volume}%";
               format-muted = "󰝟";
               format-icons = [
                 "󰕿"
@@ -198,8 +200,8 @@
 
             battery = {
               format = "{icon} {capacity}%";
-              format-discharging = "{icon}";
-              format-charging = "{icon}";
+              format-discharging = "{icon} {capacity}%";
+              format-charging = "{icon} {capacity}%";
               format-plugged = "";
               format-icons = {
                 charging = [

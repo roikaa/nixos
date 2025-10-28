@@ -116,7 +116,8 @@ home.packages = with pkgs; [
 	"$mod, O, exec, hyprctl dispatch setprop active opaque toggle"
 
 	# refrech waybar
-	"$mod SHIFT, R, exec, pkill -9 waybar; waybar &"
+	# "$mod SHIFT, R, exec, pkill -9 waybar; waybar &"
+	"$mod SHIFT, R, exec, systemctl --user restart waybar.service"
 
 	# Lunch Apps
 	# "$mod, C, exec, keepmenu"

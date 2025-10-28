@@ -51,7 +51,7 @@ programs.starship = {
 
     # Git branch
     git_branch = {
-      symbol = " ";
+      symbol = " ";
       style = "bold purple";
       format = "on [$symbol$branch]($style) ";
     };
@@ -74,14 +74,14 @@ programs.starship = {
 
     # Nix shell
     nix_shell = {
-      symbol = " ";
+      symbol = "";
       style = "bold blue";
       format = "via [$symbol$state]($style) ";
     };
 
     # Programming languages
     nodejs = {
-      symbol = " ";
+      symbol = "";
       style = "bold green";
       format = "via [$symbol($version )]($style)";
     };
