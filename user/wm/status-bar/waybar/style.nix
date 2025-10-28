@@ -1,8 +1,5 @@
 { config, pkgs, ... }:
 {
-  # flake.modules.homeManager.desktop =
-    # { pkgs, ... }:
-    # {
       programs.waybar.style =
         let
           borderRadius = "2";

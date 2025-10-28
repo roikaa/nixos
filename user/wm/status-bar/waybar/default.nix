@@ -1,8 +1,5 @@
-{ self, lib, config, pkgs, ... }:
+{lib, config, pkgs, ... }:
 {
-  # flake.modules.homeManager.desktop =
-    # { config, pkgs, ... }:
-    # {
       programs.waybar = {
         enable = true;
         systemd.enable = true;
@@ -15,7 +12,7 @@
             reload_style_on_change = true;
 
             modules-left = [
-              "custom/actions"
+              # "custom/actions"
               "systemd-failed-units"
               "hyprland/workspaces"
               "hyprland/window"
@@ -28,20 +25,20 @@
             ];
 
             modules-right = [
-              "custom/hyprcast"
+              # "custom/hyprcast"
               "backlight"
               "wireplumber"
               "group/power"
               "group/hardware"
               "tray"
-              "custom/fnott"
+              # "custom/fnott"
             ];
 
-            "custom/actions" = {
-              format = "";
-              tooltip-format = "System Actions";
-              on-click = lib.getExe' self.packages.${pkgs.system}.fuzzel-goodies "fuzzel-actions";
-            };
+            # "custom/actions" = {
+            #   format = "";
+            #   tooltip-format = "System Actions";
+            #   on-click = lib.getExe' self.packages.${pkgs.system}.fuzzel-goodies "fuzzel-actions";
+            # };
 
             "hyprland/workspaces" = {
               show-special = true;
@@ -141,18 +138,18 @@
                 on-scroll-down = "${playerctl} volume 0.1-";
               };
 
-            "custom/hyprcast" =
-              let
-                hyprcast = lib.getExe self.packages.${pkgs.system}.hyprcast;
-              in
-              {
-                exec = "${hyprcast} -w";
-                return-type = "json";
-                hide-empty-text = true;
-                on-click = hyprcast;
-                interval = "once";
-                signal = 1;
-              };
+            # "custom/hyprcast" =
+              # let
+                # hyprcast = lib.getExe self.packages.${pkgs.system}.hyprcast;
+              # in
+              # {
+                # exec = "${hyprcast} -w";
+                # return-type = "json";
+                # hide-empty-text = true;
+                # on-click = hyprcast;
+                # interval = "once";
+                # signal = 1;
+              # };
 
             backlight = {
               format = "{icon}";
@@ -310,19 +307,19 @@
               spacing = 5;
             };
 
-            "custom/fnott" =
-              let
-                fnott-dnd = lib.getExe self.packages.${pkgs.system}.fnott-dnd;
-              in
-              {
-                return-type = "json";
-                exec = "${fnott-dnd} -w";
-                interval = "once";
-                signal = 2;
-
-                on-click = "${lib.getExe' pkgs.fnott "fnottctl"} dismiss";
-                on-click-right = fnott-dnd;
-              };
+            # "custom/fnott" =
+              # let
+                # fnott-dnd = lib.getExe self.packages.${pkgs.system}.fnott-dnd;
+              # in
+              # {
+                # return-type = "json";
+                # exec = "${fnott-dnd} -w";
+                # interval = "once";
+                # signal = 2;
+#
+                # on-click = "${lib.getExe' pkgs.fnott "fnottctl"} dismiss";
+                # on-click-right = fnott-dnd;
+              # };
 
             "custom/swaync" = {
               tooltip = false;
@@ -355,5 +352,4 @@
           ${lib.getExe' pkgs.procps "pkill"} -u $USER waybar || true
         '';
       };
-    # };
 }
