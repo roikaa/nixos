@@ -4,10 +4,10 @@
     # { pkgs, ... }:
     # {
       programs.waybar.style =
-        # let
-          # borderRadius = builtins.toString config.flake.meta.appearance.border.radius;
-          # borderSize = builtins.toString config.flake.meta.appearance.border.size;
-        # in
+        let
+          borderRadius = "2";
+          borderSize = "2";
+        in
         # css
         ''
           * {
