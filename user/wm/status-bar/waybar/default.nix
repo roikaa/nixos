@@ -279,18 +279,19 @@
               tooltip-format = "{controller_alias}\t{controller_address}";
               tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
               tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
-              on-click = lib.getExe pkgs.blueberry;
+              # on-click = lib.getExe pkgs.blueberry;
+              on-click = "${lib.getExe' pkgs.blueman "blueman-manager"}";
             };
             "group/hardware" = {
               orientation = "inherit";
 
-              drawer = {
-                transition-duration = 300;
-                transition-left-to-right = false;
-              };
+              # drawer = {
+                # transition-duration = 300;
+                # transition-left-to-right = false;
+              # };
 
               modules = [
-                "custom/monitor"
+                # "custom/monitor"
                 "disk"
                 "cpu"
                 "temperature"
@@ -298,11 +299,11 @@
               ];
             };
 
-            "custom/monitor" = {
-              format = "";
-              tooltip = false;
-              on-click = "hyprctl dispatch togglespecialworkspace monitor";
-            };
+            # "custom/monitor" = {
+              # format = "";
+              # tooltip = false;
+              # on-click = "hyprctl dispatch togglespecialworkspace monitor";
+            # };
 
             disk = {
               format = "󰋊 {percentage_free}%";
@@ -310,19 +311,19 @@
 
             cpu = {
               format = " {usage}%";
-              interval = 5;
+              # interval = 5;
             };
 
             temperature = {
               format = " {temperatureC}°C";
-              interval = 5;
+              # interval = 5;
               critical-format = "󰸁 {temperatureC}°C";
               critical-threshold = 90;
             };
 
             memory = {
               format = " {used}/{total}GiB";
-              interval = 5;
+              # interval = 5;
             };
 
             tray = {
