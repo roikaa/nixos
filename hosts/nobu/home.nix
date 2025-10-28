@@ -33,6 +33,9 @@
  
 
   home.packages = with pkgs; [
+    gns3-gui
+    gns3-server
+
     tealdeer # short manual
       ani-cli   #anime in terminal
       neofetch
