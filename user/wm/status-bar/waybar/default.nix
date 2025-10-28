@@ -28,6 +28,8 @@
               # "custom/hyprcast"
               "backlight"
               "wireplumber"
+              "network"
+              "bluetooth"
               "group/power"
               "group/hardware"
               "tray"
