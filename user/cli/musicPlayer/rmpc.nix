@@ -1,167 +1,173 @@
 { config, pkgs, ... }:
 {
   home.packages = with pkgs; [
-    # Useful for album art extraction and display
-    ffmpeg
-    imagemagick
+
+    # rmpc
+
   ];
 
-  programs.rmpc = {
+       programs.rmpc = {
     enable = true;
     config = ''
-      # MPD Connection
-      address = "127.0.0.1:6600"
-      
-      # ===== THEME & UI STYLING =====
-      [theme]
-      # Use terminal default colors
-      default_background = "reset"
-      default_foreground = "reset"
-      
-      # Highlighted item (under cursor) - terminal cyan/bright blue
-      highlighted_item_foreground = "black"
-      highlighted_item_background = "cyan"
-      
-      # Currently playing item - terminal green
-      current_item_foreground = "black"
-      current_item_background = "green"
-      
-      # Headers and borders - use terminal colors
-      header_foreground = "bright_white"
-      border_foreground = "bright_black"
-      
-      # Progress bar - terminal blue
-      progress_bar_foreground = "blue"
-      progress_bar_background = "black"
-      
-      # Modal windows - use terminal defaults
-      modal_background = "reset"
-      modal_foreground = "reset"
-      
-      # ===== ALBUM ART SETTINGS =====
-      [album_art]
-      method = "kitty"  # Options: "kitty", "ueberzug", "sixel", "none"
-      max_size_px = 400
-      
-      # Show album art in a separate pane
-      [panes.album_art]
-      visible = true
-      position = "right"  # or "left", "top", "bottom"
-      size_percent = 30
-      
-      # ===== UI LAYOUT =====
-      [browser]
-      show_album_art_in_album_list = true
-      columns = ["artist", "album", "year", "duration"]
-      
-      [queue]
-      show_album_art = true
-      columns = ["track", "title", "artist", "album", "duration"]
-      
-      # ===== KEYBINDINGS =====
-      [keybinds]
-      # Navigation
-      "j" = "down"
-      "k" = "up"
-      "h" = "left"
-      "l" = "right"
-      "g" = "top"
-      "G" = "bottom"
-      "Ctrl+d" = "page_down"
-      "Ctrl+u" = "page_up"
-      
-      # Tabs
-      "1" = "goto_queue"
-      "2" = "goto_browser"
-      "3" = "goto_search"
-      "4" = "goto_playlists"
-      
-      # Playback
-      "space" = "toggle_pause"
-      ">" = "next"
-      "<" = "previous"
-      "s" = "stop"
-      
-      # Volume
-      "+" = "volume_up"
-      "-" = "volume_down"
-      "=" = "volume_up"
-      
-      # Toggle modes
-      "r" = "toggle_repeat"
-      "z" = "toggle_random"
-      "y" = "toggle_single"
-      "c" = "toggle_consume"
-      
-      # Queue management
-      "d" = "delete"
-      "D" = "clear_queue"
-      "a" = "add"
-      "A" = "add_all"
-      
-      # Search
-      "/" = "search"
-      "n" = "next_result"
-      "N" = "previous_result"
-      
-      # Other
-      "q" = "quit"
-      "u" = "update_database"
-      "?" = "show_help"
-      
-      # ===== DISPLAY OPTIONS =====
-      [display]
-      show_song_position = true
-      show_volume = true
-      show_elapsed_time = true
-      symbols = "●▶❚❚ ◼"  # play, pause, stop symbols
-      
-      # Album art border
-      [album_art.border]
-      style = "rounded"  # "rounded", "solid", "double"
-      color = "blue"  # uses terminal blue color
+#![enable(implicit_some)]
+#![enable(unwrap_newtypes)]
+#![enable(unwrap_variant_newtypes)]
+(
+    address: "/Users/ericmckevitt/.mpd/socket",
+    cache_dir: Some("/tmp/rmpc/cache"),
+    lyrics_dir: Some("~/Music/mpd"),
+    password: None,
+    theme: "catppuccin_mocha",
+
+
+
+
+
+    on_song_change: ["~/.config/rmpc/increment_play_count"], 
+    volume_step: 5,
+    max_fps: 30,
+    scrolloff: 0,
+    wrap_navigation: false,
+    enable_mouse: true,
+    status_update_interval_ms: 1000,
+    select_current_song_on_change: false,
+    browser_column_widths: [20, 38, 42],
+    album_art: (
+        method: Auto,
+        max_size_px: (width: 900, height: 900),
+        disabled_protocols: ["http://", "https://"],
+        vertical_align: Top,
+        horizontal_align: Center,
+    ),
+    keybinds: (
+        global: {
+            ":":       CommandMode,
+            ",":       VolumeDown,
+            "s":       Stop,
+            ".":       VolumeUp,
+            "<Tab>":   NextTab,
+            "<S-Tab>": PreviousTab,
+            "1":       SwitchToTab("Queue"),
+            "2":       SwitchToTab("Artists"),
+            "3":       SwitchToTab("Albums"),
+            "4":       SwitchToTab("Search"),
+            "5":       SwitchToTab("Directories"),
+            "6":       SwitchToTab("Lyrics"),
+            "q":       Quit,
+            ">":       NextTrack,
+            "p":       TogglePause,
+            "<":       PreviousTrack,
+            "f":       SeekForward,
+            "z":       ToggleRepeat,
+            "x":       ToggleRandom,
+            "c":       ToggleConsume,
+            "v":       ToggleSingle,
+            "b":       SeekBack,
+            "~":       ShowHelp,
+            "I":       ShowCurrentSongInfo,
+            "O":       ShowOutputs,
+            "P":       ShowDecoders,
+        },
+        navigation: {
+            "k":         Up,
+            "j":         Down,
+            "h":         Left,
+            "l":         Right,
+            "<Up>":      Up,
+            "<Down>":    Down,
+            "<Left>":    Left,
+            "<Right>":   Right,
+            "<C-k>":     PaneUp,
+            "<C-j>":     PaneDown,
+            "<C-h>":     PaneLeft,
+            "<C-l>":     PaneRight,
+            "<C-u>":     UpHalf,
+            "N":         PreviousResult,
+            "a":         Add,
+            "A":         AddAll,
+            "r":         Rename,
+            "n":         NextResult,
+            "g":         Top,
+            "<Space>":   Select,
+            "<C-Space>": InvertSelection,
+            "G":         Bottom,
+            "<CR>":      Confirm,
+            "i":         FocusInput,
+            "J":         MoveDown,
+            "<C-d>":     DownHalf,
+            "/":         EnterSearch,
+            "<C-c>":     Close,
+            "<Esc>":     Close,
+            "K":         MoveUp,
+            "D":         Delete,
+        },
+        queue: {
+            "D":       DeleteAll,
+            "<CR>":    Play,
+            "<C-s>":   Save,
+            "a":       AddToPlaylist,
+            "d":       Delete,
+            "i":       ShowInfo,
+            "C":       JumpToCurrent,
+        },
+    ),
+    search: (
+        case_sensitive: false,
+        mode: Contains,
+        tags: [
+            (value: "any",         label: "Any Tag"),
+            (value: "artist",      label: "Artist"),
+            (value: "album",       label: "Album"),
+            (value: "title",       label: "Title"),
+            (value: "filename",    label: "Filename"),
+            (value: "genre",       label: "Genre"),
+            (value: "albumartist", label: "Featured"),
+        ],
+    ),
+    artists: (
+        album_display_mode: SplitByDate,
+        album_sort_by: Date,
+    ),
+    tabs: [
+        (
+            name: "Queue",
+            pane: Split(
+                direction: Horizontal,
+                panes: [(size: "20%", pane: Pane(AlbumArt)), (size: "80%", pane: Pane(Queue))],
+            ),
+        ),
+        (
+            name: "Artists",
+            pane: Pane(Artists),
+        ),
+        (
+            name: "Albums",
+            pane: Pane(Albums),
+        ),
+        (
+            name: "Search",
+            pane: Pane(Search),
+        ),
+        (
+            name: "Directories",
+            pane: Pane(Directories),
+        ),
+        (
+            name: "Lyrics",
+            pane: Split(
+                direction: Vertical,
+                panes: [(size: "25%", pane: Pane(AlbumArt)), (size: "70%", pane: Pane(Lyrics), vertical_align: Bottom)],
+            ),
+        ),
+    ],
+)
     '';
   };
 
-  services.mpd = {
-    enable = true;
-    musicDirectory = "~/Music";
-    
-    extraConfig = ''
-      # Audio Output
-      audio_output {
-        type "pipewire"
-        name "PipeWire Output"
-        mixer_type "software"
-      }
-      
-      # Visualizer output (for other apps)
-      audio_output {
-        type "fifo"
-        name "Visualizer feed"
-        path "/tmp/mpd.fifo"
-        format "44100:16:2"
-      }
-      
-      # Database settings
-      auto_update "yes"
-      auto_update_depth "3"
-      
-      # Playback settings
-      restore_paused "yes"
-      replaygain "album"
-      volume_normalization "yes"
-      
-      # Logging
-      log_level "default"
-    '';
-    
-    network = {
-      listenAddress = "127.0.0.1";
-      port = 6600;
-
-    startWhenNeeded = true;
-    };
-    
-  };
-}
+ services.mpd = {
+  enable = true;
+  musicDirectory = "~/Music";
+  # Optional:
+  network.listenAddress = "any"; # if you want to allow non-localhost connections
+  network.startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
+}; }
