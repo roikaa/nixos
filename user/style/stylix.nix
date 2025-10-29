@@ -6,6 +6,7 @@ stylix.targets.firefox.profileNames = [ "roika" ];
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
 #base16Scheme = "${pkgs.base16-schemes}/share/themes/sakura.yaml";
+    polarity = "dark"; # Hopfully this force dark theme
 
     targets = {
       neovim.enable = true;
@@ -17,6 +18,7 @@ stylix.targets.firefox.profileNames = [ "roika" ];
       hyprland.enable = true;
       waybar.enable = true;
     };
+
 autoEnable = false;  
     cursor = {
       package = pkgs.bibata-cursors;
