@@ -13,11 +13,6 @@
 #![enable(unwrap_newtypes)]
 #![enable(unwrap_variant_newtypes)]
 (
-    address: "/Users/ericmckevitt/.mpd/socket",
-    cache_dir: Some("/tmp/rmpc/cache"),
-    lyrics_dir: Some("~/Music/mpd"),
-    password: None,
-    theme: "catppuccin_mocha",
 
 
 
