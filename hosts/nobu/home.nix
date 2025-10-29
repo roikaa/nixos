@@ -28,6 +28,8 @@
     ./../../user/wm/status-bar/waybar/default.nix
     
     ./../../user/frivolous/default.nix
+
+    ./../../user/cli/musicPlayer/rmpc.nix
   ];
 
   programs.foliate.enable = true; # Ebook reader
@@ -43,7 +45,6 @@ programs.freetube = {
   };
   home.packages = with pkgs; [
     # gruvbox-plus-icons
-
     gns3-gui
     gns3-server
 
