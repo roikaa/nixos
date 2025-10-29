@@ -24,18 +24,18 @@ autoEnable = false;
       size = 24;
     };
 
-    iconTheme = { 
-      enable = true;
-      package = pkgs.papirus-icon-theme;
-      dark = "Papirus";
-    };
+    # iconTheme = { 
+      # enable = true;
+      # package = pkgs.papirus-icon-theme;
+      # dark = "Papirus";
+    # };
 
-       #  fonts.sizes.applications = 14;
-#    iconTheme = {
-#      enable = true;
-#      package = pkgs.gruvbox-plus-icons;
-#      light = "Gruvbox-Plus-Light";
-#      dark = "Gruvbox-Plus-Dark";
-#    };
+        # fonts.sizes.applications = 14;
+   iconTheme = {
+     enable = true;
+     package = pkgs.gruvbox-plus-icons;
+     light = "Gruvbox-Plus-Light";
+     dark = "Gruvbox-Plus-Dark";
+   };
   };
 }   

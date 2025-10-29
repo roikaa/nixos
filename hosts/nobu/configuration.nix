@@ -128,11 +128,12 @@ environment.sessionVariables = {
 
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+gruvbox-plus-icons
 tokyo-night-sddm
     usbutils
 zig
 gcc
-    vim 
+    nvim 
     wget
     nodejs
 git  

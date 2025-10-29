@@ -36,8 +36,14 @@
 # conflicting with stylix, use if stylix nolt enabled
  # xdg.configFile."waybar/style.css".source = ./../../user/wm/waybar/style.css;
  
-
+programs.freetube = {
+    enable = true;
+    package = pkgs.freetube;
+    # additional settings if needed
+  };
   home.packages = with pkgs; [
+    # gruvbox-plus-icons
+
     gns3-gui
     gns3-server
 
