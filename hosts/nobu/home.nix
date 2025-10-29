@@ -1,4 +1,7 @@
 { config, pkgs, lib, inputs, ... }:
+let
+  unstable = import <nixos-unstable> {};
+in
 {
   home.username = "akio";
   home.homeDirectory = "/home/akio";
@@ -45,17 +48,16 @@ programs.freetube = {
   };
   home.packages = with pkgs; [
     # gruvbox-plus-icons
+
     gns3-gui
     gns3-server
 
     tealdeer # short manual
       ani-cli   #anime in terminal
-      # neofetch
 #  foot    # terminal
-# ascii-image-converter
+
 # core
-#brave
-      # nitch		        # Display system statshome.nix
+brave
       unrar-wrapper
       unzip 
       git
@@ -98,7 +100,7 @@ programs.freetube = {
       feh
       ffmpeg  # ffmpeg 
       mpv
-      yt-dlp # cli tool downloding video/audio
+      unstable.yt-dlp # cli tool downloding video/audio
       # yewtube # yet another youtube cli
       # freetube #youtube frontend
       # grayjay # multi media platform frontend
