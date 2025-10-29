@@ -8,6 +8,7 @@ in {
       ./../../system/style/stylix.nix
       ./../../system/essentials/font.nix
       ./../../system/hardware/keyboard/thinkpad.nix
+      ./../../system/services/maintenance.nix
       inputs.home-manager.nixosModules.default
     ];
 
@@ -133,7 +134,7 @@ tokyo-night-sddm
     usbutils
 zig
 gcc
-    nvim 
+    neovim 
     wget
     nodejs
 git  
