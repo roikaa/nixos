@@ -81,23 +81,23 @@ services.displayManager.sddm = {
   };
 
   # powerManagement.cpuFreqGovernor = "performance";
-powerManagement.cpuFreqGovernor = "schedutil"; # or "ondemand"
-
-services.tlp = {
-  enable = true;
-  settings = {
-    CPU_SCALING_GOVERNOR_ON_AC = "performance";
-    CPU_SCALING_GOVERNOR_ON_BAT = "schedutil";
+# powerManagement.cpuFreqGovernor = "schedutil"; # or "ondemand"
+services.power-profiles-daemon.enable = true;
+# services.tlp = {
+  # enable = true;
+  # settings = {
+    # CPU_SCALING_GOVERNOR_ON_AC = "performance";
+    # CPU_SCALING_GOVERNOR_ON_BAT = "schedutil";
     
     # Allow higher performance on battery
-    CPU_MIN_PERF_ON_BAT = 30;
-    CPU_MAX_PERF_ON_BAT = 80;
+    # CPU_MIN_PERF_ON_BAT = 30;
+    # CPU_MAX_PERF_ON_BAT = 80;
     
     # Turbo boost
-    CPU_BOOST_ON_AC = 1;
-    CPU_BOOST_ON_BAT = 1;
-  };
-};
+    # CPU_BOOST_ON_AC = 1;
+    # CPU_BOOST_ON_BAT = 1;
+  # };
+# };
   # Define a user account. Don't forget to set a password with ‘passwd’.
 programs.zsh.enable = true;
 users.defaultUserShell = pkgs.zsh;

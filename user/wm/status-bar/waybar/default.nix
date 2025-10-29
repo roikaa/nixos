@@ -30,6 +30,7 @@
               "wireplumber"
               "network"
               "bluetooth"
+            # ] ++ lib.optional hasBluetoothModule "bluetooth" ++ [
               "group/power"
               "group/hardware"
               "tray"
@@ -245,8 +246,8 @@
               format = "{icon}";
 
               format-icons = {
-                activated = "";
-                deactivated = "";
+                activated = " ";
+                deactivated = " ";
               };
             };
 
@@ -256,9 +257,9 @@
               tooltip = true;
               format-icons = {
                 default = "";
-                performance = "";
-                balanced = "";
-                power-saver = "";
+                performance = " ";
+                balanced = " ";
+                power-saver = " ";
               };
             };
 
