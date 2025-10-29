@@ -1,7 +1,6 @@
 { config, pkgs, lib, inputs, ... }:
 let 
      tokyo-night-sddm = pkgs.libsForQt5.callPackage ./../../system/sddm/tokyo-night.nix { };
-    # sddm-astronaut = pkgs.qt6Packages.callPackage ./../../system/sddm/sddm-astronaut-theme.nix { };
 in {
   imports =
     [ # Include the results of the hardware scan.
@@ -10,7 +9,6 @@ in {
       ./../../system/essentials/font.nix
       ./../../system/hardware/keyboard/thinkpad.nix
       inputs.home-manager.nixosModules.default
-      # ./../../system/hardware/fingerprint/thiknpadt470.nix
     ];
 
   # Bootloader.
@@ -49,25 +47,10 @@ services.blueman.enable = true;
     LC_TIME = "en_US.UTF-8";
   };
 
-# services.xserver.enable = true;
-# services.displayManager.sddm = {  
-#   enable = true;
-#   wayland.enable = true;
-#   theme = "sddm-astronaut-japanese_aesthetic";
-#   package = pkgs.kdePackages.sddm; 
-#   extraPackages = with pkgs; [  
-#     sddm-astronaut  
-#     qt6.qtsvg
-#     qt6.qtvirtualkeyboard
-#     qt6.qtmultimedia
-#   ];
-# };
-
 services.displayManager.sddm = {  
   enable = true;
   wayland.enable = true;
   theme = "tokyo-night-sddm";
-  # theme = "sddm-astronaut";
   };
 
   # Enable sound with pipewire.
@@ -80,25 +63,9 @@ services.displayManager.sddm = {
     pulse.enable = true;
   };
 
-  # powerManagement.cpuFreqGovernor = "performance";
-# powerManagement.cpuFreqGovernor = "schedutil"; # or "ondemand"
 services.power-profiles-daemon.enable = true;
-# services.tlp = {
-  # enable = true;
-  # settings = {
-    # CPU_SCALING_GOVERNOR_ON_AC = "performance";
-    # CPU_SCALING_GOVERNOR_ON_BAT = "schedutil";
-    
-    # Allow higher performance on battery
-    # CPU_MIN_PERF_ON_BAT = 30;
-    # CPU_MAX_PERF_ON_BAT = 80;
-    
-    # Turbo boost
-    # CPU_BOOST_ON_AC = 1;
-    # CPU_BOOST_ON_BAT = 1;
-  # };
-# };
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+
+# Define a user account. Don't forget to set a password with ‘passwd’.
 programs.zsh.enable = true;
 users.defaultUserShell = pkgs.zsh;
   users.users.akio = {
@@ -149,22 +116,19 @@ environment.sessionVariables = {
   GDK_SCALE = "1";
   GDK_DPI_SCALE = "1.0";
 };
+
   programs.hyprland = {
     package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     enable = true;
     xwayland.enable = true;
   };
-  # environment.variables.EDITOR = "vim";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
- # sddm-chili-theme
 tokyo-night-sddm
-# sddm-astronaut
     usbutils
 zig
 gcc
@@ -182,12 +146,6 @@ glib
     ntfs3g # windows filesystem driver
       python312Packages.pip
       python3Full
-      # libsForQt5.qt5ct
-  # xorg.xrandr
-    # xorg.xrdb
-    # qt5.qtwayland
-    # qt6.qtwayland
-    # xwayland
 ];
 
   programs.thunar.enable = true;

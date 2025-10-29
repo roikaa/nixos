@@ -26,6 +26,8 @@
 
     ./../../user/wm/status-bar/waybar/style.nix
     ./../../user/wm/status-bar/waybar/default.nix
+    
+    ./../../user/frivolous/default.nix
   ];
 
   programs.foliate.enable = true; # Ebook reader
@@ -41,12 +43,12 @@
 
     tealdeer # short manual
       ani-cli   #anime in terminal
-      neofetch
+      # neofetch
 #  foot    # terminal
-ascii-image-converter
+# ascii-image-converter
 # core
 #brave
-      nitch		        # Display system statshome.nix
+      # nitch		        # Display system statshome.nix
       unrar-wrapper
       unzip 
       git
