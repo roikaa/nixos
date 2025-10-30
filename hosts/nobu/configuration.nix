@@ -144,7 +144,7 @@ gnupg
 pinentry
 pinentry-curses
 glib
-   ciscoPacketTracer8
+#   ciscoPacketTracer8
     ntfs3g # windows filesystem driver
       python312Packages.pip
       python3Full
