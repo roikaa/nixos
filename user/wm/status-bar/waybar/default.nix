@@ -30,7 +30,6 @@
               "wireplumber"
               "network"
               "bluetooth"
-            # ] ++ lib.optional hasBluetoothModule "bluetooth" ++ [
               "group/power"
               "group/hardware"
               "tray"
