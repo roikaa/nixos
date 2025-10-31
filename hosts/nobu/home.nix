@@ -1,7 +1,8 @@
 { config, pkgs, lib, inputs, ... }:
-let
-  unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
-in{
+# let
+  # unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
+# in
+{
   home.username = "akio";
   home.homeDirectory = "/home/akio";
 

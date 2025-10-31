@@ -39,7 +39,7 @@
       system = "x86_64-linux";
 #      host = "kaze";
       pkgs = nixpkgs.legacyPackages.${system};
-      pkgsunstable = inputs.nixpkgs-unstable.legacyPackages.${system};
+      unstable = inputs.nixpkgs-unstable.legacyPackages.${system};
     in
       {
     nixosConfigurations = { 
