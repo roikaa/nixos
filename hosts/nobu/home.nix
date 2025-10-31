@@ -1,7 +1,4 @@
-{ config, pkgs, lib, inputs, ... }:
-# let
-  # unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
-# in
+{ config, pkgs, lib, inputs, unstable, ... }:
 {
   home.username = "akio";
   home.homeDirectory = "/home/akio";
@@ -36,17 +33,14 @@
   ];
 
   programs.foliate.enable = true; # Ebook reader
-    # programs.waybar.enable = true;
-  # xdg.configFile."waybar/config.jsonc".source = ./../../user/wm/waybar/config;
-# conflicting with stylix, use if stylix nolt enabled
- # xdg.configFile."waybar/style.css".source = ./../../user/wm/waybar/style.css;
  
 programs.freetube = {
     enable = true;
     package = pkgs.freetube;
-    # additional settings if needed
   };
-  home.packages = with pkgs; [
+
+  home.packages = 
+    (with pkgs; [
     gns3-gui
     gns3-server
 
@@ -67,8 +61,6 @@ programs.freetube = {
       wl-clipboard   # Clipboard
       dunst			# Notification daemon
       libnotify			# Notification daemon's dependency
-#rofi-wayland	        # Application luncher
-
 
 # Dev
       gtk3
@@ -76,26 +68,27 @@ programs.freetube = {
 
 # Desktop
       libreoffice-qt  # Microssoftoffice ulernative
-#foliate	# eBook reader
       obsidian	# not app
       qbittorrent       # Torrent
       baobab # GUI app to analyse disk usage
-#dolphin			# GUI file manager
 
 
 # Social
       signal-desktop  # Chat app
-#telegram-desktop
-
 # Media
       feh
       ffmpeg  
       mpv
-      unstable.yt-dlp # cli tool downloding video/audio
       komikku
-    ciscoPacketTracer8
+      ciscoPacketTracer8
+    ])
 
-      ];
+    ++
+
+    (with unstable; [
+     yt-dlp # cli tool downloding video/audio
+
+    ]);
 
   home.sessionVariables.EDITOR = "nvim";
   programs.git = {

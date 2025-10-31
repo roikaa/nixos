@@ -1,7 +1,8 @@
-{ config, pkgs, lib, inputs, ... }:
+{ config, pkgs, lib, inputs, unstable, ... }:
 let 
      tokyo-night-sddm = pkgs.libsForQt5.callPackage ./../../system/sddm/tokyo-night.nix { };
-in {
+in 
+  {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -89,7 +90,10 @@ home-manager = {
     useUserPackages = true;
 # (ref vimjoyer Ultimate NixOS Guide)
     backupFileExtension = "backup";
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { 
+      inherit inputs; 
+      inherit unstable;
+    };
     users = {
       "akio" = import ./home.nix;
     };
