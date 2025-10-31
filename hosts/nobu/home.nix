@@ -46,25 +46,19 @@ programs.freetube = {
     # additional settings if needed
   };
   home.packages = with pkgs; [
-    # gruvbox-plus-icons
-
     gns3-gui
     gns3-server
 
     tealdeer # short manual
       ani-cli   #anime in terminal
-#  foot    # terminal
 
 # core
-brave
       unrar-wrapper
       unzip 
       git
       zsh
       yazi			# CLI file manager
     nnn
-#neovim			# Text editor
-
 
 # Style
       hyprshot
@@ -79,16 +73,13 @@ brave
       gtk3
       mtpfs
 
-
 # Desktop
-      #libreoffice-qt  # Microssoftoffice ulernative
+      libreoffice-qt  # Microssoftoffice ulernative
 #foliate	# eBook reader
       obsidian	# not app
       qbittorrent       # Torrent
       baobab # GUI app to analyse disk usage
 #dolphin			# GUI file manager
-#     kdePackages.dolphin
-#      nautilus
 
 
 # Social
@@ -97,15 +88,11 @@ brave
 
 # Media
       feh
-      ffmpeg  # ffmpeg 
+      ffmpeg  
       mpv
       unstable.yt-dlp # cli tool downloding video/audio
-      # yewtube # yet another youtube cli
-      # freetube #youtube frontend
-      # grayjay # multi media platform frontend
       komikku
-    # UNI
-    # ciscoPacketTracer8
+    ciscoPacketTracer8
 
       ];
 
