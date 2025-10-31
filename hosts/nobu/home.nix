@@ -91,9 +91,10 @@ programs.freetube = {
       feh
       ffmpeg  
       mpv
-      unstable.yt-dlp # cli tool downloding video/audio
       komikku
     ciscoPacketTracer8
+  ] ++ [
+      unstable.yt-dlp # cli tool downloding video/audio
 
       ];
 
