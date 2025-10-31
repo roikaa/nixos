@@ -24,11 +24,7 @@
       url = "github:nix-community/stylix/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-#    nixvim = {
-#        #url = "github:nix-community/nixvim";
-#        url = "github:nix-community/nixvim/nixos-25.05";
-#        inputs.nixpkgs.follows = "nixpkgs";
-#    };
+
   nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -43,6 +39,7 @@
       system = "x86_64-linux";
 #      host = "kaze";
       pkgs = nixpkgs.legacyPackages.${system};
+      pkgsunstable = inputs.nixpkgs-unstable.legacyPackages.${system};
     in
       {
     nixosConfigurations = { 
