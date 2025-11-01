@@ -125,7 +125,7 @@ thunderbird
   };
   
   home.shellAliases = {
-    rebuild = "sudo nixos-rebuild switch --flake ~/nixos#kaze";
+    srebuild = "sudo nixos-rebuild switch --flake ~/MyRepos/nixos#kaze";
   };
   
 
