@@ -58,8 +58,8 @@ home.packages = with pkgs; [
 
       decoration = {
 	rounding = 15;
-	active_opacity = 0.8;
-	inactive_opacity = 0.7;
+	active_opacity = 0.95;
+	inactive_opacity = 0.89;
 
 	blur = {
 	  enabled = false;
