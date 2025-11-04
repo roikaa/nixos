@@ -30,6 +30,8 @@
     ./../../user/frivolous/default.nix
 
     ./../../user/cli/musicPlayer/rmpc.nix
+
+    # ./../../user/univercity/default.nix
   ];
 
   programs.foliate.enable = true; # Ebook reader
@@ -41,8 +43,6 @@ programs.freetube = {
 
   home.packages = 
     (with pkgs; [
-    gns3-gui
-    gns3-server
 
     tealdeer # short manual
       ani-cli   #anime in terminal
@@ -80,7 +80,6 @@ programs.freetube = {
       ffmpeg  
       mpv
       komikku
-      ciscoPacketTracer8
     ])
 
     ++
@@ -109,7 +108,7 @@ programs.freetube = {
 
 
   home.shellAliases = {
-    rebuild = "sudo nixos-rebuild switch --flake ~/nixos#nobu";
+    srebuild = "sudo nixos-rebuild switch --flake ~/MyRepos/nixos#nobu";
   };
   home.sessionVariables = {
     MANPAGER="nvim +Man!";

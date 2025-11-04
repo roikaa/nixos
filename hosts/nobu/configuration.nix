@@ -11,6 +11,8 @@ in
       ./../../system/hardware/keyboard/thinkpad.nix
       ./../../system/services/maintenance.nix
       inputs.home-manager.nixosModules.default
+
+      ./../../user/univercity/default.nix
     ];
 
   # Bootloader.
