@@ -1,8 +1,8 @@
-{pkgs, ..}:
+{pkgs, ...}:
 {
 
-    environment.sessionVariables = {
-        GDK_SCALE = "1";
+   environment.sessionVariables = {
+        # GDK_SCALE = "1";
         STEAM_EXTRA_COMPAT_TOOLS_PATHS = 
         "\${HOME}/.steam/root/compatibilitytools.d";
     };
@@ -17,7 +17,7 @@
         extraCompatPackages = [ pkgs.proton-ge-bin ];
     };
 
-    home.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
         mangohud
         protonup
     ];

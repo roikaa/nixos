@@ -19,6 +19,7 @@
 #      ./../../system/hardware/printer.nix
       ./../../system/app/ollama.nix
 
+      ./../../system/gaming/steam.nix
       inputs.home-manager.nixosModules.default
     ];
 
