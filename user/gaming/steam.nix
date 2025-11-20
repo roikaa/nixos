@@ -7,6 +7,7 @@
         "\${HOME}/.steam/root/compatibilitytools.d";
     };
 
+
     programs.steam = {
         enable = true;
         gamescopeSession.enable = true;
