@@ -67,7 +67,7 @@ ascii-image-converter
 
 
 # Desktop
-      libreoffice-qt  # Microssoftoffice ulernative
+      # libreoffice-qt  # Microssoftoffice ulernative
 #foliate	# eBook reader
       obsidian	# not app
       qbittorrent       # Torrent
@@ -89,8 +89,8 @@ thunderbird
       yt-dlp # cli tool downloding video/audio
       # yewtube # yet another youtube cli
       # freetube #youtube frontend
-      grayjay # multi media platform frontend
-      komikku
+      # grayjay # multi media platform frontend
+      # komikku
     # UNI
     # ciscoPacketTracer8
 
