@@ -17,9 +17,8 @@
 #     ./../../system/app/open-webui.nix
       ./../../system/inputs/japanese.nix
 #      ./../../system/hardware/printer.nix
-      ./../../system/app/ollama.nix
+      # ./../../system/app/ollama.nix
 
-      ./../../system/gaming/steam.nix
       inputs.home-manager.nixosModules.default
     ];
 
@@ -83,7 +82,7 @@ nixpkgs.config.packageOverrides = pkgs: {
     };
   };
   environment.systemPackages = with pkgs; [
-   ciscoPacketTracer8
+   # ciscoPacketTracer8
     ntfs3g # windows filesystem driver
       python312Packages.pip
       python3Full

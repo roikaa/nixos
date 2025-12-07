@@ -79,7 +79,7 @@ thunderbird
 
 
 # Social
-      signal-desktop  # Chat app
+      # signal-desktop  # Chat app
 #telegram-desktop
 
 # Media
