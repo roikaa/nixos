@@ -1,8 +1,7 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
 { config, lib, pkgs, inputs, ... }:
+let 
+     tokyo-night-sddm = pkgs.libsForQt5.callPackage ./../../system/sddm/tokyo-night.nix { };
+in 
 
 {
   imports =
@@ -133,8 +132,11 @@ nixpkgs.config.packageOverrides = pkgs: {
 
 
 #services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+services.displayManager.sddm = {  
+  enable = true;
+  wayland.enable = true;
+  theme = "tokyo-night-sddm";
+};
 
 
 # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
