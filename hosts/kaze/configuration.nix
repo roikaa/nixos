@@ -1,7 +1,7 @@
 { config, lib, pkgs, inputs, ... }:
-# let 
-     # tokyo-night-sddm = pkgs.libsForQt5.callPackage ./../../system/sddm/tokyo-night.nix { };
-# in 
+let 
+     tokyo-night-sddm = pkgs.libsForQt5.callPackage ./../../system/sddm/tokyo-night.nix { };
+in 
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -135,7 +135,8 @@ nixpkgs.config.packageOverrides = pkgs: {
 services.displayManager.sddm = {  
   enable = true;
   wayland.enable = true;
-  theme = "tokyo-night-sddm";
+  # theme = "tokyo-night-sddm";
+  # extraPackages = [tokyo-night-sddm];
 };
 
 
