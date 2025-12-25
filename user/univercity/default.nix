@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    ciscoPacketTracer8
+    # ciscoPacketTracer8
     
     # gns3-gui
     # gns3-server
