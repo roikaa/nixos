@@ -9,7 +9,6 @@ in
       ./../../system/style/stylix.nix
       ./../../system/essentials/font.nix
       ./../../system/hardware/keyboard/thinkpad.nix
-      ./../../system/inputs/japanese.nix
       ./../../system/services/maintenance.nix
       inputs.home-manager.nixosModules.default
 
@@ -76,10 +75,9 @@ users.defaultUserShell = pkgs.zsh;
   users.users.akio = {
     isNormalUser = true;
     description = "akio";
-    extraGroups = [ "networkmanager" "wheel" "plugdev"];
+    extraGroups = [ "networkmanager" "wheel" "plugdev" ];
     packages = with pkgs; [
     #  thunderbird
-      # gns3-gui
     ];
   };
   services.udev.extraRules = ''
