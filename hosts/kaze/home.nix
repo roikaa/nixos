@@ -11,7 +11,7 @@
     ./../../user/app/terminal/foot.nix
     ./../../user/app/terminal/kitty.nix
     ./../../user/app/obs/obs.nix
-    ./../../user/app/discord/nixcord.nix
+#    ./../../user/app/discord/nixcord.nix
     ./../../user/app/appluncher/rofi.nix
     ./../../user/app/pass/pass.nix
     ./../../user/style/stylix.nix
