@@ -54,7 +54,7 @@ services.blueman.enable = true;
 services.displayManager.sddm = {  
   enable = true;
   wayland.enable = true;
-  theme = "tokyo-night-sddm";
+  # theme = "tokyo-night-sddm";
   };
 
   # Enable sound with pipewire.
