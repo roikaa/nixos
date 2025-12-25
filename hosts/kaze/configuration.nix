@@ -82,6 +82,7 @@ nixpkgs.config.packageOverrides = pkgs: {
   };
   environment.systemPackages = with pkgs; [
    # ciscoPacketTracer8
+    tokyo-night-sddm
     ntfs3g # windows filesystem driver
       python312Packages.pip
       python3Full
