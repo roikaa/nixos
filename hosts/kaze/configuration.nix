@@ -1,8 +1,7 @@
 { config, lib, pkgs, inputs, ... }:
-let 
-     tokyo-night-sddm = pkgs.libsForQt5.callPackage ./../../system/sddm/tokyo-night.nix { };
-in 
-
+# let 
+     # tokyo-night-sddm = pkgs.libsForQt5.callPackage ./../../system/sddm/tokyo-night.nix { };
+# in 
 {
   imports =
     [ # Include the results of the hardware scan.
