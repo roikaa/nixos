@@ -135,8 +135,8 @@ nixpkgs.config.packageOverrides = pkgs: {
 services.displayManager.sddm = {  
   enable = true;
   wayland.enable = true;
-  # theme = "tokyo-night-sddm";
-  # extraPackages = [tokyo-night-sddm];
+  theme = "tokyo-night-sddm";
+  extraPackages = [tokyo-night-sddm];
 };
 
 
