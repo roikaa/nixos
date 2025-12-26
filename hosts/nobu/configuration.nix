@@ -51,6 +51,7 @@ services.blueman.enable = true;
     LC_TIME = "en_US.UTF-8";
   };
 
+services.xserver.enable = true;
 services.displayManager.sddm = {  
   enable = true;
   wayland.enable = true;
