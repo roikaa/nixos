@@ -32,9 +32,15 @@
 # conflicting with stylix, use if stylix nolt enabled
  # xdg.configFile."waybar/style.css".source = ./../../user/wm/waybar/style.css;
  
-stylix.targets = {
+programs.freetube = {
+    enable = true;
+    package = pkgs.freetube;
+  };
+
+  stylix.targets = {
     waybar.enable = true;
   };
+
   home.packages = with pkgs; [
     tealdeer # short manual
       ani-cli   #anime in terminal
@@ -87,12 +93,6 @@ thunderbird
       ffmpeg  # ffmpeg 
       mpv
       yt-dlp # cli tool downloding video/audio
-      # yewtube # yet another youtube cli
-      # freetube #youtube frontend
-      # grayjay # multi media platform frontend
-      # komikku
-    # UNI
-    # ciscoPacketTracer8
 
       ];
 

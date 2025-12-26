@@ -131,7 +131,7 @@ nixpkgs.config.packageOverrides = pkgs: {
   };
 
 
-#services.xserver.enable = true;
+services.xserver.enable = true;
 services.displayManager.sddm = {  
   enable = true;
   wayland.enable = true;
