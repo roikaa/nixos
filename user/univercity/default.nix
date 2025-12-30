@@ -5,12 +5,10 @@
     
     gns3-gui
     gns3-server
-  
-    # qemu
-    # dynamips
-    # vpcs
-    # ubridge
-    
+    dynamips
+    vpcs
+    ubridge
+
     xterm              # Classic, lightweight
     # konsole          # KDE (if using KDE)
     # gnome.gnome-terminal  # GNOME (if using GNOME)
@@ -28,10 +26,10 @@
     tcpdump
   ];
 
-  # virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd.enable = true;
 #
 #   users.groups.ubridge = { }; # Explicitly defines the 'ubridge' group
-#   users.users.akio.extraGroups = ["kvm" "libvirtd" "ubridge" "wireshark"]; # "gns3" 
+  users.users.akio.extraGroups = ["kvm" "libvirtd" "wireshark"]; # "gns3" 
 #
 #  security.wrappers.ubridge = {
 #   source = "/run/current-system/sw/bin/ubridge";
@@ -41,5 +39,13 @@
 #   # permissions = "u+rx,g+x";
 #     permissions = "u+rx,g+rx,o+rx";
 # }; 
+
+  security.wrappers.ubridge = {
+    source = "${pkgs.ubridge}/bin/ubridge";
+    capabilities = "cap_net_admin,cap_net_raw=ep";
+    owner = "root";
+    group = "root";
+    permissions = "u+rx,g+x";
+  };
     
 }
