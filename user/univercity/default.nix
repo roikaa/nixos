@@ -6,14 +6,15 @@
     dynamips
     vpcs
     # ubridge
-
+    libvirt
     xterm              # Classic, lightweight
     
     # Python and networking tools
     python3
-    # python3Packages.pip
-    # python3Packages.netmiko
-    
+    python3Packages.pip
+    python3Packages.netmiko
+        # python312
+        # python312Packages.netmiko   
     # Useful networking tools
     busybox
     inetutils
@@ -22,6 +23,14 @@
   ];
 
   virtualisation.libvirtd.enable = true;
+
+  networking.bridges.br-gns3.interfaces = [];
+  networking.interfaces.br-gns3 = {
+    ipv4.addresses = [{
+      address = "192.168.1.10";
+      prefixLength = 24;
+    }];
+  };
 #
   users.users.akio.extraGroups = ["kvm" "libvirtd" "wireshark"]; # "gns3" 
 
@@ -30,7 +39,7 @@
     capabilities = "cap_net_admin,cap_net_raw=ep";
     owner = "root";
     group = "root";
-    permissions = "u+rx,g+x";
+    permissions = "u+rx,g+x,o+x";
   };
     
 }
