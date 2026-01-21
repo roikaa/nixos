@@ -17,6 +17,7 @@ stylix.targets.firefox.profileNames = [ "roika" ];
       kitty.enable = true;
       hyprland.enable = true;
       waybar.enable = true;
+      zathura.enable = true;
     };
 
 autoEnable = false;  

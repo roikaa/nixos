@@ -8,6 +8,7 @@
     targets = {
     	gtk.enable = true;
     	qt.enable = true;
+        # zathura.enable = true;
     };
     polarity = "dark";
 
