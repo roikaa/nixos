@@ -4,9 +4,10 @@ stylix.targets.firefox.profileNames = [ "roika" ];
 # this is home-manager stylix
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
-#base16Scheme = "${pkgs.base16-schemes}/share/themes/sakura.yaml";
-    polarity = "dark"; # Hopfully this force dark theme
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-light-medium.yaml";
+    image = ../../system/style/white-mountain.jpg;
+
+    # polarity = "dark"; # Hopfully this force dark theme
 
     targets = {
       neovim.enable = true;

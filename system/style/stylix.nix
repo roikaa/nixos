@@ -4,14 +4,14 @@
 
     enable = true;
    
-    image = ./Tranquility.png;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-light-medium.yaml";
+    image = ./white-mountain.jpg;
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-light-medium.yaml";
     targets = {
     	gtk.enable = true;
     	qt.enable = true;
         # zathura.enable = true;
     };
-    polarity = "dark";
+    # polarity = "dark";
 
 
     opacity = {
