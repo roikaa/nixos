@@ -24,13 +24,13 @@
 
   virtualisation.libvirtd.enable = true;
 
-  networking.bridges.br-gns3.interfaces = [];
-  networking.interfaces.br-gns3 = {
-    ipv4.addresses = [{
-      address = "192.168.1.10";
-      prefixLength = 24;
-    }];
-  };
+  # networking.bridges.br-gns3.interfaces = [];
+  # networking.interfaces.br-gns3 = {
+  #   ipv4.addresses = [{
+  #     address = "192.168.1.10";
+  #     prefixLength = 24;
+  #   }];
+  # };
 #
   users.users.akio.extraGroups = ["kvm" "libvirtd" "wireshark"]; # "gns3" 
 
