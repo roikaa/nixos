@@ -87,9 +87,11 @@ thunderbird
 # Social
       # signal-desktop  # Chat app
 #telegram-desktop
+    komikku
 
 # Media
       feh
+
       ffmpeg  # ffmpeg 
       mpv
       yt-dlp # cli tool downloding video/audio
