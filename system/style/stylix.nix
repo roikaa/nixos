@@ -4,7 +4,8 @@
 
     enable = true;
    
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+    image = ./Tranquility.png;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-light-medium.yaml";
     targets = {
     	gtk.enable = true;
     	qt.enable = true;
