@@ -7,18 +7,19 @@ home.packages = [
     text = ''
       current=$(home-manager generations | head -1 | rg -o '/nix/store/[^ ]*')
       
-      # Check if we're currently in light mode
-      if [[ "$current" =~ specialisation/light ]]; then
-        # We're in light, go back to base (dark)
-        base=''${current%/specialisation/light}
-        "$base/activate"
-      else
+      # Check if the light specialisation activation script exists
+      if [[ -f "$current/specialisation/light/activate" ]]; then
         # We're in dark (base), switch to light
         "$current/specialisation/light/activate"
+      else
+        # We're in light, go back to the previous generation (dark)
+        previous=$(home-manager generations | sed -n 2p | rg -o '/nix/store/[^ ]*')
+        "$previous/activate"
       fi
     '';
   })
-];  
+];
+
 
   stylix = {
     enable = true;
