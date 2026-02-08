@@ -1,19 +1,24 @@
 { config, pkgs, lib, inputs, ... }: 
 {
-  home.packages = [
-    (pkgs.writeShellApplication {
-      name = "toggle-gruvbox";
-      runtimeInputs = [ pkgs.ripgrep ];
-      text = ''
-        gen=$(home-manager generations | head -1 | rg -o '/nix/store/[^ ]*')
-        if [[ "$gen" =~ light ]]; then
-          "$(home-manager generations | sed -n 2p | rg -o '/nix/store/[^ ]*')/activate"
-        else
-          "$gen/specialisation/light/activate"
-        fi
-      '';
-    })
-  ];
+home.packages = [
+  (pkgs.writeShellApplication {
+    name = "nightman";
+    runtimeInputs = [ pkgs.ripgrep pkgs.home-manager ];
+    text = ''
+      current=$(home-manager generations | head -1 | rg -o '/nix/store/[^ ]*')
+      
+      # Check if we're currently in light mode
+      if [[ "$current" =~ specialisation/light ]]; then
+        # We're in light, go back to base (dark)
+        base=''${current%/specialisation/light}
+        "$base/activate"
+      else
+        # We're in dark (base), switch to light
+        "$current/specialisation/light/activate"
+      fi
+    '';
+  })
+];  
 
   stylix = {
     enable = true;
