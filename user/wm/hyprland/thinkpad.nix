@@ -57,8 +57,8 @@
       };
 
       animations = {
-        enabled = true;
-        
+        enabled = false;
+      
         bezier = [
           "o2_shot, 0, 0.72, 0.4, 1.15"
           "o2_smooth, 0.4, 0, 0.2, 1"
@@ -67,29 +67,28 @@
           "fluffy, 0.1, 1.3, 0.1, 1.0"
           "slingshot, 1, -0.15, 0.75, 1.25"
         ];
-        
+      
         animation = [
-          "global, 1, 3, o2_shot"
-          "windows, 1, 2, o2_shot, popin 100%"
-          "windowsOut, 0.7, 3, o2_smooth, popin 90%"
-          "windowsMove, 1, 4, wind_up"
-          "border, 1, 2, o2_smooth"
-          "borderangle, 1, 100, o2_shot, loop"
-          "fade, 1, 4, o2_smooth"
-          "workspaces, 1, 5, slingshot, slide"
-          "specialWorkspace, 1, 3, bounce, slidevert"
-          "fadeSwitch, 1, 5, fluffy"
-          "fadeDim, 1, 3, o2_smooth"
+          # allow the windows animation parent (keep global off)
+          "windows, 1, 3, o2_smooth, popin 90%"   # very soft pop‑in 90%→100%
+      
+          # slight closing, barely noticeable
+          "windowsOut, 1, 2, o2_smooth, popin 95%"
+      
+          # turn everything else explicitly off
+          "windowsMove, 0"
+          "global, 0"
         ];
       };
+      
       
       # Window rules for transparency
       windowrulev2 = [
         # Terminal transparency (foot)
-        "opacity 0.90 0.85, class:^(foot)$"
+        "opacity 0.95 0.90, class:^(foot)$"
         
         # Backup terminal transparency (kitty)
-        "opacity 0.90 0.85, class:^(kitty)$"
+        "opacity 0.95 0.90, class:^(kitty)$"
         
         # Everything else stays opaque by default
         # (ctrl+o toggle will still work)
