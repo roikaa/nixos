@@ -36,7 +36,7 @@
   
   specialisation.light.configuration = {
     stylix = {
-      base16Scheme = lib.mkForce "${pkgs.base16-schemes}/share/themes/gruvbox-light-medium.yaml";
+      base16Scheme = lib.mkForce "${pkgs.base16-schemes}/share/themes/gruvbox-material-light-soft.yaml";
       polarity = lib.mkForce "light";
     };
   };
