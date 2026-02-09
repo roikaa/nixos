@@ -8,35 +8,39 @@
       qt.enable = true;
     };
     polarity = "dark";
+
     fonts = {
       sizes = {
-        terminal = 15;
-        applications = 12;
+        terminal = 12;
+        applications = 11;
         desktop = 11;
         popups = 12;
       };
-      serif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Serif";
-      };
-      sansSerif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Sans";
-      };
+      
       monospace = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Sans Mono";
+        package = pkgs.nerd-fonts.jetbrains-mono;  # Full Nerd Font version
+        name = "JetBrainsMono Nerd Font";
+      };      
+      sansSerif = {
+        package = pkgs.inter;
+        name = "Inter";
       };
+      
+      serif = {
+        package = pkgs.eb-garamond;
+        name = "EB Garamond";
+      };
+      
       emoji = {
         package = pkgs.noto-fonts-emoji;
         name = "Noto Color Emoji";
       };
-    };
+    }; 
   };
   
   specialisation.light.configuration = {
     stylix = {
-      base16Scheme = lib.mkForce "${pkgs.base16-schemes}/share/themes/gruvbox-material-light-soft.yaml";
+      base16Scheme = lib.mkForce "${pkgs.base16-schemes}/share/themes/gruvbox-material-light-medium.yaml";
       polarity = lib.mkForce "light";
     };
   };

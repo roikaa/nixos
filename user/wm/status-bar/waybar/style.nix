@@ -2,7 +2,7 @@
 {
       programs.waybar.style =
         let
-          borderRadius = "2";
+          borderRadius = "4";
           borderSize = "2";
         in
         # css
@@ -14,6 +14,7 @@
 
           window#waybar {
             transition: all 0.3s ease-in-out;
+            background: transparent;
           }
 
           .module {
@@ -21,8 +22,8 @@
             background: @base01;
             border-radius: ${borderRadius}px;
 
-            padding: 0.2rem 0.5rem;
-            margin: 0.4rem 0.2rem;
+            padding: 0.1rem 0.4rem;
+            margin: 0.3rem 0.15rem;
           }
 
           .modules-left:first-child {
@@ -192,7 +193,8 @@
           #cpu,
           #temperature,
           #memory {
-            background: @base02;
+            /* background: transparent; */
+            background: @base03;
           }
 
           #temperature.critical {

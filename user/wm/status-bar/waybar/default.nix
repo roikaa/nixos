@@ -73,7 +73,7 @@
             };
 
             "hyprland/window" = {
-              max-length = 50;
+              max-length = 30;
               format = "{title}";
               icon = true;
             };

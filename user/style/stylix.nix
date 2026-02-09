@@ -1,26 +1,27 @@
 { config, pkgs, lib, inputs, ... }: 
 {
-home.packages = [
-  (pkgs.writeShellApplication {
-    name = "nightman";
-    runtimeInputs = [ pkgs.ripgrep pkgs.home-manager ];
-    text = ''
-      current=$(home-manager generations | head -1 | rg -o '/nix/store/[^ ]*')
-      
-      # Check if the light specialisation activation script exists
-      if [[ -f "$current/specialisation/light/activate" ]]; then
-        # We're in dark (base), switch to light
-        "$current/specialisation/light/activate"
-      else
-        # We're in light, go back to the previous generation (dark)
-        previous=$(home-manager generations | sed -n 2p | rg -o '/nix/store/[^ ]*')
-        "$previous/activate"
-      fi
-    '';
-  })
-];
-
-
+  home.packages = [
+    (pkgs.writeShellApplication {
+      name = "nightman";
+      runtimeInputs = [ pkgs.ripgrep pkgs.home-manager ];
+      text = ''
+        current=$(home-manager generations | head -1 | rg -o '/nix/store/[^ ]*')
+        
+        # Check if the light specialisation activation script exists
+        if [[ -f "$current/specialisation/light/activate" ]]; then
+          # We're in dark (base), switch to light
+          "$current/specialisation/light/activate"
+          notify-send "Theme" "Switched to light mode ☀️"
+        else
+          # We're in light, go back to the previous generation (dark)
+          previous=$(home-manager generations | sed -n 2p | rg -o '/nix/store/[^ ]*')
+          "$previous/activate"
+          notify-send "Theme" "Switched to dark mode 🌙"
+        fi
+      '';
+    })
+  ];
+  
   stylix = {
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-medium.yaml";
@@ -36,6 +37,7 @@ home.packages = [
       hyprland.enable = true;
       waybar.enable = true;
       zathura.enable = true;
+      gtk.enable = true;   # Add this for better app theming
     };
     autoEnable = false;  
     cursor = {
@@ -54,7 +56,7 @@ home.packages = [
   # Add home-manager specialisation
   specialisation.light.configuration = {
     stylix = {
-      base16Scheme = lib.mkForce "${pkgs.base16-schemes}/share/themes/gruvbox-material-light-soft.yaml";
+      base16Scheme = lib.mkForce "${pkgs.base16-schemes}/share/themes/gruvbox-material-light-medium.yaml";
       polarity = lib.mkForce "light";
     };
   };

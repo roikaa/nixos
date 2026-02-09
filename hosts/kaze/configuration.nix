@@ -102,6 +102,15 @@ nixpkgs.config.packageOverrides = pkgs: {
       gnupg  # gpg encrytion for pass
       pinentry      # for gnupg
       pinentry-curses    #for gnupg
+  libsForQt5.qt5ct         # Qt5 theme configuration
+  qt6ct         # Qt6 theme configuration
+  libsForQt5.qtstyleplugin-kvantum  # Better Qt theming
+  
+  # Optional: additional fonts for completeness
+  nerd-fonts.iosevka
+  inter
+  eb-garamond
+  noto-fonts-emoji
   ];
 
   programs.thunar.enable = true;

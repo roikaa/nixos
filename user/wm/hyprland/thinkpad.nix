@@ -13,8 +13,6 @@ home.packages = with pkgs; [
 ];
   wayland.windowManager.hyprland = {
     enable = true;
-
-
     settings = {
     monitor = [
 	"HDMI-A-2,preferred,auto,1,mirror,eDP-1"
@@ -57,7 +55,7 @@ home.packages = with pkgs; [
       };
 
       decoration = {
-	rounding = 0;
+	rounding = 4;
 	active_opacity = 1;
 	inactive_opacity = 1;
 
