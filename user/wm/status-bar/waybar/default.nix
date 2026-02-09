@@ -285,10 +285,10 @@
             "group/hardware" = {
               orientation = "inherit";
 
-              # drawer = {
-                # transition-duration = 300;
-                # transition-left-to-right = false;
-              # };
+              drawer = {
+                transition-duration = 300;
+                transition-left-to-right = false;
+              };
 
               modules = [
                 # "custom/monitor"

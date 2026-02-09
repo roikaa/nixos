@@ -18,9 +18,10 @@
       };
       
       monospace = {
-        package = pkgs.nerd-fonts.jetbrains-mono;  # Full Nerd Font version
-        name = "JetBrainsMono Nerd Font";
+        package = pkgs.nerd-fonts.hack;  # Full Nerd Font version
+        name = "Hack Nerd Font";
       };      
+
       sansSerif = {
         package = pkgs.inter;
         name = "Inter";
