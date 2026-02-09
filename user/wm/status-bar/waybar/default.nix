@@ -190,6 +190,7 @@
               drawer = {
                 transition-duration = 300;
                 transition-left-to-right = false;
+                click-to-reveal = false;
               };
 
               modules = [
@@ -288,12 +289,13 @@
               drawer = {
                 transition-duration = 300;
                 transition-left-to-right = false;
+                click-to-reveal = true;
               };
 
               modules = [
                 # "custom/monitor"
-                "disk"
                 "cpu"
+                "disk"
                 "temperature"
                 "memory"
               ];

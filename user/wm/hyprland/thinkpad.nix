@@ -56,30 +56,31 @@
         };
       };
 
-      animations = {
-        enabled = false;
+animations = {
+  enabled = true;
+
+  bezier = [
+    "o2_smooth, 0.4, 0, 0.2, 1"
+    "ease_out, 0.2, 0.8, 0.5, 1"
+  ];
+
+  animation = [
+    # old window shifts out / back in smoothly
+    "windowsMove, 1, 2, o2_smooth, slide"
+
+    # new window slides in gently (same speed, same smoothness)
+    "windowsIn, 1, 2, ease_out, slide"
+
+    # closing also subtle and quiet
+    "windowsOut, 1, 2, ease_out, slide"
+
+    # global off, other things off
+    "windows, 0"
+    "fade, 0"
+    "global, 0"
+  ];
+};
       
-        bezier = [
-          "o2_shot, 0, 0.72, 0.4, 1.15"
-          "o2_smooth, 0.4, 0, 0.2, 1"
-          "wind_up, 0.1, 0.8, 0.1, 1.1"
-          "bounce, 1.1, 1.2, 0.1, 1.05"
-          "fluffy, 0.1, 1.3, 0.1, 1.0"
-          "slingshot, 1, -0.15, 0.75, 1.25"
-        ];
-      
-        animation = [
-          # allow the windows animation parent (keep global off)
-          "windows, 1, 3, o2_smooth, popin 90%"   # very soft pop‑in 90%→100%
-      
-          # slight closing, barely noticeable
-          "windowsOut, 1, 2, o2_smooth, popin 95%"
-      
-          # turn everything else explicitly off
-          "windowsMove, 0"
-          "global, 0"
-        ];
-      };
       
       
       # Window rules for transparency

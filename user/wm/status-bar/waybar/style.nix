@@ -189,11 +189,10 @@
             background: @base09;
           }
 
-          #disk,
           #cpu,
+          #disk,
           #temperature,
           #memory {
-            /* background: transparent; */
             background: @base03;
           }
 
