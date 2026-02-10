@@ -50,8 +50,6 @@ ascii-image-converter
 # core
 #brave
       nitch		        # Display system statshome.nix
-      unrar-wrapper
-      unzip 
       git
       zsh
       yazi			# CLI file manager

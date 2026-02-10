@@ -9,14 +9,13 @@
     wdisplays          # for display management
     networkmanager     # usually already installed
     swaylock           # for screen locking
-    # gruvbox-plus-icons
     # rofi-wayland    # or wofi, fuzzel, tofi
   ];
   
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      monitor = [
+      monitor = [ 
         "HDMI-A-2,preferred,auto,1,mirror,eDP-1"
         "eDP-1,preferred,auto,1"
       ];

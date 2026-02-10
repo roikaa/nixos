@@ -8,7 +8,6 @@
       qt.enable = true;
     };
     polarity = "dark";
-
     fonts = {
       sizes = {
         terminal = 12;
@@ -18,10 +17,9 @@
       };
       
       monospace = {
-        package = pkgs.nerd-fonts.hack;  # Full Nerd Font version
+        package = pkgs.nerd-fonts.hack;
         name = "Hack Nerd Font";
       };      
-
       sansSerif = {
         package = pkgs.inter;
         name = "Inter";
@@ -39,10 +37,19 @@
     }; 
   };
   
-  specialisation.light.configuration = {
-    stylix = {
-      base16Scheme = lib.mkForce "${pkgs.base16-schemes}/share/themes/gruvbox-material-light-medium.yaml";
-      polarity = lib.mkForce "light";
+  specialisation = {
+    light.configuration = {
+      stylix = {
+        base16Scheme = lib.mkForce "${pkgs.base16-schemes}/share/themes/gruvbox-material-light-medium.yaml";
+        polarity = lib.mkForce "light";
+      };
+    };
+    
+    dark.configuration = {
+      stylix = {
+        base16Scheme = lib.mkForce "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-medium.yaml";
+        polarity = lib.mkForce "dark";
+      };
     };
   };
 }

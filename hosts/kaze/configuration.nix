@@ -8,6 +8,7 @@ in
     ./hardware-configuration.nix
       ./../../system/essentials/boot.nix
       ./../../system/essentials/font.nix
+      ./../../system/essentials/applications.nix
       ./../../system/hardware/keyboard/default.nix
       ./../../system/hardware/nvidia.nix
       ./../../system/services/maintenance.nix
@@ -80,37 +81,7 @@ nixpkgs.config.packageOverrides = pkgs: {
     };
   };
   environment.systemPackages = with pkgs; [
-   # ciscoPacketTracer8
-    tokyo-night-sddm
-    ntfs3g # windows filesystem driver
-      python312Packages.pip
-      python3Full
-      tree
-      usbutils
-      openssl
-      android-tools  # for adb/fastboot
-      zig
-      nodejs
-      glib
-      vim
-      wget			
-      git	
-      nix-index
-      nix-ld			# ( idk what is this but ig some work around for some apps that dont work in nixos)
-      sysstat
-      pass			# CLI password manager
-      gnupg  # gpg encrytion for pass
-      pinentry      # for gnupg
-      pinentry-curses    #for gnupg
-  libsForQt5.qt5ct         # Qt5 theme configuration
-  qt6ct         # Qt6 theme configuration
-  libsForQt5.qtstyleplugin-kvantum  # Better Qt theming
-  
-  # Optional: additional fonts for completeness
-  nerd-fonts.iosevka
-  inter
-  eb-garamond
-  noto-fonts-emoji
+
   ];
 
   programs.thunar.enable = true;

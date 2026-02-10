@@ -8,6 +8,7 @@ in
       ./hardware-configuration.nix
       ./../../system/style/stylix.nix
       ./../../system/essentials/font.nix
+      ./../../system/essentials/applications.nix
       ./../../system/hardware/keyboard/thinkpad.nix
       ./../../system/services/maintenance.nix
       inputs.home-manager.nixosModules.default
@@ -137,26 +138,8 @@ environment.sessionVariables = {
 
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-gruvbox-plus-icons
-tokyo-night-sddm
-    usbutils
-zig
-gcc
-    neovim 
-    wget
-    nodejs
-git  
-nix-ld
-pass
-gnupg
-pinentry
-pinentry-curses
-glib
-#   ciscoPacketTracer8
-    ntfs3g # windows filesystem driver
-      python312Packages.pip
-      python3Full
-];
+
+  ];
 
   programs.thunar.enable = true;
   # Enable the OpenSSH daemon.
