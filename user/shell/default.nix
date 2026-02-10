@@ -147,17 +147,16 @@ programs.starship = {
     };
   };
 };  
-  # programs.oh-my-posh = {
-  # enable = true;
-  # useTheme = "gruvbox";  # You can choose any theme you prefer
-  # enableZshIntegration = true; 
-  # };
+
 
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+ sessionVariables = {
+    TERMINAL = "foot";  # or "kitty" or "xterm"
+  };
     shellAliases = {
       ll = "ls -l";
       c = "clear"; 
@@ -165,7 +164,7 @@ programs.starship = {
       update = "sudo nixos-rebuild switch";
       youtube = "yt-dlp -f bestaudio -x --audio-format mp3 --audio-quality 320k --embed-thumbnail --add-metadata ";
 #yt-dlp -f bestaudio -x --audio-format mp3 --audio-quality 320k --embed-thumbnail --add-metadata --postprocessor-args "-id3v2_version 3"
-    nix-shell = "nix-shell --run $SHELL";  # or use $SHELL if you want it dynamic
+    nix-shell = "nix-shell --run $SHELL";
       vi = "nvim";
     };
     

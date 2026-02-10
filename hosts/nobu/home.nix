@@ -59,8 +59,9 @@ programs.freetube = {
       hyprshot
       swww			# Wallpaper daemon
       wl-clipboard   # Clipboard
-      dunst			# Notification daemon
+      # dunst			# Notification daemon
       libnotify			# Notification daemon's dependency
+     # swaynotificationcenter      # notification for waybar
 
 # Dev
       gtk3

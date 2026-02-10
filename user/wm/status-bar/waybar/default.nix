@@ -33,7 +33,7 @@
               "group/power"
               "group/hardware"
               "tray"
-              # "custom/fnott"
+              "custom/swaync"
             ];
 
             "custom/actions" = {
@@ -78,16 +78,16 @@
               icon = true;
             };
 
-            systemd-failed-units =
-              let
-                fish = lib.getExe pkgs.fish;
-                bat = lib.getExe pkgs.bat;
-              in
-              {
-                format = "✗ {nr_failed}";
-                on-click = "xdg-terminal-exec ${fish} -c \"${bat} --paging always -f (systemctl list-units --user --failed | psub -s -user-units) (systemctl list-units --failed | psub -s -system-units)\"";
-                hide-on-ok = true;
-              };
+           systemd-failed-units = 
+           let 
+             zsh = lib.getExe pkgs.zsh;
+             bat = lib.getExe pkgs.bat;
+             terminal = lib.getExe pkgs.foot;  # or pkgs.kitty or pkgs.xterm
+           in {
+             format = "✗ {nr_failed}";
+             on-click = "${terminal} ${zsh} -c \"${bat} --paging always -f <(systemctl list-units --user --failed) <(systemctl list-units --failed)\"";
+             hide-on-ok = true;
+           }; 
 
             clock = {
               format = " {:%A %H:%M}";

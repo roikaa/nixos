@@ -9,6 +9,7 @@
     wdisplays          # for display management
     networkmanager     # usually already installed
     swaylock           # for screen locking
+    swaynotificationcenter      # notification for waybar
     # rofi-wayland    # or wofi, fuzzel, tofi
   ];
   
@@ -28,6 +29,7 @@
 
       exec-once = [
         "swww init"
+        "swaync"
         "fcitx5 -d --replace"
         # "waybar"
       ];

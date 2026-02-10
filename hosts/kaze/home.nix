@@ -60,7 +60,9 @@ ascii-image-converter
       hyprshot
       swww			# Wallpaper daemon
       wl-clipboard   # Clipboard
-      dunst			# Notification daemon
+      # dunst			# Notification daemon
+     # swaynotificationcenter      # notification for waybar
+
       libnotify			# Notification daemon's dependency
 #rofi-wayland	        # Application luncher
 
