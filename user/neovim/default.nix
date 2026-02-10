@@ -6,6 +6,7 @@ programs.neovim = {
   extraPython3Packages = ps: with ps; [
     pynvim
   ];
+  extraWrapperArgs = [ "--set" "STYLIX_ENABLED" "1" ];
 };   
 
 home.file.".config/nvim" = {

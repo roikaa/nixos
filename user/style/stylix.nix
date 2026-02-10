@@ -37,7 +37,8 @@
       hyprland.enable = true;
       waybar.enable = true;
       zathura.enable = true;
-      gtk.enable = true;   # Add this for better app theming
+      gtk.enable = true;
+      qt.enable = true;
     };
     autoEnable = false;  
     cursor = {
