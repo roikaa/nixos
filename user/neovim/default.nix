@@ -9,13 +9,16 @@ programs.neovim = {
   extraWrapperArgs = [ "--set" "STYLIX_ENABLED" "1" ];
 };   
 
-home.file.".config/nvim" = {
-	source = inputs.nvim-config;
-  recursive = true;
+stylix.targets.neovim.enable = true;
 
-};
-
-home.packages = with pkgs;[
+ # Use a different directory for your custom config
+  xdg.configFile."nvim".source = inputs.nvim-config;
+  
+  # Then in your init.lua, require the custom config
+  # programs.neovim.extraLuaConfig = ''
+    # require('custom')
+  # '';
+  home.packages = with pkgs;[
   lua54Packages.luarocks-nix 
   lua5_1
   ripgrep
