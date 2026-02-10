@@ -9,6 +9,7 @@
     wdisplays          # for display management
     networkmanager     # usually already installed
     swaylock           # for screen locking
+    # gruvbox-plus-icons
     # rofi-wayland    # or wofi, fuzzel, tofi
   ];
   

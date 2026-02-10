@@ -1,4 +1,15 @@
 { config, pkgs, lib, inputs, ... }: 
+let
+  gruvbox-icons-full = pkgs.gruvbox-plus-icons.overrideAttrs (oldAttrs: {
+    installPhase = ''
+      runHook preInstall
+      mkdir -p $out/share/icons
+      cp -r Gruvbox-Plus-Dark $out/share/icons/
+      cp -r Gruvbox-Plus-Light $out/share/icons/
+      runHook postInstall
+    '';
+  });
+in
 {
   home.packages = [
     (pkgs.writeShellApplication {
@@ -48,7 +59,7 @@
     };
     iconTheme = {
       enable = true;
-      package = pkgs.gruvbox-plus-icons;
+      package = gruvbox-icons-full;
       light = "Gruvbox-Plus-Light";
       dark = "Gruvbox-Plus-Dark";
     };
