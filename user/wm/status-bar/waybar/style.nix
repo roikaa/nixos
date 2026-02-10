@@ -193,7 +193,7 @@
           #disk,
           #temperature,
           #memory {
-            background: @base03;
+            background: @base01;
           }
 
           #temperature.critical {

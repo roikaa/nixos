@@ -18,6 +18,7 @@ in
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/nvme0n1";
+  boot.loader.grubgfxmodeEfi = "auto"
   boot.loader.grub.useOSProber = true;
 
 hardware.graphics.extraPackages = with pkgs; [ vaapiIntel intel-media-driver ];
