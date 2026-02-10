@@ -7,7 +7,7 @@
     vpcs
     # ubridge
     libvirt
-    xterm              # Classic, lightweight
+    # xterm              # Classic, lightweight
     
     # Python and networking tools
     python3

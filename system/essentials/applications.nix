@@ -1,5 +1,8 @@
 
 { config, lib, pkgs, inputs, ... }:
+let 
+     tokyo-night-sddm = pkgs.libsForQt5.callPackage ./../sddm/tokyo-night.nix { };
+in 
 {
   environment.systemPackages = with pkgs; [
     tokyo-night-sddm
