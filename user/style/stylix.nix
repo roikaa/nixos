@@ -28,7 +28,7 @@
     polarity = "dark";
     targets = {
       firefox.profileNames = [ "roika" ];
-      neovim.enable = true;
+      # neovim.enable = true;
       rofi.enable = true;
       foot.enable = true;
       tmux.enable = true;
