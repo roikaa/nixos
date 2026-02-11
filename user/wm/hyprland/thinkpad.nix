@@ -129,7 +129,7 @@ animations = {
         ", XF86WLAN, exec, nmcli radio wifi toggle"  # WiFi toggle (Fn+F8 on some models)
         
         # Screenshot
-        ", Print, exec, grimblast copy area"  # Print Screen
+        ", Print, exec, grimblast save area ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).jpg"  # Print Screen
         "SHIFT, Print, exec, grimblast copy screen"
         "$mod SHIFT, Print, exec, grimblast save screen ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"
         

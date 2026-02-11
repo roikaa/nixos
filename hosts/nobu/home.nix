@@ -46,6 +46,7 @@ programs.freetube = {
 
     tealdeer # short manual
       ani-cli   #anime in terminal
+      telegram-desktop
 
 # core
       unrar-wrapper
