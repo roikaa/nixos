@@ -31,5 +31,6 @@ in
       unrar-wrapper
       unzip 
 
+    focuswriter # minimale word editor
   ];
 }
