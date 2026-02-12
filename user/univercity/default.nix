@@ -20,6 +20,8 @@
     inetutils
     wireshark
     tcpdump
+
+    pdfpc #presntation
   ];
 
   virtualisation.libvirtd.enable = true;
