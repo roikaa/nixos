@@ -45,6 +45,7 @@ programs.freetube = {
     tealdeer # short manual
       ani-cli   #anime in terminal
       neofetch
+    telegram-desktop
 #  foot    # terminal
 ascii-image-converter
 # core
