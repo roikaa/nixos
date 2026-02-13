@@ -17,7 +17,7 @@
     enable = true;
     settings = {
       monitor = [ 
-        "HDMI-A-2,preferred,auto,1,mirror,eDP-1"
+        "HDMI-A-2,preferred,auto,1"
         "eDP-1,preferred,auto,1"
       ];
       
