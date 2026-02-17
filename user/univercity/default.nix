@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    gns3-gui
-    gns3-server
+    # gns3-gui
+    # gns3-server
     dynamips
     vpcs
     # ubridge
@@ -34,14 +34,14 @@
   #   }];
   # };
 #
-  users.users.akio.extraGroups = ["kvm" "libvirtd" "wireshark"]; # "gns3" 
-
-  security.wrappers.ubridge = {
-    source = "${pkgs.ubridge}/bin/ubridge";
-    capabilities = "cap_net_admin,cap_net_raw=ep";
-    owner = "root";
-    group = "root";
-    permissions = "u+rx,g+x,o+x";
-  };
+  # users.users.akio.extraGroups = ["kvm" "libvirtd" "wireshark"]; # "gns3" 
+  #
+  # security.wrappers.ubridge = {
+  #   source = "${pkgs.ubridge}/bin/ubridge";
+  #   capabilities = "cap_net_admin,cap_net_raw=ep";
+  #   owner = "root";
+  #   group = "root";
+  #   permissions = "u+rx,g+x,o+x";
+  # };
     
 }
