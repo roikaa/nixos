@@ -39,7 +39,7 @@
             "custom/actions" = {
               format = " ";
               tooltip-format = "System Actions";
-              on-click = lib.getExe' self.packages.${pkgs.system}.fuzzel-goodies "fuzzel-actions";
+              # on-click = lib.getExe' self.packages.${pkgs.system}.fuzzel-goodies "fuzzel-actions";
             };
 
             "hyprland/workspaces" = {

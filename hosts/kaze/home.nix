@@ -24,6 +24,7 @@
     ./../../user/app/zathura/default.nix
     ./../../user/wm/status-bar/waybar/style.nix
     ./../../user/wm/status-bar/waybar/default.nix
+    ./../../user/app/appluncher/fuzzel.nix
   ];
 
   programs.foliate.enable = true; # Ebook reader
