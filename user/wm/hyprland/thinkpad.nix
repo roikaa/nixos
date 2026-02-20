@@ -46,7 +46,7 @@
       };
 
       decoration = {
-        rounding = 4;
+        rounding = 0;
         active_opacity = 1;
         inactive_opacity = 1;
 
@@ -87,14 +87,8 @@ animations = {
       
       # Window rules for transparency
       windowrulev2 = [
-        # Terminal transparency (foot)
         "opacity 0.95 0.90, class:^(foot)$"
-        
-        # Backup terminal transparency (kitty)
         "opacity 0.95 0.90, class:^(kitty)$"
-        
-        # Everything else stays opaque by default
-        # (ctrl+o toggle will still work)
       ];
 
       bindm = [

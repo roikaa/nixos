@@ -18,7 +18,6 @@ in
       text = ''
         set -euo pipefail
         
-        # Trap to handle interruption
         cleanup() {
           notify-send "Theme Switch" "Theme switch interrupted!" -u critical
           exit 1
@@ -61,7 +60,9 @@ in
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-medium.yaml";
     polarity = "dark";
     targets = {
-      firefox.profileNames = [ "roika" ];
+      librewolf.enable = true; 
+      librewolf.profileNames = [ "roikaa" ];
+      # firefox.profileNames = [ "roika" ];
       # neovim.enable = true;
       rofi.enable = true;
       foot.enable = true;
@@ -74,7 +75,7 @@ in
       gtk.enable = true;
       qt.enable = true;
     };
-    autoEnable = false;  
+    autoEnable = true;  
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";

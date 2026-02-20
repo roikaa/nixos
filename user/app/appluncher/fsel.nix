@@ -1,3 +1,5 @@
-{ inputs, ... }: {
-  home.packages = [ inputs.fsel.packages.${pkgs.system}.default ];
+{ inputs, pkgs, ... }: {
+  home.packages = [ 
+    # inputs.fsel.packages.${pkgs.system}.default 
+  ];
 }
