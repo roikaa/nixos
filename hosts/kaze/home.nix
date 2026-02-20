@@ -25,6 +25,7 @@
     ./../../user/wm/status-bar/waybar/style.nix
     ./../../user/wm/status-bar/waybar/default.nix
     ./../../user/app/appluncher/fuzzel.nix
+    ./../../user/app/appluncher/fsel.nix
   ];
 
   programs.foliate.enable = true; # Ebook reader

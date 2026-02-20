@@ -16,7 +16,7 @@
     # My Neovim configuration 
      nvim-config = {
       url = "github:roikaa/nvim";
-      flake = false;  # It's just files, not a flake
+      flake = false;
     };
 
     # Styling tool
@@ -25,13 +25,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-  nur = {
+    nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     nixcord = {
       url = "github:kaylorben/nixcord";
     };
+
+    fsel.url = "github:Mjoyufull/fsel";
+
   };
 
   outputs = { self, nixpkgs, ... }@inputs: 
