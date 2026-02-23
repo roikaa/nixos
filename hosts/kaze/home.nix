@@ -5,6 +5,7 @@
 
   imports = [
     ./../../user/wm/hyprland/thinkpad.nix
+    ./../../user/wm/dwl/dwl-home-config.nix
     ./../../user/shell/default.nix
     ./../../user/app/browser/librewolf.nix
     ./../../user/app/browser/firefox.nix
@@ -69,7 +70,6 @@ ascii-image-converter
       libnotify			# Notification daemon's dependency
 #rofi-wayland	        # Application luncher
 
-cinny-desktop
 # Dev
       gtk3
       mtpfs
@@ -99,6 +99,8 @@ thunderbird
       mpv
       yt-dlp # cli tool downloding video/audio
 
+
+# cinny-desktop
       ];
 
   home.sessionVariables.EDITOR = "nvim";

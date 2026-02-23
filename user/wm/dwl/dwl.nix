@@ -17,16 +17,5 @@
   ];
     programs.dwl = {
         enable = true;
-        package = pkgs.dwl.override {
-            configH = ./dwl-config.h;
-        }.overrideAttrs (oldAttrs: {
-            buildInputs = oldAttrs.buildInputs or [] ++ [
-                pkgs.libdrm
-                pkgs.fcft
-            ];
-        patches = oldAttrs.patches or [] ++ [
-            ./bar-0.7.patch
-            ];
-        });
-    }
+    };
 } 
