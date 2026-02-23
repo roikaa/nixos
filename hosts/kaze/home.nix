@@ -69,7 +69,7 @@ ascii-image-converter
       libnotify			# Notification daemon's dependency
 #rofi-wayland	        # Application luncher
 
-
+cinny-desktop
 # Dev
       gtk3
       mtpfs
