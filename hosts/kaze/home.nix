@@ -1,5 +1,10 @@
-{ config, pkgs, lib, inputs, ... }:
 {
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
   home.username = "akio";
   home.homeDirectory = "/home/akio";
 
@@ -26,8 +31,8 @@
   ];
 
   programs.foliate.enable = true; # Ebook reader
- 
-programs.freetube = {
+
+  programs.freetube = {
     enable = true;
     package = pkgs.freetube;
   };
@@ -38,48 +43,46 @@ programs.freetube = {
 
   home.packages = with pkgs; [
     tealdeer # short manual
-      ani-cli   #anime in terminal
-      neofetch
+    ani-cli #anime in terminal
+    neofetch
     telegram-desktop
 
-ascii-image-converter
-      nitch		        # Display system statshome.nix
-      git
-      zsh
-      yazi			# CLI file manager
+    ascii-image-converter
+    nitch # Display system statshome.nix
+    git
+    zsh
+    yazi # CLI file manager
     nnn
 
-# Style
-      hyprshot
-      swww			# Wallpaper daemon
-      wl-clipboard   # Clipboard
-     # swaynotificationcenter      # notification for waybar
+    # Style
+    hyprshot
+    swww # Wallpaper daemon
+    wl-clipboard # Clipboard
+    # swaynotificationcenter      # notification for waybar
 
-      libnotify			# Notification daemon's dependency
+    libnotify # Notification daemon's dependency
 
-# Dev
-      gtk3
-      mtpfs
+    # Dev
+    gtk3
+    mtpfs
 
-
-# Desktop
-      # libreoffice-qt  # Microssoftoffice ulernative
-#foliate	# eBook reader
-      obsidian	# not app
-      qbittorrent       # Torrent
-      baobab # GUI app to analyse disk usage
-thunderbird
-
+    # Desktop
+    # libreoffice-qt  # Microssoftoffice ulernative
+    #foliate	# eBook reader
+    obsidian # not app
+    qbittorrent # Torrent
+    baobab # GUI app to analyse disk usage
+    thunderbird
 
     komikku
 
-      feh
+    feh
 
-      ffmpeg  # ffmpeg 
-      mpv
-      yt-dlp # cli tool downloding video/audio
-cinny-desktop
-      ];
+    ffmpeg # ffmpeg
+    mpv
+    yt-dlp # cli tool downloding video/audio
+    cinny-desktop
+  ];
 
   home.sessionVariables.EDITOR = "nvim";
   programs.git = {
@@ -96,24 +99,17 @@ cinny-desktop
     };
   };
 
-
-
-
-
   home.sessionVariables = {
-    MANPAGER="nvim +Man!";
+    MANPAGER = "nvim +Man!";
   };
-
 
   home.file = {
-
   };
-  
+
   home.shellAliases = {
     srebuild = "sudo nixos-rebuild switch --flake ~/MyRepos/nixos#kaze";
   };
-  
 
-    home.stateVersion = "24.11"; # Please read the comment before changing.
-    programs.home-manager.enable = true;
+  home.stateVersion = "24.11"; # Please read the comment before changing.
+  programs.home-manager.enable = true;
 }
