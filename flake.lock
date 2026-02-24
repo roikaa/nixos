@@ -626,11 +626,11 @@
     "nvim-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1771952425,
-        "narHash": "sha256-KIIkbLmHM9aqCOm0CbHzemPBp/zdjNLh922zIdZ4M18=",
+        "lastModified": 1771953428,
+        "narHash": "sha256-PejrGEzY7TRAQTIDlkF0AIL4OHnN4DtSpmZ21xPl2Ts=",
         "owner": "roikaa",
         "repo": "nvim",
-        "rev": "bc6f18c9c7873f99b59bbf87303184eb8299b2d0",
+        "rev": "ed85c92ea24215e41df818971ba5b70b386ddbfb",
         "type": "github"
       },
       "original": {
