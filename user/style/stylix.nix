@@ -57,13 +57,11 @@ in
   
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-medium.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
     polarity = "dark";
     targets = {
       librewolf.enable = true; 
       librewolf.profileNames = [ "roikaa" ];
-      # firefox.profileNames = [ "roika" ];
-      # neovim.enable = true;
       rofi.enable = true;
       foot.enable = true;
       tmux.enable = true;
