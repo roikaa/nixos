@@ -11,18 +11,14 @@
     ./../../user/app/terminal/foot.nix
     ./../../user/app/terminal/kitty.nix
     ./../../user/app/obs/obs.nix
-#    ./../../user/app/discord/nixcord.nix
-    ./../../user/app/appluncher/thinkpad.nix
+    ./../../user/app/appluncher/rofi.nix
     ./../../user/app/pass/pass.nix
     ./../../user/style/stylix.nix
     ./../../user/cli/btop.nix
-    # ./../../user/app/development/android.nix
-    # ./../../user/keepass/default.nix
     ./../../user/app/LaTex/default.nix
     ./../../user/neovim/default.nix
     ./../../user/app/Tmux/default.nix
     ./../../user/app/zathura/default.nix
-    # ./../../user/wm/bar/default.nix
 
     ./../../user/wm/status-bar/waybar/style.nix
     ./../../user/wm/status-bar/waybar/default.nix
@@ -31,7 +27,6 @@
 
     ./../../user/cli/musicPlayer/rmpc.nix
 
-    # ./../../user/univercity/default.nix
   ];
 
   programs.foliate.enable = true; # Ebook reader

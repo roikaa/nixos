@@ -11,7 +11,6 @@
     ./../../user/app/terminal/foot.nix
     ./../../user/app/terminal/kitty.nix
     ./../../user/app/obs/obs.nix
-#    ./../../user/app/discord/nixcord.nix
     ./../../user/app/appluncher/rofi.nix
     ./../../user/app/pass/pass.nix
     ./../../user/style/stylix.nix
@@ -24,15 +23,9 @@
     ./../../user/app/zathura/default.nix
     ./../../user/wm/status-bar/waybar/style.nix
     ./../../user/wm/status-bar/waybar/default.nix
-    ./../../user/app/appluncher/fuzzel.nix
-    ./../../user/app/appluncher/fsel.nix
   ];
 
   programs.foliate.enable = true; # Ebook reader
-    # programs.waybar.enable = true;
-  # xdg.configFile."waybar/config.jsonc".source = ./../../user/wm/waybar/config;
-# conflicting with stylix, use if stylix nolt enabled
- # xdg.configFile."waybar/style.css".source = ./../../user/wm/waybar/style.css;
  
 programs.freetube = {
     enable = true;
@@ -48,26 +41,21 @@ programs.freetube = {
       ani-cli   #anime in terminal
       neofetch
     telegram-desktop
-#  foot    # terminal
+
 ascii-image-converter
-# core
-#brave
       nitch		        # Display system statshome.nix
       git
       zsh
       yazi			# CLI file manager
     nnn
-#neovim			# Text editor
 
 # Style
       hyprshot
       swww			# Wallpaper daemon
       wl-clipboard   # Clipboard
-      # dunst			# Notification daemon
      # swaynotificationcenter      # notification for waybar
 
       libnotify			# Notification daemon's dependency
-#rofi-wayland	        # Application luncher
 
 # Dev
       gtk3
@@ -81,24 +69,15 @@ ascii-image-converter
       qbittorrent       # Torrent
       baobab # GUI app to analyse disk usage
 thunderbird
-#dolphin			# GUI file manager
-#     kdePackages.dolphin
-#      nautilus
 
 
-# Social
-      # signal-desktop  # Chat app
-#telegram-desktop
     komikku
 
-# Media
       feh
 
       ffmpeg  # ffmpeg 
       mpv
       yt-dlp # cli tool downloding video/audio
-
-
 cinny-desktop
       ];
 
