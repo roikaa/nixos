@@ -1,7 +1,5 @@
 {
   pkgs,
-  lib,
-  config,
   inputs,
   ...
 }: {
@@ -12,7 +10,40 @@
         pynvim
       ];
 
-    extraPackages = with pkgs; [nil nixd alejandra];
+    extraPackages = with pkgs; [
+      nil
+      nixd
+      alejandra
+    ];
+
+    plugins = with pkgs.vimPlugins; [
+      # ...
+      {
+        type = "lua";
+        plugin = gruvbox-material-nvim;
+        config = ''
+          require('gruvbox-material').setup({
+                      italics = true,
+                      contrast = "hard",
+                      comments = {
+                        italics = true,
+                      },
+                      background = {
+                        transparent = false,
+                      },
+                      float = {
+                        force_background = false,
+                        background_color = nil,
+                      },
+                      signs = {
+                        force_background = false,
+                        background_color = nil,
+                      },
+                      customize = nil,
+                    })
+        '';
+      }
+    ];
   };
 
   xdg.configFile."nvim".source = inputs.nvim-config;
