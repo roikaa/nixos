@@ -5,6 +5,8 @@
     extraPython3Packages = ps: with ps; [
       pynvim
     ];
+
+    extraPackages = with pkgs; [ nil nixd ];
   };
   
   xdg.configFile."nvim".source = inputs.nvim-config;
