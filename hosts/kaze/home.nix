@@ -5,7 +5,6 @@
 
   imports = [
     ./../../user/wm/hyprland/thinkpad.nix
-    ./../../user/wm/dwl/dwl-home-config.nix
     ./../../user/shell/default.nix
     ./../../user/app/browser/librewolf.nix
     ./../../user/app/browser/firefox.nix
@@ -100,7 +99,7 @@ thunderbird
       yt-dlp # cli tool downloding video/audio
 
 
-# cinny-desktop
+cinny-desktop
       ];
 
   home.sessionVariables.EDITOR = "nvim";
