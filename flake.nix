@@ -25,16 +25,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # nur = {
+      # url = "github:nix-community/NUR";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
-    nixcord = {
-      url = "github:kaylorben/nixcord";
-    };
+    # nixcord = {
+      # url = "github:kaylorben/nixcord";
+    # };
 
-    fsel.url = "github:Mjoyufull/fsel";
+    # fsel.url = "github:Mjoyufull/fsel";
 
   };
 
