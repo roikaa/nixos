@@ -2,7 +2,7 @@
 {
       programs.waybar.style =
         let
-          borderRadius = "4";
+          borderRadius = "0";
           borderSize = "2";
         in
         # css

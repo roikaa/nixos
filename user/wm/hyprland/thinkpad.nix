@@ -59,7 +59,7 @@
       };
 
 animations = {
-  enabled = true;
+  enabled = false;
 
   bezier = [
     "o2_smooth, 0.4, 0, 0.2, 1"
