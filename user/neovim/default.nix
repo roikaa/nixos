@@ -6,7 +6,7 @@
       pynvim
     ];
 
-    extraPackages = with pkgs; [ nil nixd ];
+    extraPackages = with pkgs; [ nil nixd alejandra ];
   };
   
   xdg.configFile."nvim".source = inputs.nvim-config;
@@ -17,5 +17,6 @@
     ripgrep
     fd
     tree-sitter
+
   ];
 }
