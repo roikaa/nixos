@@ -28,7 +28,7 @@
   boot.loader.grub.device = "/dev/nvme0n1";
   boot.loader.grub.gfxmodeEfi = "auto";
   boot.loader.grub.useOSProber = true;
-  boot.loader.grub.theme = inputs.grubshin-bootpact.night.teleport."1920x1080";
+  # boot.loader.grub.theme = inputs.grubshin-bootpact.night.teleport."1920x1080";
     # let
     # colorsheme = "night";
     # layout = "teleport";

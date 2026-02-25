@@ -64,6 +64,7 @@ in {
     targets = {
       librewolf.enable = true;
       librewolf.profileNames = ["roikaa"];
+      firefox.profileNames = ["default"];
       rofi.enable = true;
       foot.enable = true;
       tmux.enable = true;

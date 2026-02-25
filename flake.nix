@@ -25,18 +25,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-   grubshin-bootpact.url = "github:max-ishere/grubshin-bootpact"; 
-    # nur = {
-      # url = "github:nix-community/NUR";
-      # inputs.nixpkgs.follows = "nixpkgs";
-    # };
+   grubshin-bootpact = {
+      url = "github:max-ishere/grubshin-bootpact"; 
 
-    # nixcord = {
-      # url = "github:kaylorben/nixcord";
-    # };
-
-    # fsel.url = "github:Mjoyufull/fsel";
-
+    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs: 
