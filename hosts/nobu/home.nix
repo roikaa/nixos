@@ -4,6 +4,7 @@
   home.homeDirectory = "/home/akio";
 
   imports = [
+    ./../../user/wm/dwl/dwl.nix
     ./../../user/wm/hyprland/thinkpad.nix
     ./../../user/shell/default.nix
     ./../../user/app/browser/librewolf.nix
