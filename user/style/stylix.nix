@@ -1,5 +1,8 @@
-{ config, pkgs, lib, inputs, ... }: 
-let
+{
+  pkgs,
+  lib,
+  ...
+}: let
   gruvbox-icons-full = pkgs.gruvbox-plus-icons.overrideAttrs (oldAttrs: {
     installPhase = ''
       runHook preInstall
@@ -9,23 +12,22 @@ let
       runHook postInstall
     '';
   });
-in
-{
+in {
   home.packages = [
     (pkgs.writeShellApplication {
       name = "nightman";
-      runtimeInputs = [ pkgs.ripgrep pkgs.home-manager pkgs.libnotify ];
+      runtimeInputs = [pkgs.ripgrep pkgs.home-manager pkgs.libnotify];
       text = ''
         set -euo pipefail
-        
+
         cleanup() {
           notify-send "Theme Switch" "Theme switch interrupted!" -u critical
           exit 1
         }
         trap cleanup INT TERM
-        
+
         current=$(home-manager generations | head -1 | rg -o '/nix/store/[^ ]*')
-        
+
         # Check if the light specialisation activation script exists
         if [[ -f "$current/specialisation/light/activate" ]]; then
           # We're in dark (base), switch to light
@@ -54,14 +56,14 @@ in
       '';
     })
   ];
-  
+
   stylix = {
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
     polarity = "dark";
     targets = {
-      librewolf.enable = true; 
-      librewolf.profileNames = [ "roikaa" ];
+      librewolf.enable = true;
+      librewolf.profileNames = ["roikaa"];
       rofi.enable = true;
       foot.enable = true;
       tmux.enable = true;
@@ -73,10 +75,10 @@ in
       gtk.enable = true;
       qt.enable = true;
     };
-    autoEnable = true;  
+    autoEnable = true;
     cursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
+      package = pkgs.phinger-cursors;
+      name = "phinger-cursors-light";
       size = 24;
     };
     iconTheme = {
@@ -86,7 +88,7 @@ in
       dark = "Gruvbox-Plus-Dark";
     };
   };
-  
+
   # Add home-manager specialisation
   specialisation.light.configuration = {
     stylix = {
@@ -94,4 +96,4 @@ in
       polarity = lib.mkForce "light";
     };
   };
-}   
+}
