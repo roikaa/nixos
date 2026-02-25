@@ -25,7 +25,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    grubshin-bootpact.url = "github:max-ishere/grubshin-bootpact";
+   grubshin-bootpact.url = "github:max-ishere/grubshin-bootpact"; 
     # nur = {
       # url = "github:nix-community/NUR";
       # inputs.nixpkgs.follows = "nixpkgs";
