@@ -209,6 +209,48 @@
         "type": "github"
       }
     },
+    "grubTheme": {
+      "inputs": {
+        "nixpkgs": [
+          "grubshin-bootpact",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1761492206,
+        "narHash": "sha256-W1WDoq3+uggcmj1AeXlqJIm/XjfJPINyE0sX7vlfKaY=",
+        "owner": "max-ishere",
+        "repo": "grub-theme.nix",
+        "rev": "d807a0f176a32e7d62bea12701cbd04302d903b6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "max-ishere",
+        "ref": "main",
+        "repo": "grub-theme.nix",
+        "type": "github"
+      }
+    },
+    "grubshin-bootpact": {
+      "inputs": {
+        "grubTheme": "grubTheme",
+        "hywenhei-extended-font": "hywenhei-extended-font",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1761565928,
+        "narHash": "sha256-k/XrDGZNKorc+7Lj6eygijPWMRlTXvt8a4gm//dSFRg=",
+        "owner": "max-ishere",
+        "repo": "grubshin-bootpact",
+        "rev": "4a251dbe7a1cf985eb58939b9aad9f804e0780ac",
+        "type": "github"
+      },
+      "original": {
+        "owner": "max-ishere",
+        "repo": "grubshin-bootpact",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -299,17 +341,17 @@
         "hyprutils": "hyprutils",
         "hyprwayland-scanner": "hyprwayland-scanner",
         "hyprwire": "hyprwire",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": "nixpkgs_2",
         "pre-commit-hooks": "pre-commit-hooks",
         "systems": "systems",
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1771959711,
-        "narHash": "sha256-fVxN49l5Tu/iCSGuQuyR7HLBl9qJyg/4kt8WHTFn3MY=",
+        "lastModified": 1772022552,
+        "narHash": "sha256-L3zktLSXcvsqczTz7YL5PXYgn4a08tRfl9t6YYLESM8=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "c60b3cb2ed0404d9573b2801b51ba7be1da999d9",
+        "rev": "457617b5a31f70ea63e1fcc0729f29e4a9e6b486",
         "type": "github"
       },
       "original": {
@@ -549,17 +591,34 @@
         "type": "github"
       }
     },
-    "nixpkgs": {
+    "hywenhei-extended-font": {
+      "flake": false,
       "locked": {
-        "lastModified": 1771848320,
-        "narHash": "sha256-0MAd+0mun3K/Ns8JATeHT1sX28faLII5hVLq0L3BdZU=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "2fc6539b481e1d2569f25f8799236694180c0993",
+        "lastModified": 1706958192,
+        "narHash": "sha256-zzRUVv+OmINrvhOkQWZQ6EjjsqQMO2oAiOKE7je1F6U=",
+        "owner": "cawa-93",
+        "repo": "HYWenHei-Extended-Font",
+        "rev": "4377078bad15b06e68576cab2173d7467398afe7",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
+        "owner": "cawa-93",
+        "ref": "main",
+        "repo": "HYWenHei-Extended-Font",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1761373498,
+        "narHash": "sha256-Q/uhWNvd7V7k1H1ZPMy/vkx3F8C13ZcdrKjO7Jv7v0c=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "6a08e6bb4e46ff7fcbb53d409b253f6bad8a28ce",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
@@ -582,6 +641,22 @@
       }
     },
     "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1771848320,
+        "narHash": "sha256-0MAd+0mun3K/Ns8JATeHT1sX28faLII5hVLq0L3BdZU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "2fc6539b481e1d2569f25f8799236694180c0993",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
       "locked": {
         "lastModified": 1767313136,
         "narHash": "sha256-16KkgfdYqjaeRGBaYsNrhPRRENs0qzkQVUooNHtoy2w=",
@@ -664,9 +739,10 @@
     },
     "root": {
       "inputs": {
+        "grubshin-bootpact": "grubshin-bootpact",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs_3",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nvim-config": "nvim-config",
         "stylix": "stylix"

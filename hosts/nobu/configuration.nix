@@ -1,37 +1,50 @@
-{ config, pkgs, lib, inputs, unstable, ... }:
-# let 
-     # tokyo-night-sddm = pkgs.libsForQt5.callPackage ./../../system/sddm/tokyo-night.nix { };
-# in 
-  {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./../../system/style/stylix.nix
-      ./../../system/essentials/font.nix
-      ./../../system/essentials/applications.nix
-      ./../../system/hardware/keyboard/thinkpad.nix
-      ./../../system/services/maintenance.nix
-      inputs.home-manager.nixosModules.default
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  unstable,
+  ...
+}:
+# let
+# tokyo-night-sddm = pkgs.libsForQt5.callPackage ./../../system/sddm/tokyo-night.nix { };
+# in
+{
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./../../system/style/stylix.nix
+    ./../../system/essentials/font.nix
+    ./../../system/essentials/applications.nix
+    ./../../system/hardware/keyboard/thinkpad.nix
+    ./../../system/services/maintenance.nix
+    inputs.home-manager.nixosModules.default
 
-      ./../../user/univercity/default.nix
-    ];
+    ./../../user/univercity/default.nix
+  ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/nvme0n1";
   boot.loader.grub.gfxmodeEfi = "auto";
   boot.loader.grub.useOSProber = true;
+  boot.loader.grub.theme = inputs.grubshin-bootpact.night.teleport."1920x1080";
+    # let
+    # colorsheme = "night";
+    # layout = "teleport";
+    # resolution = "1920x1080";
+  # in
 
-hardware.graphics.extraPackages = with pkgs; [ vaapiIntel intel-media-driver ];
-hardware.graphics = {
+  hardware.graphics.extraPackages = with pkgs; [vaapiIntel intel-media-driver];
+  hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };
 
-hardware.bluetooth.enable = true;
-services.blueman.enable = true;
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
   networking.hostName = "nobu"; # Define your hostname.
-  
+
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -53,11 +66,11 @@ services.blueman.enable = true;
     LC_TIME = "en_US.UTF-8";
   };
 
-services.xserver.enable = true;
-services.displayManager.sddm = {  
-  enable = true;
-  wayland.enable = true;
-  theme = "tokyo-night-sddm";
+  services.xserver.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    theme = "tokyo-night-sddm";
   };
 
   # Enable sound with pipewire.
@@ -70,33 +83,33 @@ services.displayManager.sddm = {
     pulse.enable = true;
   };
 
-services.power-profiles-daemon.enable = true;
+  services.power-profiles-daemon.enable = true;
 
-# Define a user account. Don't forget to set a password with ‘passwd’.
-programs.zsh.enable = true;
-users.defaultUserShell = pkgs.zsh;
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
   users.users.akio = {
     isNormalUser = true;
     description = "akio";
-    extraGroups = [ "networkmanager" "wheel" "plugdev" ];
+    extraGroups = ["networkmanager" "wheel" "plugdev"];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
   services.udev.extraRules = ''
-# Samsung Download Mode
-    SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="685d", MODE="0666", GROUP="plugdev"
-# Samsung devices in download mode
-    SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666", GROUP="plugdev"
-    '';
+    # Samsung Download Mode
+        SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="685d", MODE="0666", GROUP="plugdev"
+    # Samsung devices in download mode
+        SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666", GROUP="plugdev"
+  '';
 
-home-manager = {
+  home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-# (ref vimjoyer Ultimate NixOS Guide)
+    # (ref vimjoyer Ultimate NixOS Guide)
     backupFileExtension = "backup";
-    extraSpecialArgs = { 
-      inherit inputs; 
+    extraSpecialArgs = {
+      inherit inputs;
       inherit unstable;
     };
     users = {
@@ -104,28 +117,28 @@ home-manager = {
     };
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-    pinentryPackage = pkgs.pinentry-curses ;  # or "qt", "mac", etc.
+    pinentryPackage = pkgs.pinentry-curses; # or "qt", "mac", etc.
   };
 
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   programs.nix-ld.enable = true;
 
-environment.sessionVariables = {
-  LIBVA_DRIVER_NAME = "iHD";
-  XDG_SESSION_TYPE = "wayland";
-  NIXOS_OZONE_WL = "1";
-  QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-  QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-  QT_SCALE_FACTOR = "1";
-  GDK_SCALE = "1";
-  GDK_DPI_SCALE = "1.0";
-};
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
+    XDG_SESSION_TYPE = "wayland";
+    NIXOS_OZONE_WL = "1";
+    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+    QT_SCALE_FACTOR = "1";
+    GDK_SCALE = "1";
+    GDK_DPI_SCALE = "1.0";
+  };
 
   programs.hyprland = {
     package = inputs.hyprland.packages."${pkgs.system}".hyprland;
@@ -138,7 +151,6 @@ environment.sessionVariables = {
 
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-
   ];
 
   programs.thunar.enable = true;
