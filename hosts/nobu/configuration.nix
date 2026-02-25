@@ -6,6 +6,15 @@
   unstable,
   ...
 }:
+let
+  grubshin = pkgs.fetchFromGitHub {
+    owner = "roikaa";
+    repo = "grubtheme";
+    rev = "61929a9b7b1e8ee3d2a368bcd9ba9bb568bb4002";
+    sha256 = "sha256-OAm6JkSmuKdELqlcqdM+dCUjMFemXefRFbGVCmnS16I="; # Compute via ➜ nix-prefetch-github roikaa grubtheme
+  };
+in
+
 # let
 # tokyo-night-sddm = pkgs.libsForQt5.callPackage ./../../system/sddm/tokyo-night.nix { };
 # in
@@ -28,7 +37,7 @@
   boot.loader.grub.device = "/dev/nvme0n1";
   boot.loader.grub.gfxmodeEfi = "auto";
   boot.loader.grub.useOSProber = true;
-  # boot.loader.grub.theme = inputs.grubshin-bootpact.night.teleport."1920x1080";
+  boot.loader.grub.theme = "${grubshin}/teleport-night-1280x720";
     # let
     # colorsheme = "night";
     # layout = "teleport";
