@@ -701,11 +701,11 @@
     "nvim-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1771969227,
-        "narHash": "sha256-+RxKKXPgQoH7QKbWgDhoDvE7flP2lT9FfOTgyvaxuuA=",
+        "lastModified": 1772041350,
+        "narHash": "sha256-oJmW5Au1XkCTU5a53FA8O97pPaHBreOpY9KcYBmQuh4=",
         "owner": "roikaa",
         "repo": "nvim",
-        "rev": "1b7cad2cb6dee3a80765d497d531e7e047f8a765",
+        "rev": "08098cfeca683ee603bf74018858e569ef3db994",
         "type": "github"
       },
       "original": {
