@@ -1,13 +1,11 @@
-{pkgs, inputs, ...}: 
-let
-  grubshin = pkgs.fetchFromGitHub {
-    owner = "roikaa";
-    repo = "grubtheme";
-    rev = "61929a9b7b1e8ee3d2a368bcd9ba9bb568bb4002";
-    sha256 = "sha256-OAm6JkSmuKdELqlcqdM+dCUjMFemXefRFbGVCmnS16I="; # Compute via ➜ nix-prefetch-github roikaa grubtheme
+{pkgs, ...}: let
+  cybergrub = pkgs.fetchFromGitHub {
+    owner = "adnksharp";
+    repo = "CyberGRUB-2077";
+    rev = "86ed7c3af18c3b69dd002b341dbb099daaf39eab"; # Or specific commit hash for reproducibility, e.g., "v1.0"
+    sha256 = "sha256-quXluKYzylSnUnbLZbzdygM5pgDwB1PgLV4VAU66Lc0="; # Compute via `nix-prefetch-github adnksharp CyberGRUB-2077`
   };
-in
-  {
+in {
   # boot.loader.systemd-boot.enable = true;
   boot.loader.efi.efiSysMountPoint = "/boot"; # CRITICAL - tells NixOS where EFI is
   boot.loader.efi.canTouchEfiVariables = true;
@@ -17,7 +15,6 @@ in
     device = "nodev";
     useOSProber = false;
     gfxmodeEfi = "auto";
-    theme = "${grubshin}/teleport-night-1280x720";
-
+    theme = "${cybergrub}/CyberGRUB-2077";
   };
 }
