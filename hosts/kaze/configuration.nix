@@ -114,6 +114,7 @@
   services.xserver.enable = true;
   services.displayManager.sddm = {
     enable = true;
+    package = pkgs.kdePackages.sddm; # Qt6 version
     wayland.enable = true;
     # theme = "tokyo-night-sddm";
     # extraPackages = [tokyo-night-sddm];
