@@ -71,12 +71,21 @@ in
     LC_TIME = "en_US.UTF-8";
   };
 
-  services.xserver.enable = true;
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-    # theme = "tokyo-night-sddm";
+  # services.xserver.enable = true;
+  services.greetd = {
+  enable = true;
+  settings = {
+    default_session = {
+      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --sessions /etc/wayland-sessions --time";
+      user = "greeter";
+    };
   };
+};
+  # services.displayManager.sddm = {
+  #   enable = true;
+  #   wayland.enable = true;
+  #   # theme = "tokyo-night-sddm";
+  # };
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
