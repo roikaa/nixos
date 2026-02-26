@@ -115,8 +115,10 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    theme = "tokyo-night-sddm";
+    # theme = "tokyo-night-sddm";
     # extraPackages = [tokyo-night-sddm];
+    theme = "sddm-astronaut-theme";
+    extraPackages = [pkgs.sddm-astronaut];
   };
 
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .

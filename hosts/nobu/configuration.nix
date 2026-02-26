@@ -14,10 +14,6 @@ let
     sha256 = "sha256-OAm6JkSmuKdELqlcqdM+dCUjMFemXefRFbGVCmnS16I="; # Compute via ➜ nix-prefetch-github roikaa grubtheme
   };
 in
-
-# let
-# tokyo-night-sddm = pkgs.libsForQt5.callPackage ./../../system/sddm/tokyo-night.nix { };
-# in
 {
   imports = [
     # Include the results of the hardware scan.
@@ -79,7 +75,7 @@ in
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    theme = "tokyo-night-sddm";
+    # theme = "tokyo-night-sddm";
   };
 
   # Enable sound with pipewire.

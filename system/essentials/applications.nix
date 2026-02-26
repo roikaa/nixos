@@ -1,11 +1,13 @@
 
 { config, lib, pkgs, inputs, ... }:
-let 
-     tokyo-night-sddm = pkgs.libsForQt5.callPackage ./../sddm/tokyo-night.nix { };
-in 
+# let 
+     # tokyo-night-sddm = pkgs.libsForQt5.callPackage ./../sddm/tokyo-night.nix { };
+# in 
 {
   environment.systemPackages = with pkgs; [
-    tokyo-night-sddm
+    # tokyo-night-sddm
+     qt6Packages.qtbase
+    sddm-astronaut
     ntfs3g # windows filesystem driver
     python312Packages.pip
     python3Full
