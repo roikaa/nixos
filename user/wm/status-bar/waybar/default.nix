@@ -11,13 +11,24 @@
             spacing = 0;
             reload_style_on_change = true;
 
-            modules-left = [
-              "custom/actions"
-              "systemd-failed-units"
-              "hyprland/workspaces"
-              "hyprland/window"
-            ];
+            # modules-left = [
+            #   "custom/actions"
+            #   "systemd-failed-units"
+            #   "hyprland/workspaces"
+            #   "hyprland/window"
+            # ];
+modules-left = [
+  "custom/actions"
+  "systemd-failed-units"
+  "wlr/taskbar"
+];
 
+"wlr/taskbar" = {
+  format = "{icon}";
+  icon-size = 16;
+  tooltip-format = "{title}";
+  on-click = "activate";
+};
             modules-center = [
               "privacy"
               "clock"
