@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
 {
+  config,
+  pkgs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     # gns3-gui
     # gns3-server
@@ -7,21 +10,25 @@
     vpcs
     # ubridge
     libvirt
-    # xterm              # Classic, lightweight
-    
+
     # Python and networking tools
     python3
     python3Packages.pip
     python3Packages.netmiko
-        # python312
-        # python312Packages.netmiko   
+
     # Useful networking tools
     busybox
     inetutils
     wireshark
     tcpdump
 
-    pdfpc #presntation
+    #robotics
+    clang-tools
+    gnumake
+    gdb
+
+    #presntation
+    pdfpc
   ];
 
   virtualisation.libvirtd.enable = true;
@@ -33,8 +40,8 @@
   #     prefixLength = 24;
   #   }];
   # };
-#
-  # users.users.akio.extraGroups = ["kvm" "libvirtd" "wireshark"]; # "gns3" 
+  #
+  users.users.akio.extraGroups = ["kvm" "libvirtd" "wireshark" "dialout"]; # "gns3"
   #
   # security.wrappers.ubridge = {
   #   source = "${pkgs.ubridge}/bin/ubridge";
@@ -43,5 +50,4 @@
   #   group = "root";
   #   permissions = "u+rx,g+x,o+x";
   # };
-    
 }

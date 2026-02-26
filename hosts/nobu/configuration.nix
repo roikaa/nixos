@@ -96,7 +96,7 @@ in
   users.users.akio = {
     isNormalUser = true;
     description = "akio";
-    extraGroups = ["networkmanager" "wheel" "plugdev"];
+    extraGroups = ["networkmanager" "wheel" "plugdev" ];
     packages = with pkgs; [
       #  thunderbird
     ];
