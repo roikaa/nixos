@@ -76,8 +76,8 @@ services.greetd = {
   enable = true;
   settings = {
     default_session = {
-      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd '${pkgs.dwl}/bin/dwl -s ${pkgs.waybar}/bin/waybar' --user akio --time";
-      user = "greeter";
+      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd '${pkgs.dwl}/bin/dwl -s ${pkgs.waybar}/bin/waybar'--time";
+      user = "akio";
     };
   };
 };  # services.displayManager.sddm = {
