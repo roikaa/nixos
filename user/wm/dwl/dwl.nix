@@ -16,10 +16,10 @@
       # jetbrains-mono
     ]
     ++ [
-      (pkgs.dwl.override {
+      ((pkgs.dwl.override {
         configH = ./dwl-config.h;
       }).overrideAttrs (old: {
-        patches = (old.patches or [])++[./ipc.patch];
-        })
+        patches = (old.patches or []) ++ [ ./ipc.patch ];
+      }))
     ];
 }
