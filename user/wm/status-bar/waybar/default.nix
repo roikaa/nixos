@@ -18,8 +18,8 @@
         modules-left = [
           "custom/actions"
           "systemd-failed-units"
-          "wlr/taskbar"
           "dwl/tags"
+          "dwl/window"
         ];
 
         modules-center = [
@@ -47,12 +47,22 @@
 
         "dwl/tags" = {
           num-tags = 5;
+          tag-labels = [
+            "1"
+            "2"
+            "3"
+            "4"
+            "5"
+            "6"
+            "7"
+            "8"
+            "9"
+          ];
         };
 
-        "wlr/taskbar" = {
-          max-length = 30;
+        "dwl/window" = {
           format = "{title}";
-          icon = true;
+          max-length = 50;
         };
 
         systemd-failed-units = let
