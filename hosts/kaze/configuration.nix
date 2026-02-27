@@ -111,16 +111,26 @@
     NIXOS_OZONE_WL = "1";
   };
 
-  services.xserver.enable = true;
-  services.displayManager.sddm = {
-    enable = true;
-    package = pkgs.kdePackages.sddm; # Qt6 version
-    wayland.enable = true;
-    # theme = "tokyo-night-sddm";
-    # extraPackages = [tokyo-night-sddm];
-    theme = "sddm-astronaut-theme";
-    extraPackages = [pkgs.sddm-astronaut];
+  services.greetd = {
+  enable = true;
+  settings = {
+    default_session = {
+      command = "dwl -s waybar";
+      user = "Ala";
+    };
   };
+};
+
+  # services.xserver.enable = true;
+  # services.displayManager.sddm = {
+  #   enable = true;
+  #   package = pkgs.kdePackages.sddm; # Qt6 version
+  #   wayland.enable = true;
+  #   # theme = "tokyo-night-sddm";
+  #   # extraPackages = [tokyo-night-sddm];
+  #   theme = "sddm-astronaut-theme";
+  #   extraPackages = [pkgs.sddm-astronaut];
+  # };
 
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.11"; # Did you read the comment?
