@@ -27,7 +27,7 @@
     gnumake
     gdb
     arduino-cli
-
+    arduino-language-server
     #presntation
     pdfpc
   ];
