@@ -34,6 +34,11 @@ in
   boot.loader.grub.gfxmodeEfi = "auto";
   boot.loader.grub.useOSProber = true;
   boot.loader.grub.theme = "${grubshin}/teleport-night-1920x1080";
+    # let
+    # colorsheme = "night";
+    # layout = "teleport";
+    # resolution = "1920x1080";
+  # in
 
   hardware.graphics.extraPackages = with pkgs; [vaapiIntel intel-media-driver];
   hardware.graphics = {
@@ -71,11 +76,15 @@ services.greetd = {
   enable = true;
   settings = {
     default_session = {
-      command = "${pkgs.dwl}/bin/dwl -s ${pkgs.waybar}/bin/waybar";
-      user = "akio";
+      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd '${pkgs.dwl}/bin/dwl -s ${pkgs.waybar}/bin/waybar' --user akio --time";
+      user = "greeter";
     };
   };
-};
+};  # services.displayManager.sddm = {
+  #   enable = true;
+  #   wayland.enable = true;
+  #   # theme = "tokyo-night-sddm";
+  # };
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
