@@ -67,12 +67,12 @@ in
   };
 
   # services.xserver.enable = true;
-  services.greetd = {
+services.greetd = {
   enable = true;
   settings = {
     default_session = {
-      command = "dwl -s waybar";
-      user = "Ala";
+      command = "${pkgs.dwl}/bin/dwl -s ${pkgs.waybar}/bin/waybar";
+      user = "akio";
     };
   };
 };
