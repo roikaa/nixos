@@ -18,6 +18,8 @@
     ++ [
       (pkgs.dwl.override {
         configH = ./dwl-config.h;
-      })
+      }).overrideAttrs (old: {
+        patches = (old.patches or [])++[./ipc.patch];
+        })
     ];
 }

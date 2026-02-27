@@ -110,15 +110,17 @@
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
   };
-services.greetd = {
-  enable = true;
-  settings = {
-    default_session = {
-      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd '${pkgs.dwl}/bin/dwl -s ${pkgs.waybar}/bin/waybar' --user akio --time";
-      user = "greeter";
+
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c 'dwl -s waybar' ";
+        user = "greeter";
+      };
     };
   };
-};
+
   # services.xserver.enable = true;
   # services.displayManager.sddm = {
   #   enable = true;
