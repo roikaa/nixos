@@ -26,6 +26,7 @@
     clang-tools
     gnumake
     gdb
+    arduino-cli
 
     #presntation
     pdfpc

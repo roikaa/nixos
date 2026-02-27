@@ -17,7 +17,7 @@
     ]
     ++ [
       (pkgs.dwl.override {
-        configH = ./config.h;
+        configH = ./dwl-config.h;
       })
     ];
 }
