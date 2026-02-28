@@ -18,8 +18,8 @@
         modules-left = [
           "custom/actions"
           "systemd-failed-units"
-          "dwl/tags"
-          "dwl/window"
+          # "dwl/tags"
+          # "dwl/window"
         ];
 
         modules-center = [
