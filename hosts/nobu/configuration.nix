@@ -79,18 +79,22 @@ in {
   #     };
   #   };
   # };
+
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c '${pkgs.writeShellScript "start-dwl" ''
-          mkdir -p ~/.cache
-          dwl -s waybar > ~/.cache/dwltags
-        ''}'";
+        command = let
+          start-dwl = pkgs.writeShellScript "start-dwl" ''
+            mkdir -p ~/.cache
+            exec ${pkgs.coreutils}/bin/stdbuf -oL dwl -s waybar > ~/.cache/dwltags
+          '';
+        in "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c ${start-dwl}";
         user = "greeter";
       };
     };
   };
+
   # services.displayManager.sddm = {
   #   enable = true;
   #   wayland.enable = true;

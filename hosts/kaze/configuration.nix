@@ -120,19 +120,20 @@
   #     };
   #   };
   # };
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c '${pkgs.writeShellScript "start-dwl" ''
+services.greetd = {
+  enable = true;
+  settings = {
+    default_session = {
+      command = let
+        start-dwl = pkgs.writeShellScript "start-dwl" ''
           mkdir -p ~/.cache
-          dwl -s waybar > ~/.cache/dwltags
-        ''}'";
-        user = "greeter";
-      };
+          exec ${pkgs.coreutils}/bin/stdbuf -oL dwl -s waybar > ~/.cache/dwltags
+        '';
+      in "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c ${start-dwl}";
+      user = "greeter";
     };
   };
-  # services.xserver.enable = true;
+};  # services.xserver.enable = true;
   # services.displayManager.sddm = {
   #   enable = true;
   #   package = pkgs.kdePackages.sddm; # Qt6 version
