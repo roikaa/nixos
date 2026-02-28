@@ -126,8 +126,11 @@ static const Key keys[] = {
 	{ MODKEY,                    XKB_KEY_p,           spawn,            {.v = menucmd} },
 	{ MODKEY,		     XKB_KEY_Return,      spawn,            {.v = termcmd} },
 	{ MODKEY,		     XKB_KEY_w,		  spawn,	    {.v = browsercmd}},
-	{ MODKEY,                    XKB_KEY_y,		  spawn,          SHCMD("foot -e yazi") },
+	{ MODKEY,                    XKB_KEY_y,		  spawn,            SHCMD("foot -e yazi") },
 
+	/* ── Screenshot ($mod SHIFT Print → save; Print → area) ─────────────────── */
+	{ 0,                         XKB_KEY_Print,       spawn,            SHCMD("grim -g \"$(slurp)\" ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png") },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Print,       spawn,            SHCMD("grim ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png") },
 
 	/* ── Focus / Stack ──────────────────────────────────────────────────────── */
 	{ MODKEY,                    XKB_KEY_j,           focusstack,       {.i = +1} },
