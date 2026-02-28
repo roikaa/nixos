@@ -18,8 +18,7 @@
         modules-left = [
           "custom/actions"
           "systemd-failed-units"
-          # "dwl/tags"
-          # "dwl/window"
+          "custom/dwl"
         ];
 
         modules-center = [
@@ -45,24 +44,10 @@
           # on-click = lib.getExe' self.packages.${pkgs.system}.fuzzel-goodies "fuzzel-actions";
         };
 
-        "dwl/tags" = {
-          num-tags = 5;
-          tag-labels = [
-            "1"
-            "2"
-            "3"
-            "4"
-            "5"
-            "6"
-            "7"
-            "8"
-            "9"
-          ];
-        };
-
-        "dwl/window" = {
-          format = "{title}";
-          max-length = 50;
+        "custom/dwl" = {
+          exec = "waybar-dwl";
+          format = "{}";
+          return-type = "json";
         };
 
         systemd-failed-units = let

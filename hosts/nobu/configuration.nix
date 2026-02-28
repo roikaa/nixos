@@ -5,16 +5,14 @@
   inputs,
   unstable,
   ...
-}:
-let
+}: let
   grubshin = pkgs.fetchFromGitHub {
     owner = "roikaa";
     repo = "grubtheme";
     rev = "61929a9b7b1e8ee3d2a368bcd9ba9bb568bb4002";
     sha256 = "sha256-OAm6JkSmuKdELqlcqdM+dCUjMFemXefRFbGVCmnS16I="; # Compute via ➜ nix-prefetch-github roikaa grubtheme
   };
-in
-{
+in {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -34,10 +32,10 @@ in
   boot.loader.grub.gfxmodeEfi = "auto";
   boot.loader.grub.useOSProber = true;
   boot.loader.grub.theme = "${grubshin}/classic-day-1920x1080";
-    # let
-    # colorsheme = "night";
-    # layout = "teleport";
-    # resolution = "1920x1080";
+  # let
+  # colorsheme = "night";
+  # layout = "teleport";
+  # resolution = "1920x1080";
   # in
 
   hardware.graphics.extraPackages = with pkgs; [vaapiIntel intel-media-driver];
@@ -72,15 +70,28 @@ in
   };
 
   # services.xserver.enable = true;
-services.greetd = {
-  enable = true;
-  settings = {
-    default_session = {
-      command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c 'dwl -s waybar' ";
-      user = "greeter";
+  # services.greetd = {
+  #   enable = true;
+  #   settings = {
+  #     default_session = {
+  #       command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c 'dwl -s waybar' ";
+  #       user = "greeter";
+  #     };
+  #   };
+  # };
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c '${pkgs.writeShellScript "start-dwl" ''
+          mkdir -p ~/.cache
+          dwl -s waybar > ~/.cache/dwltags
+        ''}'";
+        user = "greeter";
+      };
     };
   };
-};  # services.displayManager.sddm = {
+  # services.displayManager.sddm = {
   #   enable = true;
   #   wayland.enable = true;
   #   # theme = "tokyo-night-sddm";
@@ -104,7 +115,7 @@ services.greetd = {
   users.users.akio = {
     isNormalUser = true;
     description = "akio";
-    extraGroups = ["networkmanager" "wheel" "plugdev" ];
+    extraGroups = ["networkmanager" "wheel" "plugdev"];
     packages = with pkgs; [
       #  thunderbird
     ];

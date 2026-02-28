@@ -111,16 +111,27 @@
     NIXOS_OZONE_WL = "1";
   };
 
+  # services.greetd = {
+  #   enable = true;
+  #   settings = {
+  #     default_session = {
+  #       command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c 'dwl -s waybar' ";
+  #       user = "greeter";
+  #     };
+  #   };
+  # };
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c 'dwl -s waybar' ";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c '${pkgs.writeShellScript "start-dwl" ''
+          mkdir -p ~/.cache
+          dwl -s waybar > ~/.cache/dwltags
+        ''}'";
         user = "greeter";
       };
     };
   };
-
   # services.xserver.enable = true;
   # services.displayManager.sddm = {
   #   enable = true;
