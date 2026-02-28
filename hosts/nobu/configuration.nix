@@ -6,11 +6,11 @@
   unstable,
   ...
 }: let
-  grubshin = pkgs.fetchFromGitHub {
+  grubtheme = pkgs.fetchFromGitHub {
     owner = "roikaa";
     repo = "grubtheme";
-    rev = "61929a9b7b1e8ee3d2a368bcd9ba9bb568bb4002";
-    sha256 = "sha256-OAm6JkSmuKdELqlcqdM+dCUjMFemXefRFbGVCmnS16I="; # Compute via ➜ nix-prefetch-github roikaa grubtheme
+    rev = "ddfb35d647171f11b42a06339b0854f43e72149e";
+    sha256 = "sha256-6oW4GW5OOhYrDoU21DbxwzQyls5W08Dgi2hc1BWdQaQ="; # Compute via ➜ nix-prefetch-github roikaa grubtheme
   };
 in {
   imports = [
@@ -31,7 +31,7 @@ in {
   boot.loader.grub.device = "/dev/nvme0n1";
   boot.loader.grub.gfxmodeEfi = "auto";
   boot.loader.grub.useOSProber = true;
-  boot.loader.grub.theme = "${grubshin}/classic-day-1920x1080";
+  boot.loader.grub.theme = "${grubtheme}/sayonara";
   # let
   # colorsheme = "night";
   # layout = "teleport";
