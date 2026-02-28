@@ -51,11 +51,9 @@
 # ]
 #
 
-
-
 ############### USER: MODIFY THESE VARIABLES ###############
 readonly dwl_output_filename="$HOME"/.cache/dwltags                  # File to watch for dwl output
-readonly labels=( "1" "2" "3" "4" "5" "6" "7" "8" "9" )              # Number of lables must match dwl's config.h tagcount
+readonly labels=("1" "2" "3" "4" "5" "6" "7" "8" "9")                # Number of lables must match dwl's config.h tagcount
 pango_tag_default="<span                      foreground='#989710'>" # Pango span style for 'default' tags
 pango_tag_active="<span overline='single' overline_color='#fe8019'>" # Pango span style for 'active' tags
 pango_tag_selected="<span                     foreground='#458588'>" # Pango span style for 'selected' tags
@@ -66,69 +64,70 @@ pango_inactive="<span                         foreground='#928374'>" # Pango spa
 hide_unused_tags=false                                               # Set to 'true' to hide unused tags, 'false' to show all tags
 ############### USER: MODIFY THESE VARIABLES ###############
 
-dwl_log_lines_per_focus_change=8 # This has changed several times as dwl has developed and may not yet be rock solid
-full_components_list=( `seq 0 $(( ${#labels[@]} - 1 ))` "layout" "title" ) # (1, 2, ... length_of_$labels) + "layout" + "title"
+dwl_log_lines_per_focus_change=8                                        # This has changed several times as dwl has developed and may not yet be rock solid
+full_components_list=($(seq 0 $((${#labels[@]} - 1))) "layout" "title") # (1, 2, ... length_of_$labels) + "layout" + "title"
 monitor="${1}"
 
 _cycle() {
     output_text=""
     # Render some components in $pango_inactive if $monitor is not the active monitor
     if [[ "${selmon}" = 0 ]]; then
-	local pango_tag_default="${pango_inactive}"
-	local pango_layout="${pango_inactive}"
-	local pango_title="${pango_inactive}"
+        local pango_tag_default="${pango_inactive}"
+        local pango_layout="${pango_inactive}"
+        local pango_title="${pango_inactive}"
     fi
 
     for component in "${full_components_list[@]}"; do
-	case "${component}" in
-	    [0-9]|[1-9][0-9])
-		mask=$((1<<component))
-		tag_text=${labels[component]}
-        # Skip if the tag is unused and hide_unused_tags is true
-		if [[ "${hide_unused_tags}" = true ]] && ! (( ("${activetags}" | "${urgenttags}" | "${selectedtags}") & mask )); then
-		    continue
-		fi
-		# Wrap component in the applicable nestable pango spans
-		if (( "${activetags}"   & mask )) 2>/dev/null; then tag_text="${pango_tag_active}${tag_text}</span>"; fi
-		if (( "${urgenttags}"   & mask )) 2>/dev/null; then tag_text="${pango_tag_urgent}${tag_text}</span>"; fi
-		if (( "${selectedtags}" & mask )) 2>/dev/null; then tag_text="${pango_tag_selected}${tag_text}</span>"
-		else
-			tag_text="${pango_tag_default}${tag_text}</span>"
-		fi
-		output_text+="${tag_text}  "
-		;;
-	    layout)
-		    output_text+="${pango_layout}${layout} </span>"
-		;;
-	    title)
-		    output_text+="${pango_title}${title}</span>"
-		;;
-	    *)
-		output_text+="?" # If a "?" is visible on this module, something happened that shouldn't have happened
-		;;
-	esac
+        case "${component}" in
+        [0-9] | [1-9][0-9])
+            mask=$((1 << component))
+            tag_text=${labels[component]}
+            # Skip if the tag is unused and hide_unused_tags is true
+            if [[ "${hide_unused_tags}" = true ]] && ! ((("${activetags}" | "${urgenttags}" | "${selectedtags}") & mask)); then
+                continue
+            fi
+            # Wrap component in the applicable nestable pango spans
+            if (("${activetags}" & mask)) 2>/dev/null; then tag_text="${pango_tag_active}${tag_text}</span>"; fi
+            if (("${urgenttags}" & mask)) 2>/dev/null; then tag_text="${pango_tag_urgent}${tag_text}</span>"; fi
+            if (("${selectedtags}" & mask)) 2>/dev/null; then
+                tag_text="${pango_tag_selected}${tag_text}</span>"
+            else
+                tag_text="${pango_tag_default}${tag_text}</span>"
+            fi
+            output_text+="${tag_text}  "
+            ;;
+        layout)
+            output_text+="${pango_layout}${layout} </span>"
+            ;;
+        title)
+            output_text+="${pango_title}${title}</span>"
+            ;;
+        *)
+            output_text+="?" # If a "?" is visible on this module, something happened that shouldn't have happened
+            ;;
+        esac
     done
 }
 
-while [[ -n "$(pgrep waybar)" ]] ; do
+while [[ -n "$(pgrep waybar)" ]]; do
     [[ ! -f "${dwl_output_filename}" ]] && printf -- '%s\n' \
-				    "You need to redirect dwl stdout to ~/.cache/dwltags" >&2
+        "You need to redirect dwl stdout to ~/.cache/dwltags" >&2
 
     # Get info from the file
-    dwl_latest_output_by_monitor="$(grep  -E "^${monitor}\s" "${dwl_output_filename}" | tail -n${dwl_log_lines_per_focus_change})"
-    title="$(echo   "${dwl_latest_output_by_monitor}" | grep '^[[:graph:]]* title'  | cut -d ' ' -f 3- )"
+    dwl_latest_output_by_monitor="$(grep -E "^${monitor}\s" "${dwl_output_filename}" | tail -n${dwl_log_lines_per_focus_change})"
+    title="$(echo "${dwl_latest_output_by_monitor}" | grep '^[[:graph:]]* title' | tail -1 | cut -d ' ' -f 3-)"
     title="${title//\"/“}" # Replace quotation - prevent waybar crash
     title="${title//\&/+}" # Replace ampersand - prevent waybar crash
-    layout="$(echo  "${dwl_latest_output_by_monitor}" | grep '^[[:graph:]]* layout' | cut -d ' ' -f 3- )"
-    selmon="$(echo  "${dwl_latest_output_by_monitor}" | grep 'selmon' | cut -d ' ' -f 3)"
+    layout="$(echo "${dwl_latest_output_by_monitor}" | grep '^[[:graph:]]* layout' | tail -1 | cut -d ' ' -f 3-)"
+    selmon="$(echo "${dwl_latest_output_by_monitor}" | grep 'selmon' | tail -1 | cut -d ' ' -f 3)"
 
-	# SPecific hacky fix that allows users to choose the string "><>" (common; used in dwm) for the floating layout
-	layout="$(echo "$layout" | sed -e 's/</\&lt;/g' -e 's/>/\&gt;/g')"
-	
+    # SPecific hacky fix that allows users to choose the string "><>" (common; used in dwm) for the floating layout
+    layout="$(echo "$layout" | sed -e 's/</\&lt;/g' -e 's/>/\&gt;/g')"
+
     # Get the tag bit mask as a decimal
-    activetags="$(  echo "${dwl_latest_output_by_monitor}" | grep '^[[:graph:]]* tags' | awk '{print $3}')"
-    selectedtags="$(echo "${dwl_latest_output_by_monitor}" | grep '^[[:graph:]]* tags' | awk '{print $4}')"
-    urgenttags="$(  echo "${dwl_latest_output_by_monitor}" | grep '^[[:graph:]]* tags' | awk '{print $5}')"
+    activetags="$(echo "${dwl_latest_output_by_monitor}" | grep '^[[:graph:]]* tags' | tail -1 | awk '{print $3}')"
+    selectedtags="$(echo "${dwl_latest_output_by_monitor}" | grep '^[[:graph:]]* tags' | tail -1 | awk '{print $4}')"
+    urgenttags="$(echo "${dwl_latest_output_by_monitor}" | grep '^[[:graph:]]* tags' | tail -1 | awk '{print $5}')"
 
     _cycle
     printf -- '{"text":"%s"}\n' "${output_text}"
