@@ -55,7 +55,7 @@
 
 ############### USER: MODIFY THESE VARIABLES ###############
 readonly dwl_output_filename="$HOME"/.cache/dwltags                  # File to watch for dwl output
-readonly labels=( "" "" "" "" "" "" "" "" "" )              # Number of lables must match dwl's config.h tagcount
+readonly labels=( "1" "2" "3" "4" "5" "6" "7" "8" "9" )              # Number of lables must match dwl's config.h tagcount
 pango_tag_default="<span                      foreground='#989710'>" # Pango span style for 'default' tags
 pango_tag_active="<span overline='single' overline_color='#fe8019'>" # Pango span style for 'active' tags
 pango_tag_selected="<span                     foreground='#458588'>" # Pango span style for 'selected' tags
@@ -66,7 +66,7 @@ pango_inactive="<span                         foreground='#928374'>" # Pango spa
 hide_unused_tags=false                                               # Set to 'true' to hide unused tags, 'false' to show all tags
 ############### USER: MODIFY THESE VARIABLES ###############
 
-dwl_log_lines_per_focus_change=7 # This has changed several times as dwl has developed and may not yet be rock solid
+dwl_log_lines_per_focus_change=8 # This has changed several times as dwl has developed and may not yet be rock solid
 full_components_list=( `seq 0 $(( ${#labels[@]} - 1 ))` "layout" "title" ) # (1, 2, ... length_of_$labels) + "layout" + "title"
 monitor="${1}"
 
@@ -128,7 +128,7 @@ while [[ -n "$(pgrep waybar)" ]] ; do
     # Get the tag bit mask as a decimal
     activetags="$(  echo "${dwl_latest_output_by_monitor}" | grep '^[[:graph:]]* tags' | awk '{print $3}')"
     selectedtags="$(echo "${dwl_latest_output_by_monitor}" | grep '^[[:graph:]]* tags' | awk '{print $4}')"
-    urgenttags="$(  echo "${dwl_latest_output_by_monitor}" | grep '^[[:graph:]]* tags' | awk '{print $6}')"
+    urgenttags="$(  echo "${dwl_latest_output_by_monitor}" | grep '^[[:graph:]]* tags' | awk '{print $5}')"
 
     _cycle
     printf -- '{"text":"%s"}\n' "${output_text}"
