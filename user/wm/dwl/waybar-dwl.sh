@@ -64,7 +64,7 @@ pango_inactive="<span                         foreground='#928374'>" # Pango spa
 hide_unused_tags=true                                               # Set to 'true' to hide unused tags, 'false' to show all tags
 ############### USER: MODIFY THESE VARIABLES ###############
 
-dwl_log_lines_per_focus_change=14                                       # This has changed several times as dwl has developed and may not yet be rock solid
+dwl_log_lines_per_focus_change=7                                        # This has changed several times as dwl has developed and may not yet be rock solid
 full_components_list=($(seq 0 $((${#labels[@]} - 1))) "layout" "title") # (1, 2, ... length_of_$labels) + "layout" + "title"
 monitor="${1}"
 
