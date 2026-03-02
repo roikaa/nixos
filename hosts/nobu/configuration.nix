@@ -69,31 +69,31 @@ in {
     LC_TIME = "en_US.UTF-8";
   };
 
-  # services.xserver.enable = true;
-  # services.greetd = {
-  #   enable = true;
-  #   settings = {
-  #     default_session = {
-  #       command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c 'dwl -s waybar' ";
-  #       user = "greeter";
-  #     };
-  #   };
-  # };
-
+  services.xserver.enable = true;
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = let
-          start-dwl = pkgs.writeShellScript "start-dwl" ''
-            mkdir -p ~/.cache
-            exec ${pkgs.coreutils}/bin/stdbuf -oL dwl -s waybar > ~/.cache/dwltags
-          '';
-        in "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c ${start-dwl}";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c 'dwl -s waybar  > ~/.cache/dwltags ' ";
         user = "greeter";
       };
     };
   };
+
+  # services.greetd = {
+  #   enable = true;
+  #   settings = {
+  #     default_session = {
+  #       command = let
+  #         start-dwl = pkgs.writeShellScript "start-dwl" ''
+  #           mkdir -p ~/.cache
+  #           exec ${pkgs.coreutils}/bin/stdbuf -oL dwl -s waybar > ~/.cache/dwltags
+  #         '';
+  #       in "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c ${start-dwl}";
+  #       user = "greeter";
+  #     };
+  #   };
+  # };
 
   # services.displayManager.sddm = {
   #   enable = true;
