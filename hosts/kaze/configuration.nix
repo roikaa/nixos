@@ -115,12 +115,12 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c 'dwl -s waybar > ~/.cashe/dwltags' ";
-        user = "akio";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c 'dwl > ~/.cache/dwltags && waybar ' ";
+        user = "greeter";
       };
     };
   };
-# services.greetd = {
+  # services.greetd = {
 #   enable = true;
 #   settings = {
 #     default_session = {
