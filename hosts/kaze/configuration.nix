@@ -115,7 +115,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c 'dwl > ~/.cache/dwltags && waybar ' ";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c 'dwl > ~/.cache/dwltags'";
         user = "greeter";
       };
     };
