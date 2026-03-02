@@ -111,30 +111,30 @@
     NIXOS_OZONE_WL = "1";
   };
 
-  # services.greetd = {
-  #   enable = true;
-  #   settings = {
-  #     default_session = {
-  #       command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c 'dwl -s waybar' ";
-  #       user = "greeter";
-  #     };
-  #   };
-  # };
-services.greetd = {
-  enable = true;
-  settings = {
-    default_session = {
-      command = let
-        start-dwl = pkgs.writeShellScript "start-dwl" ''
-          mkdir -p ~/.cache
-          exec ${pkgs.coreutils}/bin/stdbuf -oL dwl -s waybar > ~/.cache/dwltags
-        '';
-      in "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c ${start-dwl}";
-      user = "greeter";
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c 'dwl -s waybar > ~.cashe/dwltags' ";
+        user = "akio";
+      };
     };
   };
-};  # services.xserver.enable = true;
-  # services.displayManager.sddm = {
+# services.greetd = {
+#   enable = true;
+#   settings = {
+#     default_session = {
+#       command = let
+#         start-dwl = pkgs.writeShellScript "start-dwl" ''
+#           mkdir -p ~/.cache
+#           exec ${pkgs.coreutils}/bin/stdbuf -oL dwl -s waybar > ~/.cache/dwltags
+#         '';
+#       in "${pkgs.greetd.tuigreet}/bin/tuigreet -t -c ${start-dwl}";
+#       user = "greeter";
+#     };
+#   };
+# };  # services.xserver.enable = true;
+#   # services.displayManager.sddm = {
   #   enable = true;
   #   package = pkgs.kdePackages.sddm; # Qt6 version
   #   wayland.enable = true;
